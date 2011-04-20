@@ -6,6 +6,8 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreFoundation;
 using System.Drawing;
+using System.Xaml;
+using System.Xml;
 
 namespace Sample
 {
@@ -30,7 +32,9 @@ namespace Sample
 			frame.Height -=20;
 			window.AddSubview(new GridView(frame));
 			window.MakeKeyAndVisible ();
-			
+			XmlTextReader xmlReader = new XmlTextReader("c:\\mywindow.xaml");
+			object obj = XamlReader.Load(xmlReader);
+			Window win = obj as Window;
 			return true;
 		}
 

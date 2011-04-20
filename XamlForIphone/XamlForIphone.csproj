@@ -18,7 +18,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
-    <DefineConstants>DEBUG</DefineConstants>
+    <DefineConstants>DEBUG; NET_4_0</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchLink>None</MtouchLink>
@@ -28,6 +28,7 @@
     <MtouchUseSGen>false</MtouchUseSGen>
     <MtouchUseThumb>false</MtouchUseThumb>
     <MtouchArch>ARMv6</MtouchArch>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -42,13 +43,15 @@
     <MtouchUseLlvm>false</MtouchUseLlvm>
     <MtouchUseThumb>false</MtouchUseThumb>
     <MtouchArch>ARMv6</MtouchArch>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>NET_4_0</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhone\Debug</OutputPath>
-    <DefineConstants>DEBUG</DefineConstants>
+    <DefineConstants>DEBUG;NET_4_0</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchUseSGen>false</MtouchUseSGen>
@@ -58,6 +61,7 @@
     <MtouchUseThumb>false</MtouchUseThumb>
     <MtouchArch>ARMv6</MtouchArch>
     <MtouchUseLlvm>false</MtouchUseLlvm>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -72,6 +76,8 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchArch>ARMv6</MtouchArch>
     <MtouchUseLlvm>false</MtouchUseLlvm>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>NET_4_0</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -106,6 +112,127 @@
     <Compile Include="RectConstructor.g.cs">
       <DependentUpon>RectConstructor.tt</DependentUpon>
     </Compile>
+    <Compile Include="System.Xaml\System.Windows.Markup\AmbientAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\ArrayExtension.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\ConstructorArgumentAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\ContentPropertyAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\ContentWrapperAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\DateTimeValueSerializer.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\DependsOnAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\DictionaryKeyPropertyAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\IComponentConnector.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\INameScope.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\INameScopeDictionary.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\IProvideValueTarget.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\IQueryAmbient.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\IUriContext.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\IValueSerializerContext.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\IXamlTypeResolver.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\MarkupExtension.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\MarkupExtensionReturnTypeAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\MemberDefinition.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\NameReferenceConverter.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\NameScopePropertyAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\NullExtension.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\PropertyDefinition.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\Reference.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\RootNamespaceAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\RuntimeNamePropertyAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\StaticExtension.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\StaticExtensionConverter.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\TrimSurroundingWhitespaceAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\TypeExtension.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\TypeExtensionConverter.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\UidPropertyAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\UsableDuringInitializationAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\ValueSerializer.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\ValueSerializerAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\WhitespaceSignificantCollectionAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\XamlDeferLoadAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\XamlSetMarkupExtensionAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\XamlSetMarkupExtensionEventArgs.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\XamlSetTypeConverterAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\XamlSetTypeConverterEventArgs.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\XamlSetValueEventArgs.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\XData.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\XmlLangPropertyAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\XmlnsCompatibleWithAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\XmlnsDefinitionAttribute.cs" />
+    <Compile Include="System.Xaml\System.Windows.Markup\XmlnsPrefixAttribute.cs" />
+    <Compile Include="System.Xaml\System.Xaml\AmbientPropertyValue.cs" />
+    <Compile Include="System.Xaml\System.Xaml\AttachableMemberIdentifier.cs" />
+    <Compile Include="System.Xaml\System.Xaml\AttachablePropertyServices.cs" />
+    <Compile Include="System.Xaml\System.Xaml\IAmbientProvider.cs" />
+    <Compile Include="System.Xaml\System.Xaml\IAttachedPropertyStore.cs" />
+    <Compile Include="System.Xaml\System.Xaml\IDestinationTypeProvider.cs" />
+    <Compile Include="System.Xaml\System.Xaml\INamespacePrefixLookup.cs" />
+    <Compile Include="System.Xaml\System.Xaml\IRootObjectProvider.cs" />
+    <Compile Include="System.Xaml\System.Xaml\IXamlIndexingReader.cs" />
+    <Compile Include="System.Xaml\System.Xaml\IXamlLineInfo.cs" />
+    <Compile Include="System.Xaml\System.Xaml\IXamlLineInfoConsumer.cs" />
+    <Compile Include="System.Xaml\System.Xaml\IXamlNameProvider.cs" />
+    <Compile Include="System.Xaml\System.Xaml\IXamlNameResolver.cs" />
+    <Compile Include="System.Xaml\System.Xaml\IXamlNamespaceResolver.cs" />
+    <Compile Include="System.Xaml\System.Xaml\IXamlObjectWriterFactory.cs" />
+    <Compile Include="System.Xaml\System.Xaml\IXamlSchemaContextProvider.cs" />
+    <Compile Include="System.Xaml\System.Xaml\NameScope.cs" />
+    <Compile Include="System.Xaml\System.Xaml\NamespaceDeclaration.cs" />
+    <Compile Include="System.Xaml\System.Xaml\ParsedMarkupExtensionInfo.cs" />
+    <Compile Include="System.Xaml\System.Xaml\PrefixLookup.cs" />
+    <Compile Include="System.Xaml\System.Xaml\TypeExtensionMethods.cs" />
+    <Compile Include="System.Xaml\System.Xaml\ValueSerializerContext.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlBackgroundReader.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlDeferringLoader.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlDirective.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlDuplicateMemberException.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlException.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlInternalException.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlLanguage.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlMember.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlNameResolver.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlNode.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlNodeList.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlNodeQueue.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlNodeQueueReader.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlNodeQueueWriter.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlNodeType.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlObjectEventArgs.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlObjectNodeIterator.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlObjectReader.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlObjectReaderException.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlObjectReaderSettings.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlObjectWriter.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlObjectWriterException.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlObjectWriterSettings.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlParseException.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlReader.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlReaderSettings.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlSchemaContext.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlSchemaContextSettings.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlSchemaException.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlServices.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlSubtreeReader.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlType.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlWriter.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlWriterInternalBase.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlWriterSettings.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlWriterStateManager.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlXmlReader.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlXmlReaderSettings.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlXmlWriter.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlXmlWriterException.cs" />
+    <Compile Include="System.Xaml\System.Xaml\XamlXmlWriterSettings.cs" />
+    <Compile Include="System.Xaml\System.Xaml.Permissions\XamlAccessLevel.cs" />
+    <Compile Include="System.Xaml\System.Xaml.Permissions\XamlLoadPermission.cs" />
+    <Compile Include="System.Xaml\System.Xaml.Schema\AllowedMemberLocations.cs" />
+    <Compile Include="System.Xaml\System.Xaml.Schema\ShouldSerializeResult.cs" />
+    <Compile Include="System.Xaml\System.Xaml.Schema\XamlCollectionKind.cs" />
+    <Compile Include="System.Xaml\System.Xaml.Schema\XamlMemberInvoker.cs" />
+    <Compile Include="System.Xaml\System.Xaml.Schema\XamlTypeInvoker.cs" />
+    <Compile Include="System.Xaml\System.Xaml.Schema\XamlTypeName.cs" />
+    <Compile Include="System.Xaml\System.Xaml.Schema\XamlTypeTypeConverter.cs" />
+    <Compile Include="System.Xaml\System.Xaml.Schema\XamlValueConverter.cs" />
+    <Compile Include="Consts.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DispacherTemplate.tt">
@@ -116,5 +243,8 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RectConstructor.g.cs</LastGenOutput>
     </None>
+    <None Include="System.Xaml\System.Windows.Markup\ChangeLog" />
+    <None Include="System.Xaml\System.Xaml\ChangeLog" />
+    <None Include="System.Xaml\System.Xaml.Schema\ChangeLog" />
   </ItemGroup>
 </Project>
