@@ -5,12 +5,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamlForIphone", "XamlForIph
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{15DFF25C-2E5F-4590-9EF0-BC5035FEBDBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Windows", "..\..\Downloads\System.Windows\System.Windows.csproj", "f3b79564-f550-4d71-8d24-2aef5fab95b2"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
 		Release|iPhoneSimulator = Release|iPhoneSimulator
 		Debug|iPhone = Debug|iPhone
 		Release|iPhone = Release|iPhone
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{15DFF25C-2E5F-4590-9EF0-BC5035FEBDBE}.Debug|iPhone.ActiveCfg = Debug|iPhone
@@ -29,6 +33,18 @@ Global
 		{384B6D18-AF14-4DC7-89EF-6D26433DC3E3}.Release|iPhone.Build.0 = Release|iPhone
 		{384B6D18-AF14-4DC7-89EF-6D26433DC3E3}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{384B6D18-AF14-4DC7-89EF-6D26433DC3E3}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		f3b79564-f550-4d71-8d24-2aef5fab95b2.Debug|iPhone.ActiveCfg = Debug|x86
+		f3b79564-f550-4d71-8d24-2aef5fab95b2.Debug|iPhone.Build.0 = Debug|x86
+		f3b79564-f550-4d71-8d24-2aef5fab95b2.Debug|iPhoneSimulator.ActiveCfg = Debug|x86
+		f3b79564-f550-4d71-8d24-2aef5fab95b2.Debug|iPhoneSimulator.Build.0 = Debug|x86
+		f3b79564-f550-4d71-8d24-2aef5fab95b2.Debug|x86.ActiveCfg = Debug|x86
+		f3b79564-f550-4d71-8d24-2aef5fab95b2.Debug|x86.Build.0 = Debug|x86
+		f3b79564-f550-4d71-8d24-2aef5fab95b2.Release|iPhone.ActiveCfg = Release|x86
+		f3b79564-f550-4d71-8d24-2aef5fab95b2.Release|iPhone.Build.0 = Release|x86
+		f3b79564-f550-4d71-8d24-2aef5fab95b2.Release|iPhoneSimulator.ActiveCfg = Release|x86
+		f3b79564-f550-4d71-8d24-2aef5fab95b2.Release|iPhoneSimulator.Build.0 = Release|x86
+		f3b79564-f550-4d71-8d24-2aef5fab95b2.Release|x86.ActiveCfg = Release|x86
+		f3b79564-f550-4d71-8d24-2aef5fab95b2.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Sample\Sample.csproj

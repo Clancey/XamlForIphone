@@ -88,7 +88,10 @@
       <DependentUpon>MainWindow.xib</DependentUpon>
     </Compile>
     <Compile Include="Main.cs" />
-    <Compile Include="GridView.cs" />
+    <Compile Include="PhoneApplicationPage.cs" />
+    <Compile Include="TextBlock.cs" />
+    <Compile Include="MainPage.xaml.cs" />
+    <Compile Include="UIGrid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />
@@ -104,5 +107,10 @@
       <Project>{384B6D18-AF14-4DC7-89EF-6D26433DC3E3}</Project>
       <Name>XamlForIphone</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MainPage.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

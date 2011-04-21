@@ -11,18 +11,24 @@ using System.Collections.Generic;
 //using System.Windows.Threading;
 using System.Windows;
 using System;
-using System.Drawing;
+using System.Drawing; 
+using System;
+using System.ComponentModel; 
+using System.Diagnostics; 
+using System.Windows.Markup; 
+using XamlForIphone;
 
-namespace XamlControls
+namespace XamlForIphone
 {
-<#	
 
+public enum SizeType {Fixed,Calculated};
+<#	
 
 string[] uiviews= "UIView,UIActionSheet,UIAlertView,UIControl,UIPickerView,UISegmentedControl,UITableView,UITableViewCell,UITextField,UITextView,UIWindow,UIActivityIndicatorView,UIBezierPath,UIButton,UILabel,UIImageView,UIDatePicker,UINavigationBar,UIPageControl,UIProgressView,UIScrollView,UISearchBar,UISlider,UISwitch,UITabBar,UIToolbar,UIWebView".Split(new char[]{char.Parse(",")});
 foreach(var uiview in uiviews)
 {
 #>
-
+	[ContentProperty("Content")]
 	public partial class <#= uiview #> : MonoTouch.UIKit.<#= uiview #> , IDependencyObject
 	{		
 		public <#= uiview #> () : base ()
@@ -119,8 +125,8 @@ foreach(var uiview in uiviews)
 			if(properties.ContainsKey(dp))
 				oldValue = 	properties[dp];
 			properties[dp] = value;
-			if(oldValue != null)
-				OnPropertyChanged(new DependencyPropertyChangedEventArgs(dp,oldValue,value));
+			//if(oldValue != null)
+			OnPropertyChanged(new DependencyPropertyChangedEventArgs(dp,oldValue,value));
 		}
 		
 		public void SetValue(DependencyPropertyKey key, object value)
@@ -137,6 +143,79 @@ foreach(var uiview in uiviews)
 		{
 			DependencyObject.register(t,dp);
 		}
+		
+#region Content
+		/// <summary> 
+		/// Gets or sets the content of a ContentControl.
+		/// </summary>
+		public object Content {
+			get { return GetValue (ContentProperty); }
+			set { SetValue (ContentProperty, value); }
+		}
+
+		/// <summary> 
+		/// Identifies the Content dependency property.
+		/// </summary>
+		public static readonly DependencyProperty ContentProperty = DependencyProperty.Register ("Content", typeof(object), typeof(<#= uiview #>), new PropertyMetadata (OnContentPropertyChanged));
+
+		private static void OnContentPropertyChanged (IDependencyObject d, DependencyPropertyChangedEventArgs e)
+		{
+			<#= uiview #> source = d as <#= uiview #>;
+			Debug.Assert (source != null, "The source is not an instance of <#= uiview #>!");
+			
+			// Notify derived classes of the change 
+			source.OnContentChanged (e.OldValue, e.NewValue);
+		}
+#endregion Content
+
+		/// <summary>
+		/// Called when the Content property changes. 
+		/// </summary>
+		/// <param name="oldContent">
+		/// The old value of the Content property. 
+		/// </param>
+		/// <param name="newContent">
+		/// The new value of the Content property. 
+		/// </param> 
+		protected virtual void OnContentChanged (object oldContent, object newContent)
+		{
+			if (this is MonoTouch.UIKit.UIView) {
+				if (oldContent is MonoTouch.UIKit.UIView)
+					(oldContent as MonoTouch.UIKit.UIView).RemoveFromSuperview ();
+				if (newContent is MonoTouch.UIKit.UIView)
+					this.AddSubview ((newContent as MonoTouch.UIKit.UIView));
+			}
+		}
+		
+		
+#region Sizes
+		public string Width {
+			
+			get	{return Frame.Width.ToString();}
+			set {
+				var width = int.Parse(value);
+				var frame = Frame;
+				frame.Width = width;
+				Frame = frame;			
+			}
+		}
+		
+		
+		public string Height {
+			
+			get	{return Frame.Height.ToString();}
+			set { 
+				var height = int.Parse(value);
+				var frame = Frame;
+				frame.Height = height;
+				Frame = frame;
+			}
+		}
+		
+		#endregion Sizes
+		
+		
+		
 	}
 	
 	

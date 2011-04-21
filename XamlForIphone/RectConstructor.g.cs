@@ -1,8 +1,11 @@
 ﻿
+using System.Collections.Generic;
+//using System.Windows.Threading;
+using System.Windows;
 using System;
 using System.Drawing;
 
-namespace Xaml
+namespace XamlForIphone
 {
 	public partial class UIView : MonoTouch.UIKit.UIView
 	{	

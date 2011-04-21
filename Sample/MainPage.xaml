@@ -1,0 +1,16 @@
+﻿<Canvas 
+    x:Class="WindowsPhoneApplication1.MainPage"
+    xmlns="clr-namespace:XamlForIphone;assembly=XamlForIphone"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sample="clr-namespace:Sample;assembly=Sample"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+		<UITextField Canvas.Left="100" Canvas.Top="20" Name="uITextField1"  Text="MY this was from xaml" Height="67" Width="300" />
+</Canvas>

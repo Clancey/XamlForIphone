@@ -4,9 +4,11 @@ using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Windows;
-namespace XamlForIphone
+using XamlForIphone;
+namespace Sample
 {
-	public class UIGrid : UIView
+	
+	public class UIGrid : Canvas
 	{
 		
 		public static readonly DependencyProperty RowProperty;
@@ -18,9 +20,7 @@ namespace XamlForIphone
 		{
 		// Register the property
 			UIGrid.RowProperty = DependencyProperty.Register("Row",
-			typeof(int), typeof(UIGrid),new PropertyMetadata(new PropertyChangedCallback(OnRowColumnChanged)), new ValidateValueCallback(
-			delegate {
-				return true;}));
+			typeof(int), typeof(UIGrid),new PropertyMetadata(new PropertyChangedCallback(OnRowColumnChanged)));
 			UIGrid.RowSpanProperty = DependencyProperty.Register("RowSpan",
 			typeof(int), typeof(UIGrid),new PropertyMetadata(new PropertyChangedCallback(OnRowColumnChanged)));
 			UIGrid.ColumnProperty = DependencyProperty.Register("Column",
@@ -28,11 +28,6 @@ namespace XamlForIphone
 			UIGrid.ColumnSpanProperty = DependencyProperty.Register("ColumnSpan",
 			typeof(int), typeof(UIGrid),new PropertyMetadata(new PropertyChangedCallback(OnRowColumnChanged)));
 			
-		}
-		
-		public UIGrid ()
-		{
-			Children = new List<IDependencyObject>();	
 		}
 		// A .NET property wrapper (not must)
 		public static int GetRow (IDependencyObject element){return (int)element.GetValue(UIGrid.RowProperty );	}
@@ -54,6 +49,16 @@ namespace XamlForIphone
 		public float ColumnPadding = 5;
 		public float RowPadding = 5;
 		private bool useCounts;
+		public UIGrid ()
+		{
+			Frame = new RectangleF(0,0,300,480);
+			columns = 5;
+			rows = 5;
+			var rect = Frame;
+			columnWidth = rect.Width / columns;
+			rowHeight = rect.Height / rows;
+			Children = new List<IDependencyObject>();
+		}
 		public UIGrid (RectangleF rect,int Columns,int Rows) 
 		{
 			Frame = rect;
@@ -95,8 +100,8 @@ namespace XamlForIphone
 		private void reload()
 		{
 			// Only reload if you used counts not specified widths/height
-			if(!useCounts)
-				return;
+			//if(!useCounts)
+			//	return;
 			
 			columnWidth = this.Frame.Width / columns;
 			rowHeight = this.Frame.Height / rows;
@@ -136,8 +141,6 @@ namespace XamlForIphone
 		
 		private static void OnRowColumnChanged( IDependencyObject o, DependencyPropertyChangedEventArgs e) 
 		{
-			Console.WriteLine(o);
-			Console.WriteLine(e.NewValue + " : " + e.OldValue + " , " + e.Property);
 		}
 		
 	}

@@ -8,6 +8,8 @@ using MonoTouch.CoreFoundation;
 using System.Drawing;
 using System.Xaml;
 using System.Xml;
+using System.IO;
+using Microsoft.Phone.Controls;
 
 namespace Sample
 {
@@ -30,11 +32,12 @@ namespace Sample
 			var frame = window.Frame;
 			frame.Y += 20;
 			frame.Height -=20;
-			window.AddSubview(new GridView(frame));
 			window.MakeKeyAndVisible ();
-			XmlTextReader xmlReader = new XmlTextReader("c:\\mywindow.xaml");
-			object obj = XamlReader.Load(xmlReader);
-			Window win = obj as Window;
+			var directory = Path.Combine(NSBundle.MainBundle.ResourcePath,"MainPage.xaml");
+			XamlXmlReader reader = new XamlXmlReader(directory);
+			UIView obj = (UIView)XamlServices.Load(reader);
+			obj.Frame = frame;
+			window.AddSubview(obj);
 			return true;
 		}
 

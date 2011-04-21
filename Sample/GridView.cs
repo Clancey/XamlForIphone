@@ -1,28 +1,31 @@
 using System;
-using MonoTouch.UIKit;
 using System.Drawing;
-using XamlControls;
+using XamlForIphone;
+using MonoTouch.UIKit;
 namespace Sample
 {
 	public class GridView : MonoTouch.UIKit.UIView
 	{
-		public XamlControls.UITextField textInput;
-		public XamlControls.UILabel label;
-		public XamlControls.UIImageView imageView;
-		private XamlControls.UIGrid grid;	
-		
+		public XamlForIphone.UITextField textInput;
+		public XamlForIphone.UILabel label;
+		public XamlForIphone.UIImageView imageView;
+		private XamlForIphone.UIGrid grid;	
+		public GridView () :this (new RectangleF(0,0,100,100))
+		{
+			
+		}
 		public GridView (RectangleF rect) : base (rect)
 		{
 			this.BackgroundColor = UIColor.Gray;
 			// pass in Number of collumns/rows
-			grid = new XamlControls.UIGrid(this.Frame,6,10);
+			grid = new UIGrid(this.Frame,6,10);
 			
 			//pass in collumn/row width/height
 			//grid = new UIGrid(this.Frame,30f,30f);
 			
-			textInput = new XamlControls.UITextField(){BackgroundColor = UIColor.White};
+			textInput = new XamlForIphone.UITextField(){BackgroundColor = UIColor.White};
 			
-			label = new XamlControls.UILabel{Text = "label 1"};
+			label = new XamlForIphone.UILabel{Text = "label 1"};
 			//imageView = new XamlControls.UIImageView(null);
 			
 			this.AddSubview(grid);

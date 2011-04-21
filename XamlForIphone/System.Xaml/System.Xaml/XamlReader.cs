@@ -58,7 +58,8 @@ namespace System.Xaml
 		{
 			return new XamlSubtreeReader (this);
 		}
-		
+
+
 		public virtual void Skip ()
 		{
 			int count = 0;

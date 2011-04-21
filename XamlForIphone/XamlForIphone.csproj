@@ -102,7 +102,6 @@
       <DependentUpon>DispacherTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="DependencyObjectType.cs" />
-    <Compile Include="UIGrid.cs" />
     <Compile Include="PropertyMetadata.cs" />
     <Compile Include="ValidateValueCallback.cs" />
     <Compile Include="LocalValueEntry.cs" />
@@ -233,6 +232,13 @@
     <Compile Include="System.Xaml\System.Xaml.Schema\XamlTypeTypeConverter.cs" />
     <Compile Include="System.Xaml\System.Xaml.Schema\XamlValueConverter.cs" />
     <Compile Include="Consts.cs" />
+    <Compile Include="VerticalAlignment.cs" />
+    <Compile Include="HorizontalAlignment.cs" />
+    <Compile Include="IUIView.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="Canvas.cs" />
+    <Compile Include="AutomationProperty.cs" />
+    <Compile Include="Kind.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DispacherTemplate.tt">
