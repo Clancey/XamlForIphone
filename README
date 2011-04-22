@@ -1,0 +1,1 @@
+This is an overnight hack. It is in no way a finished/working product.  It is merely a proof of concept.  If/when I am ready to continue working on this project; I will completely rewrite the majority of the code you see here. The fundamental design of using an interface instead of properly preserving the inheritance chain is an ugly hack. 
