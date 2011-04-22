@@ -93,7 +93,6 @@
   </ProjectExtensions>
   <ItemGroup>
     <Compile Include="IDependencyObject.cs" />
-    <Compile Include="DependencyObject.cs" />
     <Compile Include="DependencyAttribute.cs" />
     <Compile Include="DependencyPropertyKey.cs" />
     <Compile Include="LocalValueEnumerator.cs" />
@@ -237,8 +236,9 @@
     <Compile Include="IUIView.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="Canvas.cs" />
-    <Compile Include="AutomationProperty.cs" />
     <Compile Include="Kind.cs" />
+    <Compile Include="DependencyObject.cs" />
+    <Compile Include="IRefContainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DispacherTemplate.tt">

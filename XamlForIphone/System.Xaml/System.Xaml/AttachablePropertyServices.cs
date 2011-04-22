@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Windows;
 
 namespace System.Xaml
 {
@@ -46,6 +47,15 @@ namespace System.Xaml
 				props [instance] = t;
 			}
 			t [name] = value;
+			//DependencyObject.propertyDeclarations
+			if(instance is IDependencyObject)
+			{
+				var dependancy = DependencyObject.propertyDeclarations[name.DeclaringType][name.MemberName];
+				// = name.DeclaringType.GetProperty(name.MemberName);
+				//var dependancy = prop.GetValue(null,null);// as DependencyProperty;
+				Console.WriteLine(dependancy);
+				(instance as IDependencyObject).SetValue(dependancy,value);
+			}
 		}
 
 		public static bool TryGetProperty (object instance, AttachableMemberIdentifier name, out object value)

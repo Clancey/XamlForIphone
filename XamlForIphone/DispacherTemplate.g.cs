@@ -1584,12 +1584,12 @@ public enum SizeType {Fixed,Calculated};
 
 		public sealed override bool Equals (object obj)
 		{
-			throw new NotImplementedException("Equals");
+			return base.Equals(obj);
 		}
 
 		public sealed override int GetHashCode ()
 		{
-			throw new NotImplementedException("GetHashCode");
+			return this.ToString().GetHashCode();
 		}
 
 		[MonoTODO]

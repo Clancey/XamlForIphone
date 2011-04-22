@@ -1,93 +1,59 @@
 using System;
-using System.ComponentModel; 
-using System.Diagnostics; 
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Markup;
-using System.Windows; 
+using System.Windows;
 namespace XamlForIphone
 {
-    public partial class Canvas : UIView
-    { 
+	public partial class Canvas : UIView
+	{
 		#region Canvas
 		/// <summary> 
 		/// Identifies the Content dependency property.
 		/// </summary>
-		public static readonly DependencyProperty LeftProperty;
-		
-		static Canvas()
-		{
-			LeftProperty= DependencyProperty.Register ("Left", typeof(int), typeof(Canvas), new PropertyMetadata (OnLeftPropertyChanged));
-		}
+		public static readonly DependencyProperty LeftProperty = DependencyProperty.Register ("Left", typeof(int), typeof(Canvas), new PropertyMetadata (0, OnLeftPropertyChanged));
 
-		/// <summary>
-		/// ContentProperty property changed handler.
-		/// </summary> 
-		/// <param name="d">ContentControl that changed its Content.</param>
-		/// <param name="e">DependencyPropertyChangedEventArgs.</param>
+
+		public static int GetLeft (IDependencyObject element)
+		{
+			return (int)element.GetValue (Canvas.LeftProperty);
+		}
+		public static void SetLeft (IDependencyObject element, int value)
+		{
+			element.SetValue (Canvas.LeftProperty, value);
+		}
 		private static void OnLeftPropertyChanged (IDependencyObject d, DependencyPropertyChangedEventArgs e)
 		{
-			Console.WriteLine("left changed");
-			Canvas source = d as Canvas;
-			Debug.Assert (source != null, "The source is not an instance of ContentControl!");
-			// Notify derived classes of the change 
-			source.OnLeftChanged (e.OldValue, e.NewValue);
+			var frame = d.Frame;
+			frame.X = float.Parse (e.NewValue.ToString ());
+			d.Frame = frame;
 		}
-		
-		/// <summary>
-		/// Called when the Content property changes. 
-		/// </summary>
-		/// <param name="oldContent">
-		/// The old value of the Content property. 
-		/// </param>
-		/// <param name="newContent">
-		/// The new value of the Content property. 
-		/// </param> 
-		protected virtual void OnLeftChanged (object oldContent, object newContent)
-		{
-			Console.WriteLine(newContent);
-		}
-		
-		public static readonly DependencyProperty TopProperty = DependencyProperty.Register ("Top", typeof(int), typeof(Canvas), new PropertyMetadata (OnRightPropertyChanged));
+		public static readonly DependencyProperty TopProperty = DependencyProperty.Register ("Top", typeof(int), typeof(Canvas), new PropertyMetadata (OnTopPropertyChanged));
 
-		/// <summary>
-		/// ContentProperty property changed handler.
-		/// </summary> 
-		/// <param name="d">ContentControl that changed its Content.</param>
-		/// <param name="e">DependencyPropertyChangedEventArgs.</param>
-		private static void OnRightPropertyChanged (IDependencyObject d, DependencyPropertyChangedEventArgs e)
+		public static int GetTop (IDependencyObject element)
 		{
-			Console.WriteLine("top changed");
-			Canvas source = d as Canvas;
-			Debug.Assert (source != null, "The source is not an instance of ContentControl!");
-			// Notify derived classes of the change 
-			source.OnRightChanged (e.OldValue, e.NewValue);
+			return (int)element.GetValue (Canvas.TopProperty);
+		}
+		public static void SetTop (IDependencyObject element, int value)
+		{
+			element.SetValue (Canvas.TopProperty, value);
+		}
+		private static void OnTopPropertyChanged (IDependencyObject d, DependencyPropertyChangedEventArgs e)
+		{
+			var frame = d.Frame;
+			frame.Y = float.Parse (e.NewValue.ToString ());
+			d.Frame = frame;
 		}
 		#endregion Content
-		
-		/// <summary>
-		/// Called when the Content property changes. 
-		/// </summary>
-		/// <param name="oldContent">
-		/// The old value of the Content property. 
-		/// </param>
-		/// <param name="newContent">
-		/// The new value of the Content property. 
-		/// </param> 
-		protected virtual void OnRightChanged (object oldContent, object newContent)
-		{
-			Console.WriteLine(newContent);
-		}
-		
-		public static int GetLeft (IDependencyObject element){return (int)element.GetValue(Canvas.LeftProperty );	}
 		public override void SubviewAdded (MonoTouch.UIKit.UIView uiview)
 		{
 			base.SubviewAdded (uiview);
-			if(uiview is IDependencyObject)
-			{
+			if (uiview is IDependencyObject) {
 				
 				var theview = uiview as IDependencyObject;
 				//var test = GetLeft(theview);
 				//Console.WriteLine(test);
-				/*
+								/*
 				var left =  theview.GetValue(LeftProperty);
 				var right =  theview.GetValue(RightProperty);
 				var frame = theview.Frame;
@@ -95,10 +61,10 @@ namespace XamlForIphone
 				frame.Y = (int)right;
 				theview.Frame = frame;
 				*/
-				Console.WriteLine("view added");
+Console.WriteLine ("view added");
 			}
 		}
 		
-    }
+	}
 }
 
