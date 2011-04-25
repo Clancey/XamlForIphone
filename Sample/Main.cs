@@ -42,18 +42,20 @@ namespace Sample
 		}
 		public void start()
 		{
-			var frame = window.Frame;
-			frame.Y += 20;
-			frame.Height -=20;
-			var directory = Path.Combine(NSBundle.MainBundle.ResourcePath,"MainPage.xaml");
-			XamlXmlReader reader = new XamlXmlReader(directory);
-			UIView obj = (UIView)XamlServices.Load(reader);
-			obj.Frame = frame;
-			this.InvokeOnMainThread( delegate {
-				loadingLabel.RemoveFromSuperview();
-				loadingLabel = null;
-				window.AddSubview(obj);
-			});
+			using(new NSAutoreleasePool()) {
+				var frame = window.Frame;
+				frame.Y += 20;
+				frame.Height -=20;
+				var directory = Path.Combine(NSBundle.MainBundle.ResourcePath,"MainPage.xaml");
+				XamlXmlReader reader = new XamlXmlReader(directory);
+				UIView obj = (UIView)XamlServices.Load(reader);
+				obj.Frame = frame;
+				this.InvokeOnMainThread( delegate {
+					loadingLabel.RemoveFromSuperview();
+					loadingLabel = null;
+					window.AddSubview(obj);
+				});
+			}
 		}
 		
 

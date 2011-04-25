@@ -11,8 +11,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
-    
-		<CustomCanvas Name="uITextField1"  Text="MY this was from xaml" Height="67" Width="300" />
-		<CustomCanvas Name="uITextField1"  Text="MY this was from xaml" Height="67" Width="300" />
+    shell:SystemTray.IsVisible="True">    
+    	<UITextField Canvas.Left="100" Canvas.Top="20" Name="uITextField1"  Text="MY this was from xaml" Height="67" Width="300" />
+    	<UITextField Canvas.Left="50" Canvas.Top="200" Name="uITextField1"  Text="I am item 2!!!!" Height="67" Width="300" />
 </Canvas>

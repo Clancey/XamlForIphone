@@ -53,5 +53,12 @@ namespace XamlForIphone {
 			internal set { SetValue (IsItemsHostProperty, value); }
 		}
 		
+		public Panel()
+		{
+			Children.CollectionChanged += HandleChildrenCollectionChanged;	
+		}
+
+		internal abstract void HandleChildrenCollectionChanged (object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+		
 	}
 }
