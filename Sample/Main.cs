@@ -10,6 +10,7 @@ using System.Xaml;
 using System.Xml;
 using System.IO;
 using Microsoft.Phone.Controls;
+using System.Threading;
 
 namespace Sample
 {
@@ -25,21 +26,36 @@ namespace Sample
 	public partial class AppDelegate : UIApplicationDelegate
 	{
 		// This method is invoked when the application has loaded its UI and its ready to run
+		UILabel loadingLabel;
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
 			// If you have defined a view, add it here:
 			// window.AddSubview (navigationController.View);
+			loadingLabel = new UILabel(window.Bounds);
+			loadingLabel.Text = "Loading";
+			loadingLabel.TextAlignment = UITextAlignment.Center;
+			window.AddSubview(loadingLabel);
+			window.MakeKeyAndVisible ();
+			Thread thread = new Thread(start);
+			thread.Start();
+			return true;
+		}
+		public void start()
+		{
 			var frame = window.Frame;
 			frame.Y += 20;
 			frame.Height -=20;
-			window.MakeKeyAndVisible ();
 			var directory = Path.Combine(NSBundle.MainBundle.ResourcePath,"MainPage.xaml");
 			XamlXmlReader reader = new XamlXmlReader(directory);
 			UIView obj = (UIView)XamlServices.Load(reader);
 			obj.Frame = frame;
-			window.AddSubview(obj);
-			return true;
+			this.InvokeOnMainThread( delegate {
+				loadingLabel.RemoveFromSuperview();
+				loadingLabel = null;
+				window.AddSubview(obj);
+			});
 		}
+		
 
 		// This method is required in iPhoneOS 3.0
 		public override void OnActivated (UIApplication application)

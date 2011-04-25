@@ -33,7 +33,7 @@ using System.Collections.Generic;
 using System.Drawing;
 
 namespace System.Windows {
-	public class DependencyObject : IDependencyObject{
+	public class DependencyObject : MonoTouch.UIKit.UIView, IDependencyObject{
 		public static Dictionary<Type,Dictionary<string,DependencyProperty>> propertyDeclarations = new Dictionary<Type,Dictionary<string,DependencyProperty>>();
 		private Dictionary<DependencyProperty,object> properties = new Dictionary<DependencyProperty,object>();
 
@@ -42,7 +42,6 @@ namespace System.Windows {
 			get { return false; }
 		}
 		
-		public RectangleF  Frame {get;set;}
 		public DependencyObjectType DependencyObjectType { 
 			get { return DependencyObjectType.FromSystemType (GetType()); }
 		}
@@ -74,7 +73,8 @@ namespace System.Windows {
 
 		public sealed override int GetHashCode ()
 		{
-			throw new NotImplementedException("GetHashCode");
+			return base.GetHashCode();
+			//throw new NotImplementedException("GetHashCode");
 		}
 
 		[MonoTODO]
@@ -85,8 +85,14 @@ namespace System.Windows {
 		
 		public object GetValue(DependencyProperty dp)
 		{
-			object val = properties[dp];
-			return val == null ? dp.DefaultMetadata.DefaultValue : val;
+			object val = null;
+			try	{
+				val = properties[dp];
+			}
+			catch {
+				val = dp.DefaultMetadata.DefaultValue;
+			}
+			return val ?? dp.DefaultMetadata.DefaultValue;
 		}
 		
 		[MonoTODO]
@@ -113,8 +119,8 @@ namespace System.Windows {
 			if (IsSealed)
 				throw new InvalidOperationException ("Cannot manipulate property values on a sealed DependencyObject");
 
-			if (!dp.IsValidType (value))
-				throw new ArgumentException ("value not of the correct type for this DependencyProperty");
+			//if (!dp.IsValidType (value))
+			//	throw new ArgumentException ("value not of the correct type for this DependencyProperty");
 
 			ValidateValueCallback validate = dp.ValidateValueCallback;
 			if (validate != null && !validate(value))
@@ -148,5 +154,7 @@ namespace System.Windows {
 			else
 				throw new ArgumentException("A property named " + dp.Name + " already exists on " + t.Name);
 		}
+				
+
 	}
 }

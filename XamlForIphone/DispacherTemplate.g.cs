@@ -14,7 +14,6 @@ namespace XamlForIphone
 {
 
 public enum SizeType {Fixed,Calculated};
-	[ContentProperty("Content")]
 	public partial class UIView : MonoTouch.UIKit.UIView , IDependencyObject
 	{		
 		public UIView () : base ()
@@ -1628,8 +1627,8 @@ public enum SizeType {Fixed,Calculated};
 			if (IsSealed)
 				throw new InvalidOperationException ("Cannot manipulate property values on a sealed DependencyObject");
 
-			if (!dp.IsValidType (value))
-				throw new ArgumentException ("value not of the correct type for this DependencyProperty");
+			//if (!dp.IsValidType (value))
+			//	throw new ArgumentException ("value not of the correct type for this DependencyProperty");
 
 			ValidateValueCallback validate = dp.ValidateValueCallback;
 			if (validate != null && !validate(value))

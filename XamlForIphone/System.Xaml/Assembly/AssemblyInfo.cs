@@ -55,15 +55,7 @@ using System.Runtime.InteropServices;
 [assembly: NeutralResourcesLanguage ("en-US")]
 [assembly: CLSCompliant (true)]
 [assembly: AssemblyDelaySign (true)]
-#if NET_2_1
-[assembly: AssemblyKeyFile ("../silverlight.pub")]
-#else
-[assembly: AssemblyKeyFile ("../ecma.pub")]
-[assembly: AllowPartiallyTrustedCallers]
-[assembly: ComCompatibleVersion (1, 0, 3300, 0)]
-[assembly: Debuggable (DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: SecurityCritical (SecurityCriticalScope.Explicit)]
-#endif
+
 
 [assembly: ComVisible (false)]
 

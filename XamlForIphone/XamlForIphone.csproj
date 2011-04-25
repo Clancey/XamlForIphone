@@ -12,13 +12,14 @@
     <AssemblyName>XamlForIphone</AssemblyName>
     <MtouchMinimumOS>3.0</MtouchMinimumOS>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <newfilesearch>OnLoad</newfilesearch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
-    <DefineConstants>DEBUG; NET_4_0</DefineConstants>
+    <DefineConstants>DEBUG; NET_1_1;NET_2_0;NET_3_0;NET_3_5;NET_4_0</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchLink>None</MtouchLink>
@@ -106,7 +107,6 @@
     <Compile Include="LocalValueEntry.cs" />
     <Compile Include="PropertyChangedCallback.cs" />
     <Compile Include="CoerceValueCallback.cs" />
-    <Compile Include="MonoTODOAttribute.cs" />
     <Compile Include="RectConstructor.g.cs">
       <DependentUpon>RectConstructor.tt</DependentUpon>
     </Compile>
@@ -230,15 +230,34 @@
     <Compile Include="System.Xaml\System.Xaml.Schema\XamlTypeName.cs" />
     <Compile Include="System.Xaml\System.Xaml.Schema\XamlTypeTypeConverter.cs" />
     <Compile Include="System.Xaml\System.Xaml.Schema\XamlValueConverter.cs" />
-    <Compile Include="Consts.cs" />
     <Compile Include="VerticalAlignment.cs" />
     <Compile Include="HorizontalAlignment.cs" />
     <Compile Include="IUIView.cs" />
     <Compile Include="Util.cs" />
-    <Compile Include="Canvas.cs" />
     <Compile Include="Kind.cs" />
     <Compile Include="DependencyObject.cs" />
-    <Compile Include="IRefContainer.cs" />
+    <Compile Include="LayoutControls\Grid.cs" />
+    <Compile Include="LayoutControls\UIElement.cs" />
+    <Compile Include="LayoutControls\Rect.cs" />
+    <Compile Include="LayoutControls\DependencyPropertyChangedEventHandler.cs" />
+    <Compile Include="LayoutControls\Point.cs" />
+    <Compile Include="LayoutControls\Size.cs" />
+    <Compile Include="LayoutControls\Utils.cs" />
+    <Compile Include="LayoutControls\FrameworkElement.cs" />
+    <Compile Include="LayoutControls\MoonError.cs" />
+    <Compile Include="LayoutControls\VisualTreeWalker.cs" />
+    <Compile Include="LayoutControls\DependencyObjectCollection.cs" />
+    <Compile Include="LayoutControls\UIElementCollection.cs" />
+    <Compile Include="LayoutControls\PresentationFrameworkCollection.cs" />
+    <Compile Include="LayoutControls\Panel.cs" />
+    <Compile Include="iPhone\Canvas.cs" />
+    <Compile Include="LayoutControls\Canvas.cs" />
+    <Compile Include="LayoutControls\CustomCanvas.cs" />
+    <Compile Include="LayoutControls\ObjectCollection.cs" />
+    <Compile Include="System.Xaml\Consts.cs" />
+    <Compile Include="System.Xaml\Locale.cs" />
+    <Compile Include="System.Xaml\MonoTODOAttribute.cs" />
+    <Compile Include="System.Xaml\Assembly\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DispacherTemplate.tt">
@@ -252,5 +271,26 @@
     <None Include="System.Xaml\System.Windows.Markup\ChangeLog" />
     <None Include="System.Xaml\System.Xaml\ChangeLog" />
     <None Include="System.Xaml\System.Xaml.Schema\ChangeLog" />
+    <None Include="Canvas.cs">
+      <Visible>False</Visible>
+    </None>
+    <None Include="System.Xaml\ChangeLog">
+      <Visible>False</Visible>
+    </None>
+    <None Include="System.Xaml\Assembly\ChangeLog" />
+    <None Include="System.Xaml\System.Xaml.Permissions\ChangeLog" />
+     <None Include="DispacherTemplate.cs">
+      <Visible>False</Visible>
+    </None>
+    <None Include="RectConstructor.cs">
+      <Visible>False</Visible>
+    </None>
+    <None Include="UIGrid.cs">
+      <Visible>False</Visible>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LayoutControls\" />
+    <Folder Include="iPhone\" />
   </ItemGroup>
 </Project>
