@@ -64,6 +64,240 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void Add (MonoTouch.UIKit.UIView view) { m_helper.Add(view);}
+		public  void AddSubviews (MonoTouch.UIKit.UIView[] views) { m_helper.AddSubviews(views);}
+		public  System.Collections.IEnumerator GetEnumerator () {return  m_helper.GetEnumerator();}
+		public  void AddSubview (MonoTouch.UIKit.UIView view) { m_helper.AddSubview(view);}
+		public  void Draw (System.Drawing.RectangleF rect) { m_helper.Draw(rect);}
+		public  System.Drawing.SizeF DrawString (System.String str , System.Drawing.PointF point , MonoTouch.UIKit.UIFont font) {return  m_helper.DrawString(str , point , font);}
+		public  System.Drawing.SizeF DrawString (System.String str , System.Drawing.PointF point , System.Single width , MonoTouch.UIKit.UIFont font , MonoTouch.UIKit.UILineBreakMode breakMode) {return  m_helper.DrawString(str , point , width , font , breakMode);}
+		public  System.Drawing.SizeF DrawString (System.String str , System.Drawing.PointF point , System.Single width , MonoTouch.UIKit.UIFont font , System.Single fontSize , MonoTouch.UIKit.UILineBreakMode breakMode , MonoTouch.UIKit.UIBaselineAdjustment adjustment) {return  m_helper.DrawString(str , point , width , font , fontSize , breakMode , adjustment);}
+		public  System.Drawing.SizeF DrawString (System.String str , System.Drawing.PointF point , System.Single width , MonoTouch.UIKit.UIFont font , System.Single minFontSize , System.Single actualFontSize , MonoTouch.UIKit.UILineBreakMode breakMode , MonoTouch.UIKit.UIBaselineAdjustment adjustment) {return  m_helper.DrawString(str , point , width , font , minFontSize , actualFontSize , breakMode , adjustment);}
+		public  System.Drawing.SizeF DrawString (System.String str , System.Drawing.RectangleF rect , MonoTouch.UIKit.UIFont font) {return  m_helper.DrawString(str , rect , font);}
+		public  System.Drawing.SizeF DrawString (System.String str , System.Drawing.RectangleF rect , MonoTouch.UIKit.UIFont font , MonoTouch.UIKit.UILineBreakMode mode) {return  m_helper.DrawString(str , rect , font , mode);}
+		public  System.Drawing.SizeF DrawString (System.String str , System.Drawing.RectangleF rect , MonoTouch.UIKit.UIFont font , MonoTouch.UIKit.UILineBreakMode mode , MonoTouch.UIKit.UITextAlignment alignment) {return  m_helper.DrawString(str , rect , font , mode , alignment);}
+		public  System.Drawing.SizeF StringSize (System.String str , MonoTouch.UIKit.UIFont font) {return  m_helper.StringSize(str , font);}
+		public  System.Drawing.SizeF StringSize (System.String str , MonoTouch.UIKit.UIFont font , System.Single forWidth , MonoTouch.UIKit.UILineBreakMode breakMode) {return  m_helper.StringSize(str , font , forWidth , breakMode);}
+		public  System.Drawing.SizeF StringSize (System.String str , MonoTouch.UIKit.UIFont font , System.Drawing.SizeF constrainedToSize) {return  m_helper.StringSize(str , font , constrainedToSize);}
+		public  System.Drawing.SizeF StringSize (System.String str , MonoTouch.UIKit.UIFont font , System.Drawing.SizeF constrainedToSize , MonoTouch.UIKit.UILineBreakMode lineBreakMode) {return  m_helper.StringSize(str , font , constrainedToSize , lineBreakMode);}
+		public  MonoTouch.UIKit.UIView HitTest (System.Drawing.PointF point , MonoTouch.UIKit.UIEvent uievent) {return  m_helper.HitTest(point , uievent);}
+		public  System.Boolean PointInside (System.Drawing.PointF point , MonoTouch.UIKit.UIEvent uievent) {return  m_helper.PointInside(point , uievent);}
+		public  System.Drawing.PointF ConvertPointToView (System.Drawing.PointF point , MonoTouch.UIKit.UIView toView) {return  m_helper.ConvertPointToView(point , toView);}
+		public  System.Drawing.PointF ConvertPointFromView (System.Drawing.PointF point , MonoTouch.UIKit.UIView fromView) {return  m_helper.ConvertPointFromView(point , fromView);}
+		public  System.Drawing.RectangleF ConvertRectToView (System.Drawing.RectangleF rect , MonoTouch.UIKit.UIView toView) {return  m_helper.ConvertRectToView(rect , toView);}
+		public  System.Drawing.RectangleF ConvertRectFromView (System.Drawing.RectangleF rect , MonoTouch.UIKit.UIView fromView) {return  m_helper.ConvertRectFromView(rect , fromView);}
+		public  System.Drawing.SizeF SizeThatFits (System.Drawing.SizeF size) {return  m_helper.SizeThatFits(size);}
+		public  void SizeToFit () { m_helper.SizeToFit();}
+		public  void RemoveFromSuperview () { m_helper.RemoveFromSuperview();}
+		public  void InsertSubview (MonoTouch.UIKit.UIView view , System.Int32 atIndex) { m_helper.InsertSubview(view , atIndex);}
+		public  void ExchangeSubview (System.Int32 atIndex , System.Int32 withSubviewAtIndex) { m_helper.ExchangeSubview(atIndex , withSubviewAtIndex);}
+		public  void InsertSubviewBelow (MonoTouch.UIKit.UIView view , MonoTouch.UIKit.UIView siblingSubview) { m_helper.InsertSubviewBelow(view , siblingSubview);}
+		public  void InsertSubviewAbove (MonoTouch.UIKit.UIView view , MonoTouch.UIKit.UIView siblingSubview) { m_helper.InsertSubviewAbove(view , siblingSubview);}
+		public  void BringSubviewToFront (MonoTouch.UIKit.UIView view) { m_helper.BringSubviewToFront(view);}
+		public  void SendSubviewToBack (MonoTouch.UIKit.UIView view) { m_helper.SendSubviewToBack(view);}
+		public  void SubviewAdded (MonoTouch.UIKit.UIView uiview) { m_helper.SubviewAdded(uiview);}
+		public  void WillRemoveSubview (MonoTouch.UIKit.UIView uiview) { m_helper.WillRemoveSubview(uiview);}
+		public  void WillMoveToSuperview (MonoTouch.UIKit.UIView newsuper) { m_helper.WillMoveToSuperview(newsuper);}
+		public  void MovedToSuperview () { m_helper.MovedToSuperview();}
+		public  void WillMoveToWindow (MonoTouch.UIKit.UIWindow window) { m_helper.WillMoveToWindow(window);}
+		public  void MovedToWindow () { m_helper.MovedToWindow();}
+		public  System.Boolean IsDescendantOfView (MonoTouch.UIKit.UIView view) {return  m_helper.IsDescendantOfView(view);}
+		public  MonoTouch.UIKit.UIView ViewWithTag (System.Int32 tag) {return  m_helper.ViewWithTag(tag);}
+		public  void SetNeedsLayout () { m_helper.SetNeedsLayout();}
+		public  void LayoutIfNeeded () { m_helper.LayoutIfNeeded();}
+		public  void LayoutSubviews () { m_helper.LayoutSubviews();}
+		public  void SetNeedsDisplay () { m_helper.SetNeedsDisplay();}
+		public  void SetNeedsDisplayInRect (System.Drawing.RectangleF rect) { m_helper.SetNeedsDisplayInRect(rect);}
+		public  void AddGestureRecognizer (MonoTouch.UIKit.UIGestureRecognizer gestureRecognizer) { m_helper.AddGestureRecognizer(gestureRecognizer);}
+		public  void RemoveGestureRecognizer (MonoTouch.UIKit.UIGestureRecognizer gestureRecognizer) { m_helper.RemoveGestureRecognizer(gestureRecognizer);}
+		public  void DrawRect (System.Drawing.RectangleF area , MonoTouch.UIKit.UIViewPrintFormatter formatter) { m_helper.DrawRect(area , formatter);}
+		#endregion
+	}
+	
+	public  partial class MKMapView : UIElement
+	{
+		internal override void ArrangeInternal (Rect finalRect)
+		{
+			this.Frame = finalRect;
+		}
+		
+		public static implicit operator MonoTouch.MapKit.MKMapView (MKMapView element)
+		{
+			return element.m_helper;
+		}
+		
+		internal new MonoTouch.MapKit.MKMapView m_helper;
+		protected override void CreateHandle ()
+		{
+			m_helper = new MonoTouch.MapKit.MKMapView();
+			m_view = m_helper;
+		}
+		
+		#region Fields
+		#endregion
+		#region Properties
+		public System.IntPtr ClassHandle {get{return m_helper.ClassHandle;}}
+		public MonoTouch.Foundation.NSObject WeakDelegate {get{return m_helper.WeakDelegate;}set{m_helper.WeakDelegate = value;}}
+		public MonoTouch.MapKit.MKMapViewDelegate Delegate {get{return m_helper.Delegate;}set{m_helper.Delegate = value;}}
+		public MonoTouch.MapKit.MKMapType MapType {get{return m_helper.MapType;}set{m_helper.MapType = value;}}
+		public MonoTouch.MapKit.MKCoordinateRegion Region {get{return m_helper.Region;}set{m_helper.Region = value;}}
+		public MonoTouch.CoreLocation.CLLocationCoordinate2D CenterCoordinate {get{return m_helper.CenterCoordinate;}set{m_helper.CenterCoordinate = value;}}
+		public System.Boolean ZoomEnabled {get{return m_helper.ZoomEnabled;}set{m_helper.ZoomEnabled = value;}}
+		public System.Boolean ScrollEnabled {get{return m_helper.ScrollEnabled;}set{m_helper.ScrollEnabled = value;}}
+		public System.Boolean ShowsUserLocation {get{return m_helper.ShowsUserLocation;}set{m_helper.ShowsUserLocation = value;}}
+		public MonoTouch.MapKit.MKUserLocation UserLocation {get{return m_helper.UserLocation;}}
+		public System.Boolean UserLocationVisible {get{return m_helper.UserLocationVisible;}}
+		public MonoTouch.Foundation.NSObject[] Annotations {get{return m_helper.Annotations;}}
+		public MonoTouch.Foundation.NSObject[] SelectedAnnotations {get{return m_helper.SelectedAnnotations;}set{m_helper.SelectedAnnotations = value;}}
+		public System.Drawing.RectangleF AnnotationVisibleRect {get{return m_helper.AnnotationVisibleRect;}}
+		public MonoTouch.Foundation.NSObject[] Overlays {get{return m_helper.Overlays;}}
+		public MonoTouch.MapKit.MKMapRect visibleMapRect {get{return m_helper.visibleMapRect;}set{m_helper.visibleMapRect = value;}}
+		public MonoTouch.MapKit.MKMapViewAnnotation GetViewForAnnotation {get{return m_helper.GetViewForAnnotation;}set{m_helper.GetViewForAnnotation = value;}}
+		public MonoTouch.MapKit.MKMapViewOverlay GetViewForOverlay {get{return m_helper.GetViewForOverlay;}set{m_helper.GetViewForOverlay = value;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor BackgroundColor {get{return m_helper.BackgroundColor;}set{m_helper.BackgroundColor = value;}}
+		public System.Drawing.RectangleF Bounds {get{return m_helper.Bounds;}set{m_helper.Bounds = value;}}
+		public System.Boolean UserInteractionEnabled {get{return m_helper.UserInteractionEnabled;}set{m_helper.UserInteractionEnabled = value;}}
+		public System.Int32 Tag {get{return m_helper.Tag;}set{m_helper.Tag = value;}}
+		public MonoTouch.CoreAnimation.CALayer Layer {get{return m_helper.Layer;}}
+		public System.Drawing.RectangleF Frame {get{return m_helper.Frame;}set{m_helper.Frame = value;}}
+		public System.Drawing.PointF Center {get{return m_helper.Center;}set{m_helper.Center = value;}}
+		public MonoTouch.CoreGraphics.CGAffineTransform Transform {get{return m_helper.Transform;}set{m_helper.Transform = value;}}
+		public System.Boolean MultipleTouchEnabled {get{return m_helper.MultipleTouchEnabled;}set{m_helper.MultipleTouchEnabled = value;}}
+		public System.Boolean ExclusiveTouch {get{return m_helper.ExclusiveTouch;}set{m_helper.ExclusiveTouch = value;}}
+		public System.Boolean AutosizesSubviews {get{return m_helper.AutosizesSubviews;}set{m_helper.AutosizesSubviews = value;}}
+		public MonoTouch.UIKit.UIViewAutoresizing AutoresizingMask {get{return m_helper.AutoresizingMask;}set{m_helper.AutoresizingMask = value;}}
+		public MonoTouch.UIKit.UIView Superview {get{return m_helper.Superview;}}
+		public MonoTouch.UIKit.UIView[] Subviews {get{return m_helper.Subviews;}}
+		public MonoTouch.UIKit.UIWindow Window {get{return m_helper.Window;}}
+		public System.Boolean ClipsToBounds {get{return m_helper.ClipsToBounds;}set{m_helper.ClipsToBounds = value;}}
+		public System.Single Alpha {get{return m_helper.Alpha;}set{m_helper.Alpha = value;}}
+		public System.Boolean Opaque {get{return m_helper.Opaque;}set{m_helper.Opaque = value;}}
+		public System.Boolean ClearsContextBeforeDrawing {get{return m_helper.ClearsContextBeforeDrawing;}set{m_helper.ClearsContextBeforeDrawing = value;}}
+		public System.Boolean Hidden {get{return m_helper.Hidden;}set{m_helper.Hidden = value;}}
+		public MonoTouch.UIKit.UIViewContentMode ContentMode {get{return m_helper.ContentMode;}set{m_helper.ContentMode = value;}}
+		public System.Drawing.RectangleF ContentStretch {get{return m_helper.ContentStretch;}set{m_helper.ContentStretch = value;}}
+		public MonoTouch.UIKit.UIGestureRecognizer[] GestureRecognizers {get{return m_helper.GestureRecognizers;}}
+		public System.Single ContentScaleFactor {get{return m_helper.ContentScaleFactor;}set{m_helper.ContentScaleFactor = value;}}
+		public MonoTouch.UIKit.UIViewPrintFormatter ViewPrintFormatter {get{return m_helper.ViewPrintFormatter;}}
+		public System.Boolean EnableInputClicksWhenVisible {get{return m_helper.EnableInputClicksWhenVisible;}}
+		public MonoTouch.UIKit.UIResponder NextResponder {get{return m_helper.NextResponder;}}
+		public System.Boolean CanBecomeFirstResponder {get{return m_helper.CanBecomeFirstResponder;}}
+		public System.Boolean CanResignFirstResponder {get{return m_helper.CanResignFirstResponder;}}
+		public System.Boolean IsFirstResponder {get{return m_helper.IsFirstResponder;}}
+		public MonoTouch.Foundation.NSUndoManager UndoManager {get{return m_helper.UndoManager;}}
+		public MonoTouch.UIKit.UIView InputAccessoryView {get{return m_helper.InputAccessoryView;}}
+		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
+		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
+		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Methods
+		public  void AddAnnotation (MonoTouch.MapKit.MKAnnotation annotation) { m_helper.AddAnnotation(annotation);}
+		public  void AddAnnotation (MonoTouch.MapKit.MKAnnotation[] annotations) { m_helper.AddAnnotation(annotations);}
+		public  void AddPlacemark (MonoTouch.MapKit.MKPlacemark placemark) { m_helper.AddPlacemark(placemark);}
+		public  void AddAnnotation (MonoTouch.MapKit.MKPlacemark[] placemarks) { m_helper.AddAnnotation(placemarks);}
+		public  void SetRegion (MonoTouch.MapKit.MKCoordinateRegion region , System.Boolean animated) { m_helper.SetRegion(region , animated);}
+		public  void SetCenterCoordinate (MonoTouch.CoreLocation.CLLocationCoordinate2D coordinate , System.Boolean animated) { m_helper.SetCenterCoordinate(coordinate , animated);}
+		public  MonoTouch.MapKit.MKCoordinateRegion RegionThatFits (MonoTouch.MapKit.MKCoordinateRegion region) {return  m_helper.RegionThatFits(region);}
+		public  System.Drawing.PointF ConvertCoordinate (MonoTouch.CoreLocation.CLLocationCoordinate2D coordinate , MonoTouch.UIKit.UIView toPointToView) {return  m_helper.ConvertCoordinate(coordinate , toPointToView);}
+		public  MonoTouch.CoreLocation.CLLocationCoordinate2D ConvertPoint (System.Drawing.PointF point , MonoTouch.UIKit.UIView toCoordinateFromView) {return  m_helper.ConvertPoint(point , toCoordinateFromView);}
+		public  System.Drawing.RectangleF ConvertRegion (MonoTouch.MapKit.MKCoordinateRegion region , MonoTouch.UIKit.UIView toRectToView) {return  m_helper.ConvertRegion(region , toRectToView);}
+		public  MonoTouch.MapKit.MKCoordinateRegion ConvertRect (System.Drawing.RectangleF rect , MonoTouch.UIKit.UIView toRegiontFromView) {return  m_helper.ConvertRect(rect , toRegiontFromView);}
+		public  void AddAnnotationObject (MonoTouch.Foundation.NSObject annotation) { m_helper.AddAnnotationObject(annotation);}
+		public  void AddAnnotationObjects (MonoTouch.Foundation.NSObject[] annotations) { m_helper.AddAnnotationObjects(annotations);}
+		public  void RemoveAnnotation (MonoTouch.MapKit.MKAnnotation annotation) { m_helper.RemoveAnnotation(annotation);}
+		public  void RemoveAnnotations (MonoTouch.MapKit.MKAnnotation[] annotations) { m_helper.RemoveAnnotations(annotations);}
+		public  MonoTouch.MapKit.MKAnnotationView ViewForAnnotation (MonoTouch.MapKit.MKAnnotation annotation) {return  m_helper.ViewForAnnotation(annotation);}
+		public  MonoTouch.MapKit.MKAnnotationView DequeueReusableAnnotation (System.String withViewIdentifier) {return  m_helper.DequeueReusableAnnotation(withViewIdentifier);}
+		public  void SelectAnnotation (MonoTouch.MapKit.MKAnnotation annotation , System.Boolean animated) { m_helper.SelectAnnotation(annotation , animated);}
+		public  void DeselectAnnotation (MonoTouch.MapKit.MKAnnotation annotation , System.Boolean animated) { m_helper.DeselectAnnotation(annotation , animated);}
+		public  void AddOverlay (MonoTouch.Foundation.NSObject overlay) { m_helper.AddOverlay(overlay);}
+		public  void AddOverlays (MonoTouch.Foundation.NSObject[] overlays) { m_helper.AddOverlays(overlays);}
+		public  void RemoveOverlay (MonoTouch.Foundation.NSObject overlay) { m_helper.RemoveOverlay(overlay);}
+		public  void RemoveOverlays (MonoTouch.Foundation.NSObject[] overlays) { m_helper.RemoveOverlays(overlays);}
+		public  void InsertOverlay (MonoTouch.Foundation.NSObject overlay , System.Int32 index) { m_helper.InsertOverlay(overlay , index);}
+		public  void InsertOverlayAbove (MonoTouch.Foundation.NSObject overlay , MonoTouch.Foundation.NSObject sibling) { m_helper.InsertOverlayAbove(overlay , sibling);}
+		public  void InsertOverlayBelow (MonoTouch.Foundation.NSObject overlay , MonoTouch.Foundation.NSObject sibling) { m_helper.InsertOverlayBelow(overlay , sibling);}
+		public  void ExchangeOverlays (System.Int32 index1 , System.Int32 index2) { m_helper.ExchangeOverlays(index1 , index2);}
+		public  MonoTouch.MapKit.MKMapRect MapRectThatFits (MonoTouch.MapKit.MKMapRect mapRect) {return  m_helper.MapRectThatFits(mapRect);}
+		public  void SetVisibleMapRect (MonoTouch.MapKit.MKMapRect mapRect , MonoTouch.UIKit.UIEdgeInsets edgePadding , System.Boolean animate) { m_helper.SetVisibleMapRect(mapRect , edgePadding , animate);}
+		public  void SetVisibleMapRect (MonoTouch.MapKit.MKMapRect mapRect , System.Boolean animate) { m_helper.SetVisibleMapRect(mapRect , animate);}
+		public  MonoTouch.MapKit.MKMapRect MapRectThatFits (MonoTouch.MapKit.MKMapRect mapRect , MonoTouch.UIKit.UIEdgeInsets edgePadding) {return  m_helper.MapRectThatFits(mapRect , edgePadding);}
+		public  MonoTouch.MapKit.MKOverlayView ViewForOverlay (MonoTouch.Foundation.NSObject overlay) {return  m_helper.ViewForOverlay(overlay);}
+		public  MonoTouch.Foundation.NSSet GetAnnotations (MonoTouch.MapKit.MKMapRect mapRect) {return  m_helper.GetAnnotations(mapRect);}
+		#endregion
+	}
+	
+	public  partial class MKOverlayView : UIElement
+	{
+		internal override void ArrangeInternal (Rect finalRect)
+		{
+			this.Frame = finalRect;
+		}
+		
+		public static implicit operator MonoTouch.MapKit.MKOverlayView (MKOverlayView element)
+		{
+			return element.m_helper;
+		}
+		
+		internal new MonoTouch.MapKit.MKOverlayView m_helper;
+		protected override void CreateHandle ()
+		{
+			m_helper = new MonoTouch.MapKit.MKOverlayView();
+			m_view = m_helper;
+		}
+		
+		#region Fields
+		#endregion
+		#region Properties
+		public System.IntPtr ClassHandle {get{return m_helper.ClassHandle;}}
+		public MonoTouch.Foundation.NSObject Overlay {get{return m_helper.Overlay;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor BackgroundColor {get{return m_helper.BackgroundColor;}set{m_helper.BackgroundColor = value;}}
+		public System.Drawing.RectangleF Bounds {get{return m_helper.Bounds;}set{m_helper.Bounds = value;}}
+		public System.Boolean UserInteractionEnabled {get{return m_helper.UserInteractionEnabled;}set{m_helper.UserInteractionEnabled = value;}}
+		public System.Int32 Tag {get{return m_helper.Tag;}set{m_helper.Tag = value;}}
+		public MonoTouch.CoreAnimation.CALayer Layer {get{return m_helper.Layer;}}
+		public System.Drawing.RectangleF Frame {get{return m_helper.Frame;}set{m_helper.Frame = value;}}
+		public System.Drawing.PointF Center {get{return m_helper.Center;}set{m_helper.Center = value;}}
+		public MonoTouch.CoreGraphics.CGAffineTransform Transform {get{return m_helper.Transform;}set{m_helper.Transform = value;}}
+		public System.Boolean MultipleTouchEnabled {get{return m_helper.MultipleTouchEnabled;}set{m_helper.MultipleTouchEnabled = value;}}
+		public System.Boolean ExclusiveTouch {get{return m_helper.ExclusiveTouch;}set{m_helper.ExclusiveTouch = value;}}
+		public System.Boolean AutosizesSubviews {get{return m_helper.AutosizesSubviews;}set{m_helper.AutosizesSubviews = value;}}
+		public MonoTouch.UIKit.UIViewAutoresizing AutoresizingMask {get{return m_helper.AutoresizingMask;}set{m_helper.AutoresizingMask = value;}}
+		public MonoTouch.UIKit.UIView Superview {get{return m_helper.Superview;}}
+		public MonoTouch.UIKit.UIView[] Subviews {get{return m_helper.Subviews;}}
+		public MonoTouch.UIKit.UIWindow Window {get{return m_helper.Window;}}
+		public System.Boolean ClipsToBounds {get{return m_helper.ClipsToBounds;}set{m_helper.ClipsToBounds = value;}}
+		public System.Single Alpha {get{return m_helper.Alpha;}set{m_helper.Alpha = value;}}
+		public System.Boolean Opaque {get{return m_helper.Opaque;}set{m_helper.Opaque = value;}}
+		public System.Boolean ClearsContextBeforeDrawing {get{return m_helper.ClearsContextBeforeDrawing;}set{m_helper.ClearsContextBeforeDrawing = value;}}
+		public System.Boolean Hidden {get{return m_helper.Hidden;}set{m_helper.Hidden = value;}}
+		public MonoTouch.UIKit.UIViewContentMode ContentMode {get{return m_helper.ContentMode;}set{m_helper.ContentMode = value;}}
+		public System.Drawing.RectangleF ContentStretch {get{return m_helper.ContentStretch;}set{m_helper.ContentStretch = value;}}
+		public MonoTouch.UIKit.UIGestureRecognizer[] GestureRecognizers {get{return m_helper.GestureRecognizers;}}
+		public System.Single ContentScaleFactor {get{return m_helper.ContentScaleFactor;}set{m_helper.ContentScaleFactor = value;}}
+		public MonoTouch.UIKit.UIViewPrintFormatter ViewPrintFormatter {get{return m_helper.ViewPrintFormatter;}}
+		public System.Boolean EnableInputClicksWhenVisible {get{return m_helper.EnableInputClicksWhenVisible;}}
+		public MonoTouch.UIKit.UIResponder NextResponder {get{return m_helper.NextResponder;}}
+		public System.Boolean CanBecomeFirstResponder {get{return m_helper.CanBecomeFirstResponder;}}
+		public System.Boolean CanResignFirstResponder {get{return m_helper.CanResignFirstResponder;}}
+		public System.Boolean IsFirstResponder {get{return m_helper.IsFirstResponder;}}
+		public MonoTouch.Foundation.NSUndoManager UndoManager {get{return m_helper.UndoManager;}}
+		public MonoTouch.UIKit.UIView InputAccessoryView {get{return m_helper.InputAccessoryView;}}
+		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
+		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
+		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Methods
+		public  System.Drawing.PointF PointForMapPoint (MonoTouch.MapKit.MKMapPoint mapPoint) {return  m_helper.PointForMapPoint(mapPoint);}
+		public  MonoTouch.MapKit.MKMapPoint MapPointForPoint (System.Drawing.PointF point) {return  m_helper.MapPointForPoint(point);}
+		public  System.Drawing.RectangleF RectForMapRect (MonoTouch.MapKit.MKMapRect mapRect) {return  m_helper.RectForMapRect(mapRect);}
+		public  MonoTouch.MapKit.MKMapRect MapRectForRect (System.Drawing.RectangleF rect) {return  m_helper.MapRectForRect(rect);}
+		public  System.Boolean CanDrawMapRect (MonoTouch.MapKit.MKMapRect mapRect , System.Single zoomScale) {return  m_helper.CanDrawMapRect(mapRect , zoomScale);}
+		public  void DrawMapRect (MonoTouch.MapKit.MKMapRect mapRect , System.Single zoomScale , MonoTouch.CoreGraphics.CGContext context) { m_helper.DrawMapRect(mapRect , zoomScale , context);}
+		public  void SetNeedsDisplay (MonoTouch.MapKit.MKMapRect mapRect) { m_helper.SetNeedsDisplay(mapRect);}
+		public  void SetNeedsDisplay (MonoTouch.MapKit.MKMapRect mapRect , System.Single zoomScale) { m_helper.SetNeedsDisplay(mapRect , zoomScale);}
 		#endregion
 	}
 	
@@ -137,6 +371,16 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void Add (System.String name) { m_helper.Add(name);}
+		public  System.Collections.IEnumerator GetEnumerator () {return  m_helper.GetEnumerator();}
+		public  System.Int32 AddButton (System.String title) {return  m_helper.AddButton(title);}
+		public  System.String ButtonTitle (System.Int32 index) {return  m_helper.ButtonTitle(index);}
+		public  void ShowFromToolbar (MonoTouch.UIKit.UIToolbar view) { m_helper.ShowFromToolbar(view);}
+		public  void ShowFromTabBar (MonoTouch.UIKit.UITabBar view) { m_helper.ShowFromTabBar(view);}
+		public  void ShowInView (MonoTouch.UIKit.UIView view) { m_helper.ShowInView(view);}
+		public  void DismissWithClickedButtonIndex (System.Int32 buttonIndex , System.Boolean animated) { m_helper.DismissWithClickedButtonIndex(buttonIndex , animated);}
+		public  void ShowFrom (MonoTouch.UIKit.UIBarButtonItem item , System.Boolean animated) { m_helper.ShowFrom(item , animated);}
+		public  void ShowFrom (System.Drawing.RectangleF rect , MonoTouch.UIKit.UIView inView , System.Boolean animated) { m_helper.ShowFrom(rect , inView , animated);}
 		#endregion
 	}
 	
@@ -209,6 +453,10 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  System.Int32 AddButton (System.String title) {return  m_helper.AddButton(title);}
+		public  System.String ButtonTitle (System.Int32 index) {return  m_helper.ButtonTitle(index);}
+		public  void Show () { m_helper.Show();}
+		public  void DismissWithClickedButtonIndex (System.Int32 index , System.Boolean animated) { m_helper.DismissWithClickedButtonIndex(index , animated);}
 		#endregion
 	}
 	
@@ -283,6 +531,17 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void AddTarget (System.EventHandler notification , MonoTouch.UIKit.UIControlEvent events) { m_helper.AddTarget(notification , events);}
+		public  void RemoveTarget (System.EventHandler notification , MonoTouch.UIKit.UIControlEvent events) { m_helper.RemoveTarget(notification , events);}
+		public  System.Boolean BeginTracking (MonoTouch.UIKit.UITouch uitouch , MonoTouch.UIKit.UIEvent uievent) {return  m_helper.BeginTracking(uitouch , uievent);}
+		public  System.Boolean ContinueTracking (MonoTouch.UIKit.UITouch uitouch , MonoTouch.UIKit.UIEvent uievent) {return  m_helper.ContinueTracking(uitouch , uievent);}
+		public  void EndTracking (MonoTouch.UIKit.UITouch uitouch , MonoTouch.UIKit.UIEvent uievent) { m_helper.EndTracking(uitouch , uievent);}
+		public  void CancelTracking (MonoTouch.UIKit.UIEvent uievent) { m_helper.CancelTracking(uievent);}
+		public  void AddTarget (MonoTouch.Foundation.NSObject target , MonoTouch.ObjCRuntime.Selector sel , MonoTouch.UIKit.UIControlEvent events) { m_helper.AddTarget(target , sel , events);}
+		public  void RemoveTarget (MonoTouch.Foundation.NSObject target , MonoTouch.ObjCRuntime.Selector sel , MonoTouch.UIKit.UIControlEvent events) { m_helper.RemoveTarget(target , sel , events);}
+		public  System.String[] GetActions (MonoTouch.Foundation.NSObject target , MonoTouch.UIKit.UIControlEvent events) {return  m_helper.GetActions(target , events);}
+		public  void SendAction (MonoTouch.ObjCRuntime.Selector action , MonoTouch.Foundation.NSObject target , MonoTouch.UIKit.UIEvent uievent) { m_helper.SendAction(action , target , uievent);}
+		public  void SendActionForControlEvents (MonoTouch.UIKit.UIControlEvent events) { m_helper.SendActionForControlEvents(events);}
 		#endregion
 	}
 	
@@ -354,6 +613,13 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  System.Int32 RowsInComponent (System.Int32 component) {return  m_helper.RowsInComponent(component);}
+		public  System.Drawing.SizeF RowSizeForComponent (System.Int32 component) {return  m_helper.RowSizeForComponent(component);}
+		public  MonoTouch.UIKit.UIView ViewFor (System.Int32 row , System.Int32 component) {return  m_helper.ViewFor(row , component);}
+		public  void ReloadAllComponents () { m_helper.ReloadAllComponents();}
+		public  void ReloadComponent (System.Int32 component) { m_helper.ReloadComponent(component);}
+		public  void Select (System.Int32 row , System.Int32 component , System.Boolean animated) { m_helper.Select(row , component , animated);}
+		public  System.Int32 SelectedRowInComponent (System.Int32 component) {return  m_helper.SelectedRowInComponent(component);}
 		#endregion
 	}
 	
@@ -434,6 +700,20 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void InsertSegment (System.String title , System.Int32 pos , System.Boolean animated) { m_helper.InsertSegment(title , pos , animated);}
+		public  void InsertSegment (MonoTouch.UIKit.UIImage image , System.Int32 pos , System.Boolean animated) { m_helper.InsertSegment(image , pos , animated);}
+		public  void RemoveSegmentAtIndex (System.Int32 segment , System.Boolean animated) { m_helper.RemoveSegmentAtIndex(segment , animated);}
+		public  void RemoveAllSegments () { m_helper.RemoveAllSegments();}
+		public  void SetTitle (System.String title , System.Int32 segment) { m_helper.SetTitle(title , segment);}
+		public  System.String TitleAt (System.Int32 segment) {return  m_helper.TitleAt(segment);}
+		public  void SetImage (MonoTouch.UIKit.UIImage image , System.Int32 segment) { m_helper.SetImage(image , segment);}
+		public  MonoTouch.UIKit.UIImage ImageAt (System.Int32 segment) {return  m_helper.ImageAt(segment);}
+		public  void SetWidth (System.Single width , System.Int32 segment) { m_helper.SetWidth(width , segment);}
+		public  System.Single SegmentWidth (System.Int32 segment) {return  m_helper.SegmentWidth(segment);}
+		public  void SetContentOffset (System.Drawing.SizeF offset , System.Int32 segment) { m_helper.SetContentOffset(offset , segment);}
+		public  System.Drawing.SizeF GetContentOffset (System.Int32 segment) {return  m_helper.GetContentOffset(segment);}
+		public  void SetEnabled (System.Boolean enabled , System.Int32 segment) { m_helper.SetEnabled(enabled , segment);}
+		public  System.Boolean IsEnabled (System.Int32 segment) {return  m_helper.IsEnabled(segment);}
 		#endregion
 	}
 	
@@ -549,6 +829,32 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void ReloadData () { m_helper.ReloadData();}
+		public  void ReloadSectionIndexTitles () { m_helper.ReloadSectionIndexTitles();}
+		public  System.Int32 NumberOfSections () {return  m_helper.NumberOfSections();}
+		public  System.Int32 NumberOfRowsInSection (System.Int32 section) {return  m_helper.NumberOfRowsInSection(section);}
+		public  System.Drawing.RectangleF RectForSection (System.Int32 section) {return  m_helper.RectForSection(section);}
+		public  System.Drawing.RectangleF RectForHeaderInSection (System.Int32 section) {return  m_helper.RectForHeaderInSection(section);}
+		public  System.Drawing.RectangleF RectForFooterInSection (System.Int32 section) {return  m_helper.RectForFooterInSection(section);}
+		public  System.Drawing.RectangleF RectForRowAtIndexPath (MonoTouch.Foundation.NSIndexPath indexPath) {return  m_helper.RectForRowAtIndexPath(indexPath);}
+		public  MonoTouch.Foundation.NSIndexPath IndexPathForRowAtPoint (System.Drawing.PointF point) {return  m_helper.IndexPathForRowAtPoint(point);}
+		public  MonoTouch.Foundation.NSIndexPath IndexPathForCell (MonoTouch.UIKit.UITableViewCell cell) {return  m_helper.IndexPathForCell(cell);}
+		public  MonoTouch.UIKit.UITableViewCell CellAt (MonoTouch.Foundation.NSIndexPath ns) {return  m_helper.CellAt(ns);}
+		public  void ScrollToRow (MonoTouch.Foundation.NSIndexPath indexPath , MonoTouch.UIKit.UITableViewScrollPosition atScrollPosition , System.Boolean animated) { m_helper.ScrollToRow(indexPath , atScrollPosition , animated);}
+		public  void ScrollToNearestSelected (MonoTouch.UIKit.UITableViewScrollPosition atScrollPosition , System.Boolean animated) { m_helper.ScrollToNearestSelected(atScrollPosition , animated);}
+		public  void BeginUpdates () { m_helper.BeginUpdates();}
+		public  void EndUpdates () { m_helper.EndUpdates();}
+		public  void InsertSections (MonoTouch.Foundation.NSIndexSet sections , MonoTouch.UIKit.UITableViewRowAnimation withRowAnimation) { m_helper.InsertSections(sections , withRowAnimation);}
+		public  void DeleteSections (MonoTouch.Foundation.NSIndexSet sections , MonoTouch.UIKit.UITableViewRowAnimation withRowAnimation) { m_helper.DeleteSections(sections , withRowAnimation);}
+		public  void ReloadSections (MonoTouch.Foundation.NSIndexSet sections , MonoTouch.UIKit.UITableViewRowAnimation withRowAnimation) { m_helper.ReloadSections(sections , withRowAnimation);}
+		public  void InsertRows (MonoTouch.Foundation.NSIndexPath[] atIndexPaths , MonoTouch.UIKit.UITableViewRowAnimation withRowAnimation) { m_helper.InsertRows(atIndexPaths , withRowAnimation);}
+		public  void DeleteRows (MonoTouch.Foundation.NSIndexPath[] atIndexPaths , MonoTouch.UIKit.UITableViewRowAnimation withRowAnimation) { m_helper.DeleteRows(atIndexPaths , withRowAnimation);}
+		public  void ReloadRows (MonoTouch.Foundation.NSIndexPath[] atIndexPaths , MonoTouch.UIKit.UITableViewRowAnimation withRowAnimation) { m_helper.ReloadRows(atIndexPaths , withRowAnimation);}
+		public  void SetEditing (System.Boolean editing , System.Boolean animated) { m_helper.SetEditing(editing , animated);}
+		public  void SelectRow (MonoTouch.Foundation.NSIndexPath indexPath , System.Boolean animated , MonoTouch.UIKit.UITableViewScrollPosition scrollPosition) { m_helper.SelectRow(indexPath , animated , scrollPosition);}
+		public  void DeselectRow (MonoTouch.Foundation.NSIndexPath indexPath , System.Boolean animated) { m_helper.DeselectRow(indexPath , animated);}
+		public  MonoTouch.UIKit.UITableViewCell DequeueReusableCell (System.String identifier) {return  m_helper.DequeueReusableCell(identifier);}
+		public  MonoTouch.UIKit.UITableViewCell DequeueReusableCell (MonoTouch.Foundation.NSString identifier) {return  m_helper.DequeueReusableCell(identifier);}
 		#endregion
 	}
 	
@@ -634,6 +940,12 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void PrepareForReuse () { m_helper.PrepareForReuse();}
+		public  void SetSelected (System.Boolean selected , System.Boolean animated) { m_helper.SetSelected(selected , animated);}
+		public  void SetHighlighted (System.Boolean highlighted , System.Boolean animated) { m_helper.SetHighlighted(highlighted , animated);}
+		public  void SetEditing (System.Boolean editing , System.Boolean animated) { m_helper.SetEditing(editing , animated);}
+		public  void WillTransitionToState (MonoTouch.UIKit.UITableViewCellState mask) { m_helper.WillTransitionToState(mask);}
+		public  void DidTransitionToState (MonoTouch.UIKit.UITableViewCellState mask) { m_helper.DidTransitionToState(mask);}
 		#endregion
 	}
 	
@@ -740,6 +1052,15 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  System.Drawing.RectangleF BorderRect (System.Drawing.RectangleF forBounds) {return  m_helper.BorderRect(forBounds);}
+		public  System.Drawing.RectangleF TextRect (System.Drawing.RectangleF forBounds) {return  m_helper.TextRect(forBounds);}
+		public  System.Drawing.RectangleF PlaceholderRect (System.Drawing.RectangleF forBounds) {return  m_helper.PlaceholderRect(forBounds);}
+		public  System.Drawing.RectangleF EditingRect (System.Drawing.RectangleF forBounds) {return  m_helper.EditingRect(forBounds);}
+		public  System.Drawing.RectangleF ClearButtonRect (System.Drawing.RectangleF forBounds) {return  m_helper.ClearButtonRect(forBounds);}
+		public  System.Drawing.RectangleF LeftViewRect (System.Drawing.RectangleF forBounds) {return  m_helper.LeftViewRect(forBounds);}
+		public  System.Drawing.RectangleF RightViewRect (System.Drawing.RectangleF forBounds) {return  m_helper.RightViewRect(forBounds);}
+		public  void DrawText (System.Drawing.RectangleF rect) { m_helper.DrawText(rect);}
+		public  void DrawPlaceholder (System.Drawing.RectangleF rect) { m_helper.DrawPlaceholder(rect);}
 		#endregion
 	}
 	
@@ -854,6 +1175,7 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void ScrollRangeToVisible (MonoTouch.Foundation.NSRange range) { m_helper.ScrollRangeToVisible(range);}
 		#endregion
 	}
 	
@@ -922,6 +1244,82 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void MakeKeyAndVisible () { m_helper.MakeKeyAndVisible();}
+		public  void MakeKeyWindow () { m_helper.MakeKeyWindow();}
+		public  void BecomeKeyWindow () { m_helper.BecomeKeyWindow();}
+		public  void ResignKeyWindow () { m_helper.ResignKeyWindow();}
+		public  System.Drawing.PointF ConvertPointFromWindow (System.Drawing.PointF point , MonoTouch.UIKit.UIWindow window) {return  m_helper.ConvertPointFromWindow(point , window);}
+		public  System.Drawing.PointF ConvertPointToWindow (System.Drawing.PointF point , MonoTouch.UIKit.UIWindow window) {return  m_helper.ConvertPointToWindow(point , window);}
+		public  System.Drawing.RectangleF ConvertRectFromWindow (System.Drawing.RectangleF rect , MonoTouch.UIKit.UIWindow window) {return  m_helper.ConvertRectFromWindow(rect , window);}
+		public  System.Drawing.RectangleF ConvertRectToWindow (System.Drawing.RectangleF rect , MonoTouch.UIKit.UIWindow window) {return  m_helper.ConvertRectToWindow(rect , window);}
+		public  void SendEvent (MonoTouch.UIKit.UIEvent evt) { m_helper.SendEvent(evt);}
+		#endregion
+	}
+	
+	public  partial class MPVolumeView : UIElement
+	{
+		internal override void ArrangeInternal (Rect finalRect)
+		{
+			this.Frame = finalRect;
+		}
+		
+		public static implicit operator MonoTouch.MediaPlayer.MPVolumeView (MPVolumeView element)
+		{
+			return element.m_helper;
+		}
+		
+		internal new MonoTouch.MediaPlayer.MPVolumeView m_helper;
+		protected override void CreateHandle ()
+		{
+			m_helper = new MonoTouch.MediaPlayer.MPVolumeView();
+			m_view = m_helper;
+		}
+		
+		#region Fields
+		#endregion
+		#region Properties
+		public System.IntPtr ClassHandle {get{return m_helper.ClassHandle;}}
+		public System.Boolean ShowsRouteButton {get{return m_helper.ShowsRouteButton;}set{m_helper.ShowsRouteButton = value;}}
+		public System.Boolean ShowsVolumeSlider {get{return m_helper.ShowsVolumeSlider;}set{m_helper.ShowsVolumeSlider = value;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor BackgroundColor {get{return m_helper.BackgroundColor;}set{m_helper.BackgroundColor = value;}}
+		public System.Drawing.RectangleF Bounds {get{return m_helper.Bounds;}set{m_helper.Bounds = value;}}
+		public System.Boolean UserInteractionEnabled {get{return m_helper.UserInteractionEnabled;}set{m_helper.UserInteractionEnabled = value;}}
+		public System.Int32 Tag {get{return m_helper.Tag;}set{m_helper.Tag = value;}}
+		public MonoTouch.CoreAnimation.CALayer Layer {get{return m_helper.Layer;}}
+		public System.Drawing.RectangleF Frame {get{return m_helper.Frame;}set{m_helper.Frame = value;}}
+		public System.Drawing.PointF Center {get{return m_helper.Center;}set{m_helper.Center = value;}}
+		public MonoTouch.CoreGraphics.CGAffineTransform Transform {get{return m_helper.Transform;}set{m_helper.Transform = value;}}
+		public System.Boolean MultipleTouchEnabled {get{return m_helper.MultipleTouchEnabled;}set{m_helper.MultipleTouchEnabled = value;}}
+		public System.Boolean ExclusiveTouch {get{return m_helper.ExclusiveTouch;}set{m_helper.ExclusiveTouch = value;}}
+		public System.Boolean AutosizesSubviews {get{return m_helper.AutosizesSubviews;}set{m_helper.AutosizesSubviews = value;}}
+		public MonoTouch.UIKit.UIViewAutoresizing AutoresizingMask {get{return m_helper.AutoresizingMask;}set{m_helper.AutoresizingMask = value;}}
+		public MonoTouch.UIKit.UIView Superview {get{return m_helper.Superview;}}
+		public MonoTouch.UIKit.UIView[] Subviews {get{return m_helper.Subviews;}}
+		public MonoTouch.UIKit.UIWindow Window {get{return m_helper.Window;}}
+		public System.Boolean ClipsToBounds {get{return m_helper.ClipsToBounds;}set{m_helper.ClipsToBounds = value;}}
+		public System.Single Alpha {get{return m_helper.Alpha;}set{m_helper.Alpha = value;}}
+		public System.Boolean Opaque {get{return m_helper.Opaque;}set{m_helper.Opaque = value;}}
+		public System.Boolean ClearsContextBeforeDrawing {get{return m_helper.ClearsContextBeforeDrawing;}set{m_helper.ClearsContextBeforeDrawing = value;}}
+		public System.Boolean Hidden {get{return m_helper.Hidden;}set{m_helper.Hidden = value;}}
+		public MonoTouch.UIKit.UIViewContentMode ContentMode {get{return m_helper.ContentMode;}set{m_helper.ContentMode = value;}}
+		public System.Drawing.RectangleF ContentStretch {get{return m_helper.ContentStretch;}set{m_helper.ContentStretch = value;}}
+		public MonoTouch.UIKit.UIGestureRecognizer[] GestureRecognizers {get{return m_helper.GestureRecognizers;}}
+		public System.Single ContentScaleFactor {get{return m_helper.ContentScaleFactor;}set{m_helper.ContentScaleFactor = value;}}
+		public MonoTouch.UIKit.UIViewPrintFormatter ViewPrintFormatter {get{return m_helper.ViewPrintFormatter;}}
+		public System.Boolean EnableInputClicksWhenVisible {get{return m_helper.EnableInputClicksWhenVisible;}}
+		public MonoTouch.UIKit.UIResponder NextResponder {get{return m_helper.NextResponder;}}
+		public System.Boolean CanBecomeFirstResponder {get{return m_helper.CanBecomeFirstResponder;}}
+		public System.Boolean CanResignFirstResponder {get{return m_helper.CanResignFirstResponder;}}
+		public System.Boolean IsFirstResponder {get{return m_helper.IsFirstResponder;}}
+		public MonoTouch.Foundation.NSUndoManager UndoManager {get{return m_helper.UndoManager;}}
+		public MonoTouch.UIKit.UIView InputAccessoryView {get{return m_helper.InputAccessoryView;}}
+		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
+		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
+		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Methods
+		public  System.Drawing.SizeF SizeThatFits (System.Drawing.SizeF f) {return  m_helper.SizeThatFits(f);}
 		#endregion
 	}
 	
@@ -989,6 +1387,8 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void StartAnimating () { m_helper.StartAnimating();}
+		public  void StopAnimating () { m_helper.StopAnimating();}
 		#endregion
 	}
 	
@@ -1072,6 +1472,21 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void MoveTo (System.Drawing.PointF point) { m_helper.MoveTo(point);}
+		public  void AddLineTo (System.Drawing.PointF point) { m_helper.AddLineTo(point);}
+		public  void AddCurveToPoint (System.Drawing.PointF endPoint , System.Drawing.PointF controlPoint1 , System.Drawing.PointF controlPoint2) { m_helper.AddCurveToPoint(endPoint , controlPoint1 , controlPoint2);}
+		public  void AddQuadCurveToPoint (System.Drawing.PointF endPoint , System.Drawing.PointF controlPoint) { m_helper.AddQuadCurveToPoint(endPoint , controlPoint);}
+		public  void ClosePath () { m_helper.ClosePath();}
+		public  void RemoveAllPoints () { m_helper.RemoveAllPoints();}
+		public  void AppendPath (MonoTouch.UIKit.UIBezierPath path) { m_helper.AppendPath(path);}
+		public  void ApplyTransform (MonoTouch.CoreGraphics.CGAffineTransform transform) { m_helper.ApplyTransform(transform);}
+		public  System.Boolean ContainsPoint (System.Drawing.PointF point) {return  m_helper.ContainsPoint(point);}
+		public  void Fill () { m_helper.Fill();}
+		public  void Stroke () { m_helper.Stroke();}
+		public  void Fill (MonoTouch.CoreGraphics.CGBlendMode blendMode , System.Single alpha) { m_helper.Fill(blendMode , alpha);}
+		public  void Stroke (MonoTouch.CoreGraphics.CGBlendMode blendMode , System.Single alpha) { m_helper.Stroke(blendMode , alpha);}
+		public  void AddClip () { m_helper.AddClip();}
+		public  void AddArc (System.Drawing.PointF center , System.Single radius , System.Single startAngle , System.Single endAngle , System.Boolean clockWise) { m_helper.AddArc(center , radius , startAngle , endAngle , clockWise);}
 		#endregion
 	}
 	
@@ -1090,7 +1505,7 @@ namespace XamlForIphone
 		internal new MonoTouch.UIKit.UIButton m_helper;
 		protected override void CreateHandle ()
 		{
-			m_helper = new MonoTouch.UIKit.UIButton();
+			m_helper = MonoTouch.UIKit.UIButton.FromType(MonoTouch.UIKit.UIButtonType.RoundedRect);
 			m_view = m_helper;
 		}
 		
@@ -1166,6 +1581,20 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void SetTitle (System.String title , MonoTouch.UIKit.UIControlState forState) { m_helper.SetTitle(title , forState);}
+		public  void SetTitleColor (MonoTouch.UIKit.UIColor color , MonoTouch.UIKit.UIControlState forState) { m_helper.SetTitleColor(color , forState);}
+		public  void SetTitleShadowColor (MonoTouch.UIKit.UIColor color , MonoTouch.UIKit.UIControlState forState) { m_helper.SetTitleShadowColor(color , forState);}
+		public  void SetImage (MonoTouch.UIKit.UIImage image , MonoTouch.UIKit.UIControlState forState) { m_helper.SetImage(image , forState);}
+		public  void SetBackgroundImage (MonoTouch.UIKit.UIImage image , MonoTouch.UIKit.UIControlState forState) { m_helper.SetBackgroundImage(image , forState);}
+		public  System.String Title (MonoTouch.UIKit.UIControlState state) {return  m_helper.Title(state);}
+		public  MonoTouch.UIKit.UIColor TitleColor (MonoTouch.UIKit.UIControlState state) {return  m_helper.TitleColor(state);}
+		public  MonoTouch.UIKit.UIColor TitleShadowColor (MonoTouch.UIKit.UIControlState state) {return  m_helper.TitleShadowColor(state);}
+		public  MonoTouch.UIKit.UIImage ImageForState (MonoTouch.UIKit.UIControlState state) {return  m_helper.ImageForState(state);}
+		public  MonoTouch.UIKit.UIImage BackgroundImageForState (MonoTouch.UIKit.UIControlState state) {return  m_helper.BackgroundImageForState(state);}
+		public  System.Drawing.RectangleF BackgroundRectForBounds (System.Drawing.RectangleF rect) {return  m_helper.BackgroundRectForBounds(rect);}
+		public  System.Drawing.RectangleF ContentRectForBounds (System.Drawing.RectangleF rect) {return  m_helper.ContentRectForBounds(rect);}
+		public  System.Drawing.RectangleF TitleRectForContentRect (System.Drawing.RectangleF rect) {return  m_helper.TitleRectForContentRect(rect);}
+		public  System.Drawing.RectangleF ImageRectForContentRect (System.Drawing.RectangleF rect) {return  m_helper.ImageRectForContentRect(rect);}
 		#endregion
 	}
 	
@@ -1247,6 +1676,8 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  System.Drawing.RectangleF TextRectForBounds (System.Drawing.RectangleF bounds , System.Int32 numberOfLines) {return  m_helper.TextRectForBounds(bounds , numberOfLines);}
+		public  void DrawText (System.Drawing.RectangleF rect) { m_helper.DrawText(rect);}
 		#endregion
 	}
 	
@@ -1319,6 +1750,8 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void StartAnimating () { m_helper.StartAnimating();}
+		public  void StopAnimating () { m_helper.StopAnimating();}
 		#endregion
 	}
 	
@@ -1402,6 +1835,7 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void SetDate (MonoTouch.Foundation.NSDate date , System.Boolean animated) { m_helper.SetDate(date , animated);}
 		#endregion
 	}
 	
@@ -1475,6 +1909,9 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void PushNavigationItem (MonoTouch.UIKit.UINavigationItem item , System.Boolean animated) { m_helper.PushNavigationItem(item , animated);}
+		public  MonoTouch.UIKit.UINavigationItem PopNavigationItemAnimated (System.Boolean animated) {return  m_helper.PopNavigationItemAnimated(animated);}
+		public  void SetItems (MonoTouch.UIKit.UINavigationItem[] items , System.Boolean animated) { m_helper.SetItems(items , animated);}
 		#endregion
 	}
 	
@@ -1553,6 +1990,8 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void UpdateCurrentPageDisplay () { m_helper.UpdateCurrentPageDisplay();}
+		public  System.Drawing.SizeF SizeForNumberOfPages (System.Int32 pageCount) {return  m_helper.SizeForNumberOfPages(pageCount);}
 		#endregion
 	}
 	
@@ -1713,6 +2152,13 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void SetContentOffset (System.Drawing.PointF contentOffset , System.Boolean animated) { m_helper.SetContentOffset(contentOffset , animated);}
+		public  void ScrollRectToVisible (System.Drawing.RectangleF rect , System.Boolean animated) { m_helper.ScrollRectToVisible(rect , animated);}
+		public  void FlashScrollIndicators () { m_helper.FlashScrollIndicators();}
+		public  System.Boolean TouchesShouldBegin (MonoTouch.Foundation.NSSet touches , MonoTouch.UIKit.UIEvent withEvent , MonoTouch.UIKit.UIView inContentView) {return  m_helper.TouchesShouldBegin(touches , withEvent , inContentView);}
+		public  System.Boolean TouchesShouldCancelInContentView (MonoTouch.UIKit.UIView view) {return  m_helper.TouchesShouldCancelInContentView(view);}
+		public  void SetZoomScale (System.Single scale , System.Boolean animated) { m_helper.SetZoomScale(scale , animated);}
+		public  void ZoomToRect (System.Drawing.RectangleF rect , System.Boolean animated) { m_helper.ZoomToRect(rect , animated);}
 		#endregion
 	}
 	
@@ -1799,6 +2245,7 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void SetShowsCancelButton (System.Boolean showsCancelButton , System.Boolean animated) { m_helper.SetShowsCancelButton(showsCancelButton , animated);}
 		#endregion
 	}
 	
@@ -1882,6 +2329,17 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void SetValue (System.Single value , System.Boolean animated) { m_helper.SetValue(value , animated);}
+		public  void SetThumbImage (MonoTouch.UIKit.UIImage image , MonoTouch.UIKit.UIControlState forState) { m_helper.SetThumbImage(image , forState);}
+		public  void SetMinTrackImage (MonoTouch.UIKit.UIImage image , MonoTouch.UIKit.UIControlState forState) { m_helper.SetMinTrackImage(image , forState);}
+		public  void SetMaxTrackImage (MonoTouch.UIKit.UIImage image , MonoTouch.UIKit.UIControlState forState) { m_helper.SetMaxTrackImage(image , forState);}
+		public  MonoTouch.UIKit.UIImage ThumbImage (MonoTouch.UIKit.UIControlState forState) {return  m_helper.ThumbImage(forState);}
+		public  MonoTouch.UIKit.UIImage MinTrackImage (MonoTouch.UIKit.UIControlState forState) {return  m_helper.MinTrackImage(forState);}
+		public  MonoTouch.UIKit.UIImage MaxTrackImage (MonoTouch.UIKit.UIControlState forState) {return  m_helper.MaxTrackImage(forState);}
+		public  System.Drawing.RectangleF MinValueImageRectForBounds (System.Drawing.RectangleF forBounds) {return  m_helper.MinValueImageRectForBounds(forBounds);}
+		public  System.Drawing.RectangleF MaxValueImageRectForBounds (System.Drawing.RectangleF forBounds) {return  m_helper.MaxValueImageRectForBounds(forBounds);}
+		public  System.Drawing.RectangleF TrackRectForBounds (System.Drawing.RectangleF forBounds) {return  m_helper.TrackRectForBounds(forBounds);}
+		public  System.Drawing.RectangleF ThumbRectForBounds (System.Drawing.RectangleF bounds , System.Drawing.RectangleF trackRect , System.Single value) {return  m_helper.ThumbRectForBounds(bounds , trackRect , value);}
 		#endregion
 	}
 	
@@ -1957,6 +2415,7 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void SetState (System.Boolean newState , System.Boolean animated) { m_helper.SetState(newState , animated);}
 		#endregion
 	}
 	
@@ -2026,6 +2485,9 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void SetItems (MonoTouch.UIKit.UITabBarItem[] items , System.Boolean animated) { m_helper.SetItems(items , animated);}
+		public  void BeginCustomizingItems (MonoTouch.UIKit.UITabBarItem[] items) { m_helper.BeginCustomizingItems(items);}
+		public  System.Boolean EndCustomizingAnimated (System.Boolean animated) {return  m_helper.EndCustomizingAnimated(animated);}
 		#endregion
 	}
 	
@@ -2095,6 +2557,7 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void SetItems (MonoTouch.UIKit.UIBarButtonItem[] items , System.Boolean animated) { m_helper.SetItems(items , animated);}
 		#endregion
 	}
 	
@@ -2170,6 +2633,557 @@ namespace XamlForIphone
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
 		#region Methods
+		public  void LoadRequest (MonoTouch.Foundation.NSUrlRequest r) { m_helper.LoadRequest(r);}
+		public  void LoadHtmlString (System.String s , MonoTouch.Foundation.NSUrl baseUrl) { m_helper.LoadHtmlString(s , baseUrl);}
+		public  void LoadData (MonoTouch.Foundation.NSData data , System.String mimeType , System.String textEncodingName , MonoTouch.Foundation.NSUrl baseUrl) { m_helper.LoadData(data , mimeType , textEncodingName , baseUrl);}
+		public  void Reload () { m_helper.Reload();}
+		public  void StopLoading () { m_helper.StopLoading();}
+		public  void GoBack () { m_helper.GoBack();}
+		public  void GoForward () { m_helper.GoForward();}
+		public  System.String EvaluateJavascript (System.String script) {return  m_helper.EvaluateJavascript(script);}
+		#endregion
+	}
+	
+	public  partial class MKAnnotationView : UIElement
+	{
+		internal override void ArrangeInternal (Rect finalRect)
+		{
+			this.Frame = finalRect;
+		}
+		
+		public static implicit operator MonoTouch.MapKit.MKAnnotationView (MKAnnotationView element)
+		{
+			return element.m_helper;
+		}
+		
+		internal new MonoTouch.MapKit.MKAnnotationView m_helper;
+		protected override void CreateHandle ()
+		{
+			m_helper = new MonoTouch.MapKit.MKAnnotationView();
+			m_view = m_helper;
+		}
+		
+		#region Fields
+		#endregion
+		#region Properties
+		public System.IntPtr ClassHandle {get{return m_helper.ClassHandle;}}
+		public System.String ReuseIdentifier {get{return m_helper.ReuseIdentifier;}}
+		public MonoTouch.Foundation.NSObject Annotation {get{return m_helper.Annotation;}set{m_helper.Annotation = value;}}
+		public MonoTouch.UIKit.UIImage Image {get{return m_helper.Image;}set{m_helper.Image = value;}}
+		public System.Drawing.PointF CenterOffset {get{return m_helper.CenterOffset;}set{m_helper.CenterOffset = value;}}
+		public System.Drawing.PointF CalloutOffset {get{return m_helper.CalloutOffset;}set{m_helper.CalloutOffset = value;}}
+		public System.Boolean Enabled {get{return m_helper.Enabled;}set{m_helper.Enabled = value;}}
+		public System.Boolean Highlighted {get{return m_helper.Highlighted;}set{m_helper.Highlighted = value;}}
+		public System.Boolean Selected {get{return m_helper.Selected;}set{m_helper.Selected = value;}}
+		public System.Boolean CanShowCallout {get{return m_helper.CanShowCallout;}set{m_helper.CanShowCallout = value;}}
+		public MonoTouch.UIKit.UIView LeftCalloutAccessoryView {get{return m_helper.LeftCalloutAccessoryView;}set{m_helper.LeftCalloutAccessoryView = value;}}
+		public MonoTouch.UIKit.UIView RightCalloutAccessoryView {get{return m_helper.RightCalloutAccessoryView;}set{m_helper.RightCalloutAccessoryView = value;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor BackgroundColor {get{return m_helper.BackgroundColor;}set{m_helper.BackgroundColor = value;}}
+		public System.Drawing.RectangleF Bounds {get{return m_helper.Bounds;}set{m_helper.Bounds = value;}}
+		public System.Boolean UserInteractionEnabled {get{return m_helper.UserInteractionEnabled;}set{m_helper.UserInteractionEnabled = value;}}
+		public System.Int32 Tag {get{return m_helper.Tag;}set{m_helper.Tag = value;}}
+		public MonoTouch.CoreAnimation.CALayer Layer {get{return m_helper.Layer;}}
+		public System.Drawing.RectangleF Frame {get{return m_helper.Frame;}set{m_helper.Frame = value;}}
+		public System.Drawing.PointF Center {get{return m_helper.Center;}set{m_helper.Center = value;}}
+		public MonoTouch.CoreGraphics.CGAffineTransform Transform {get{return m_helper.Transform;}set{m_helper.Transform = value;}}
+		public System.Boolean MultipleTouchEnabled {get{return m_helper.MultipleTouchEnabled;}set{m_helper.MultipleTouchEnabled = value;}}
+		public System.Boolean ExclusiveTouch {get{return m_helper.ExclusiveTouch;}set{m_helper.ExclusiveTouch = value;}}
+		public System.Boolean AutosizesSubviews {get{return m_helper.AutosizesSubviews;}set{m_helper.AutosizesSubviews = value;}}
+		public MonoTouch.UIKit.UIViewAutoresizing AutoresizingMask {get{return m_helper.AutoresizingMask;}set{m_helper.AutoresizingMask = value;}}
+		public MonoTouch.UIKit.UIView Superview {get{return m_helper.Superview;}}
+		public MonoTouch.UIKit.UIView[] Subviews {get{return m_helper.Subviews;}}
+		public MonoTouch.UIKit.UIWindow Window {get{return m_helper.Window;}}
+		public System.Boolean ClipsToBounds {get{return m_helper.ClipsToBounds;}set{m_helper.ClipsToBounds = value;}}
+		public System.Single Alpha {get{return m_helper.Alpha;}set{m_helper.Alpha = value;}}
+		public System.Boolean Opaque {get{return m_helper.Opaque;}set{m_helper.Opaque = value;}}
+		public System.Boolean ClearsContextBeforeDrawing {get{return m_helper.ClearsContextBeforeDrawing;}set{m_helper.ClearsContextBeforeDrawing = value;}}
+		public System.Boolean Hidden {get{return m_helper.Hidden;}set{m_helper.Hidden = value;}}
+		public MonoTouch.UIKit.UIViewContentMode ContentMode {get{return m_helper.ContentMode;}set{m_helper.ContentMode = value;}}
+		public System.Drawing.RectangleF ContentStretch {get{return m_helper.ContentStretch;}set{m_helper.ContentStretch = value;}}
+		public MonoTouch.UIKit.UIGestureRecognizer[] GestureRecognizers {get{return m_helper.GestureRecognizers;}}
+		public System.Single ContentScaleFactor {get{return m_helper.ContentScaleFactor;}set{m_helper.ContentScaleFactor = value;}}
+		public MonoTouch.UIKit.UIViewPrintFormatter ViewPrintFormatter {get{return m_helper.ViewPrintFormatter;}}
+		public System.Boolean EnableInputClicksWhenVisible {get{return m_helper.EnableInputClicksWhenVisible;}}
+		public MonoTouch.UIKit.UIResponder NextResponder {get{return m_helper.NextResponder;}}
+		public System.Boolean CanBecomeFirstResponder {get{return m_helper.CanBecomeFirstResponder;}}
+		public System.Boolean CanResignFirstResponder {get{return m_helper.CanResignFirstResponder;}}
+		public System.Boolean IsFirstResponder {get{return m_helper.IsFirstResponder;}}
+		public MonoTouch.Foundation.NSUndoManager UndoManager {get{return m_helper.UndoManager;}}
+		public MonoTouch.UIKit.UIView InputAccessoryView {get{return m_helper.InputAccessoryView;}}
+		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
+		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
+		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Methods
+		public  void PrepareForReuse () { m_helper.PrepareForReuse();}
+		public  void SetSelected (System.Boolean selected , System.Boolean animated) { m_helper.SetSelected(selected , animated);}
+		public  void SetDragState (MonoTouch.MapKit.MKAnnotationViewDragState newDragState , System.Boolean animated) { m_helper.SetDragState(newDragState , animated);}
+		#endregion
+	}
+	
+	public  partial class MKCircleView : UIElement
+	{
+		internal override void ArrangeInternal (Rect finalRect)
+		{
+			this.Frame = finalRect;
+		}
+		
+		public static implicit operator MonoTouch.MapKit.MKCircleView (MKCircleView element)
+		{
+			return element.m_helper;
+		}
+		
+		internal new MonoTouch.MapKit.MKCircleView m_helper;
+		protected override void CreateHandle ()
+		{
+			m_helper = new MonoTouch.MapKit.MKCircleView();
+			m_view = m_helper;
+		}
+		
+		#region Fields
+		#endregion
+		#region Properties
+		public System.IntPtr ClassHandle {get{return m_helper.ClassHandle;}}
+		public MonoTouch.MapKit.MKCircle Circle {get{return m_helper.Circle;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor FillColor {get{return m_helper.FillColor;}set{m_helper.FillColor = value;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor StrokeColor {get{return m_helper.StrokeColor;}set{m_helper.StrokeColor = value;}}
+		public System.Single LineWidth {get{return m_helper.LineWidth;}set{m_helper.LineWidth = value;}}
+		public MonoTouch.CoreGraphics.CGLineJoin LineJoin {get{return m_helper.LineJoin;}set{m_helper.LineJoin = value;}}
+		public MonoTouch.CoreGraphics.CGLineCap Linecap {get{return m_helper.Linecap;}set{m_helper.Linecap = value;}}
+		public System.Single MiterLimit {get{return m_helper.MiterLimit;}set{m_helper.MiterLimit = value;}}
+		public System.Single LineDashPhase {get{return m_helper.LineDashPhase;}set{m_helper.LineDashPhase = value;}}
+		public MonoTouch.Foundation.NSNumber[] LineDashPattern {get{return m_helper.LineDashPattern;}set{m_helper.LineDashPattern = value;}}
+		public MonoTouch.CoreGraphics.CGPath Path {get{return m_helper.Path;}set{m_helper.Path = value;}}
+		public MonoTouch.Foundation.NSObject Overlay {get{return m_helper.Overlay;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor BackgroundColor {get{return m_helper.BackgroundColor;}set{m_helper.BackgroundColor = value;}}
+		public System.Drawing.RectangleF Bounds {get{return m_helper.Bounds;}set{m_helper.Bounds = value;}}
+		public System.Boolean UserInteractionEnabled {get{return m_helper.UserInteractionEnabled;}set{m_helper.UserInteractionEnabled = value;}}
+		public System.Int32 Tag {get{return m_helper.Tag;}set{m_helper.Tag = value;}}
+		public MonoTouch.CoreAnimation.CALayer Layer {get{return m_helper.Layer;}}
+		public System.Drawing.RectangleF Frame {get{return m_helper.Frame;}set{m_helper.Frame = value;}}
+		public System.Drawing.PointF Center {get{return m_helper.Center;}set{m_helper.Center = value;}}
+		public MonoTouch.CoreGraphics.CGAffineTransform Transform {get{return m_helper.Transform;}set{m_helper.Transform = value;}}
+		public System.Boolean MultipleTouchEnabled {get{return m_helper.MultipleTouchEnabled;}set{m_helper.MultipleTouchEnabled = value;}}
+		public System.Boolean ExclusiveTouch {get{return m_helper.ExclusiveTouch;}set{m_helper.ExclusiveTouch = value;}}
+		public System.Boolean AutosizesSubviews {get{return m_helper.AutosizesSubviews;}set{m_helper.AutosizesSubviews = value;}}
+		public MonoTouch.UIKit.UIViewAutoresizing AutoresizingMask {get{return m_helper.AutoresizingMask;}set{m_helper.AutoresizingMask = value;}}
+		public MonoTouch.UIKit.UIView Superview {get{return m_helper.Superview;}}
+		public MonoTouch.UIKit.UIView[] Subviews {get{return m_helper.Subviews;}}
+		public MonoTouch.UIKit.UIWindow Window {get{return m_helper.Window;}}
+		public System.Boolean ClipsToBounds {get{return m_helper.ClipsToBounds;}set{m_helper.ClipsToBounds = value;}}
+		public System.Single Alpha {get{return m_helper.Alpha;}set{m_helper.Alpha = value;}}
+		public System.Boolean Opaque {get{return m_helper.Opaque;}set{m_helper.Opaque = value;}}
+		public System.Boolean ClearsContextBeforeDrawing {get{return m_helper.ClearsContextBeforeDrawing;}set{m_helper.ClearsContextBeforeDrawing = value;}}
+		public System.Boolean Hidden {get{return m_helper.Hidden;}set{m_helper.Hidden = value;}}
+		public MonoTouch.UIKit.UIViewContentMode ContentMode {get{return m_helper.ContentMode;}set{m_helper.ContentMode = value;}}
+		public System.Drawing.RectangleF ContentStretch {get{return m_helper.ContentStretch;}set{m_helper.ContentStretch = value;}}
+		public MonoTouch.UIKit.UIGestureRecognizer[] GestureRecognizers {get{return m_helper.GestureRecognizers;}}
+		public System.Single ContentScaleFactor {get{return m_helper.ContentScaleFactor;}set{m_helper.ContentScaleFactor = value;}}
+		public MonoTouch.UIKit.UIViewPrintFormatter ViewPrintFormatter {get{return m_helper.ViewPrintFormatter;}}
+		public System.Boolean EnableInputClicksWhenVisible {get{return m_helper.EnableInputClicksWhenVisible;}}
+		public MonoTouch.UIKit.UIResponder NextResponder {get{return m_helper.NextResponder;}}
+		public System.Boolean CanBecomeFirstResponder {get{return m_helper.CanBecomeFirstResponder;}}
+		public System.Boolean CanResignFirstResponder {get{return m_helper.CanResignFirstResponder;}}
+		public System.Boolean IsFirstResponder {get{return m_helper.IsFirstResponder;}}
+		public MonoTouch.Foundation.NSUndoManager UndoManager {get{return m_helper.UndoManager;}}
+		public MonoTouch.UIKit.UIView InputAccessoryView {get{return m_helper.InputAccessoryView;}}
+		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
+		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
+		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Methods
+		#endregion
+	}
+	
+	public  partial class MKPinAnnotationView : UIElement
+	{
+		internal override void ArrangeInternal (Rect finalRect)
+		{
+			this.Frame = finalRect;
+		}
+		
+		public static implicit operator MonoTouch.MapKit.MKPinAnnotationView (MKPinAnnotationView element)
+		{
+			return element.m_helper;
+		}
+		
+		internal new MonoTouch.MapKit.MKPinAnnotationView m_helper;
+		protected override void CreateHandle ()
+		{
+			m_helper = new MonoTouch.MapKit.MKPinAnnotationView();
+			m_view = m_helper;
+		}
+		
+		#region Fields
+		#endregion
+		#region Properties
+		public System.IntPtr ClassHandle {get{return m_helper.ClassHandle;}}
+		public MonoTouch.MapKit.MKPinAnnotationColor PinColor {get{return m_helper.PinColor;}set{m_helper.PinColor = value;}}
+		public System.Boolean AnimatesDrop {get{return m_helper.AnimatesDrop;}set{m_helper.AnimatesDrop = value;}}
+		public MonoTouch.MapKit.MKAnnotationViewDragState DragState {get{return m_helper.DragState;}set{m_helper.DragState = value;}}
+		public System.Boolean Draggable {get{return m_helper.Draggable;}set{m_helper.Draggable = value;}}
+		public System.String ReuseIdentifier {get{return m_helper.ReuseIdentifier;}}
+		public MonoTouch.Foundation.NSObject Annotation {get{return m_helper.Annotation;}set{m_helper.Annotation = value;}}
+		public MonoTouch.UIKit.UIImage Image {get{return m_helper.Image;}set{m_helper.Image = value;}}
+		public System.Drawing.PointF CenterOffset {get{return m_helper.CenterOffset;}set{m_helper.CenterOffset = value;}}
+		public System.Drawing.PointF CalloutOffset {get{return m_helper.CalloutOffset;}set{m_helper.CalloutOffset = value;}}
+		public System.Boolean Enabled {get{return m_helper.Enabled;}set{m_helper.Enabled = value;}}
+		public System.Boolean Highlighted {get{return m_helper.Highlighted;}set{m_helper.Highlighted = value;}}
+		public System.Boolean Selected {get{return m_helper.Selected;}set{m_helper.Selected = value;}}
+		public System.Boolean CanShowCallout {get{return m_helper.CanShowCallout;}set{m_helper.CanShowCallout = value;}}
+		public MonoTouch.UIKit.UIView LeftCalloutAccessoryView {get{return m_helper.LeftCalloutAccessoryView;}set{m_helper.LeftCalloutAccessoryView = value;}}
+		public MonoTouch.UIKit.UIView RightCalloutAccessoryView {get{return m_helper.RightCalloutAccessoryView;}set{m_helper.RightCalloutAccessoryView = value;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor BackgroundColor {get{return m_helper.BackgroundColor;}set{m_helper.BackgroundColor = value;}}
+		public System.Drawing.RectangleF Bounds {get{return m_helper.Bounds;}set{m_helper.Bounds = value;}}
+		public System.Boolean UserInteractionEnabled {get{return m_helper.UserInteractionEnabled;}set{m_helper.UserInteractionEnabled = value;}}
+		public System.Int32 Tag {get{return m_helper.Tag;}set{m_helper.Tag = value;}}
+		public MonoTouch.CoreAnimation.CALayer Layer {get{return m_helper.Layer;}}
+		public System.Drawing.RectangleF Frame {get{return m_helper.Frame;}set{m_helper.Frame = value;}}
+		public System.Drawing.PointF Center {get{return m_helper.Center;}set{m_helper.Center = value;}}
+		public MonoTouch.CoreGraphics.CGAffineTransform Transform {get{return m_helper.Transform;}set{m_helper.Transform = value;}}
+		public System.Boolean MultipleTouchEnabled {get{return m_helper.MultipleTouchEnabled;}set{m_helper.MultipleTouchEnabled = value;}}
+		public System.Boolean ExclusiveTouch {get{return m_helper.ExclusiveTouch;}set{m_helper.ExclusiveTouch = value;}}
+		public System.Boolean AutosizesSubviews {get{return m_helper.AutosizesSubviews;}set{m_helper.AutosizesSubviews = value;}}
+		public MonoTouch.UIKit.UIViewAutoresizing AutoresizingMask {get{return m_helper.AutoresizingMask;}set{m_helper.AutoresizingMask = value;}}
+		public MonoTouch.UIKit.UIView Superview {get{return m_helper.Superview;}}
+		public MonoTouch.UIKit.UIView[] Subviews {get{return m_helper.Subviews;}}
+		public MonoTouch.UIKit.UIWindow Window {get{return m_helper.Window;}}
+		public System.Boolean ClipsToBounds {get{return m_helper.ClipsToBounds;}set{m_helper.ClipsToBounds = value;}}
+		public System.Single Alpha {get{return m_helper.Alpha;}set{m_helper.Alpha = value;}}
+		public System.Boolean Opaque {get{return m_helper.Opaque;}set{m_helper.Opaque = value;}}
+		public System.Boolean ClearsContextBeforeDrawing {get{return m_helper.ClearsContextBeforeDrawing;}set{m_helper.ClearsContextBeforeDrawing = value;}}
+		public System.Boolean Hidden {get{return m_helper.Hidden;}set{m_helper.Hidden = value;}}
+		public MonoTouch.UIKit.UIViewContentMode ContentMode {get{return m_helper.ContentMode;}set{m_helper.ContentMode = value;}}
+		public System.Drawing.RectangleF ContentStretch {get{return m_helper.ContentStretch;}set{m_helper.ContentStretch = value;}}
+		public MonoTouch.UIKit.UIGestureRecognizer[] GestureRecognizers {get{return m_helper.GestureRecognizers;}}
+		public System.Single ContentScaleFactor {get{return m_helper.ContentScaleFactor;}set{m_helper.ContentScaleFactor = value;}}
+		public MonoTouch.UIKit.UIViewPrintFormatter ViewPrintFormatter {get{return m_helper.ViewPrintFormatter;}}
+		public System.Boolean EnableInputClicksWhenVisible {get{return m_helper.EnableInputClicksWhenVisible;}}
+		public MonoTouch.UIKit.UIResponder NextResponder {get{return m_helper.NextResponder;}}
+		public System.Boolean CanBecomeFirstResponder {get{return m_helper.CanBecomeFirstResponder;}}
+		public System.Boolean CanResignFirstResponder {get{return m_helper.CanResignFirstResponder;}}
+		public System.Boolean IsFirstResponder {get{return m_helper.IsFirstResponder;}}
+		public MonoTouch.Foundation.NSUndoManager UndoManager {get{return m_helper.UndoManager;}}
+		public MonoTouch.UIKit.UIView InputAccessoryView {get{return m_helper.InputAccessoryView;}}
+		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
+		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
+		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Methods
+		#endregion
+	}
+	
+	public  partial class MKOverlayPathView : UIElement
+	{
+		internal override void ArrangeInternal (Rect finalRect)
+		{
+			this.Frame = finalRect;
+		}
+		
+		public static implicit operator MonoTouch.MapKit.MKOverlayPathView (MKOverlayPathView element)
+		{
+			return element.m_helper;
+		}
+		
+		internal new MonoTouch.MapKit.MKOverlayPathView m_helper;
+		protected override void CreateHandle ()
+		{
+			m_helper = new MonoTouch.MapKit.MKOverlayPathView();
+			m_view = m_helper;
+		}
+		
+		#region Fields
+		#endregion
+		#region Properties
+		public System.IntPtr ClassHandle {get{return m_helper.ClassHandle;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor FillColor {get{return m_helper.FillColor;}set{m_helper.FillColor = value;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor StrokeColor {get{return m_helper.StrokeColor;}set{m_helper.StrokeColor = value;}}
+		public System.Single LineWidth {get{return m_helper.LineWidth;}set{m_helper.LineWidth = value;}}
+		public MonoTouch.CoreGraphics.CGLineJoin LineJoin {get{return m_helper.LineJoin;}set{m_helper.LineJoin = value;}}
+		public MonoTouch.CoreGraphics.CGLineCap Linecap {get{return m_helper.Linecap;}set{m_helper.Linecap = value;}}
+		public System.Single MiterLimit {get{return m_helper.MiterLimit;}set{m_helper.MiterLimit = value;}}
+		public System.Single LineDashPhase {get{return m_helper.LineDashPhase;}set{m_helper.LineDashPhase = value;}}
+		public MonoTouch.Foundation.NSNumber[] LineDashPattern {get{return m_helper.LineDashPattern;}set{m_helper.LineDashPattern = value;}}
+		public MonoTouch.CoreGraphics.CGPath Path {get{return m_helper.Path;}set{m_helper.Path = value;}}
+		public MonoTouch.Foundation.NSObject Overlay {get{return m_helper.Overlay;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor BackgroundColor {get{return m_helper.BackgroundColor;}set{m_helper.BackgroundColor = value;}}
+		public System.Drawing.RectangleF Bounds {get{return m_helper.Bounds;}set{m_helper.Bounds = value;}}
+		public System.Boolean UserInteractionEnabled {get{return m_helper.UserInteractionEnabled;}set{m_helper.UserInteractionEnabled = value;}}
+		public System.Int32 Tag {get{return m_helper.Tag;}set{m_helper.Tag = value;}}
+		public MonoTouch.CoreAnimation.CALayer Layer {get{return m_helper.Layer;}}
+		public System.Drawing.RectangleF Frame {get{return m_helper.Frame;}set{m_helper.Frame = value;}}
+		public System.Drawing.PointF Center {get{return m_helper.Center;}set{m_helper.Center = value;}}
+		public MonoTouch.CoreGraphics.CGAffineTransform Transform {get{return m_helper.Transform;}set{m_helper.Transform = value;}}
+		public System.Boolean MultipleTouchEnabled {get{return m_helper.MultipleTouchEnabled;}set{m_helper.MultipleTouchEnabled = value;}}
+		public System.Boolean ExclusiveTouch {get{return m_helper.ExclusiveTouch;}set{m_helper.ExclusiveTouch = value;}}
+		public System.Boolean AutosizesSubviews {get{return m_helper.AutosizesSubviews;}set{m_helper.AutosizesSubviews = value;}}
+		public MonoTouch.UIKit.UIViewAutoresizing AutoresizingMask {get{return m_helper.AutoresizingMask;}set{m_helper.AutoresizingMask = value;}}
+		public MonoTouch.UIKit.UIView Superview {get{return m_helper.Superview;}}
+		public MonoTouch.UIKit.UIView[] Subviews {get{return m_helper.Subviews;}}
+		public MonoTouch.UIKit.UIWindow Window {get{return m_helper.Window;}}
+		public System.Boolean ClipsToBounds {get{return m_helper.ClipsToBounds;}set{m_helper.ClipsToBounds = value;}}
+		public System.Single Alpha {get{return m_helper.Alpha;}set{m_helper.Alpha = value;}}
+		public System.Boolean Opaque {get{return m_helper.Opaque;}set{m_helper.Opaque = value;}}
+		public System.Boolean ClearsContextBeforeDrawing {get{return m_helper.ClearsContextBeforeDrawing;}set{m_helper.ClearsContextBeforeDrawing = value;}}
+		public System.Boolean Hidden {get{return m_helper.Hidden;}set{m_helper.Hidden = value;}}
+		public MonoTouch.UIKit.UIViewContentMode ContentMode {get{return m_helper.ContentMode;}set{m_helper.ContentMode = value;}}
+		public System.Drawing.RectangleF ContentStretch {get{return m_helper.ContentStretch;}set{m_helper.ContentStretch = value;}}
+		public MonoTouch.UIKit.UIGestureRecognizer[] GestureRecognizers {get{return m_helper.GestureRecognizers;}}
+		public System.Single ContentScaleFactor {get{return m_helper.ContentScaleFactor;}set{m_helper.ContentScaleFactor = value;}}
+		public MonoTouch.UIKit.UIViewPrintFormatter ViewPrintFormatter {get{return m_helper.ViewPrintFormatter;}}
+		public System.Boolean EnableInputClicksWhenVisible {get{return m_helper.EnableInputClicksWhenVisible;}}
+		public MonoTouch.UIKit.UIResponder NextResponder {get{return m_helper.NextResponder;}}
+		public System.Boolean CanBecomeFirstResponder {get{return m_helper.CanBecomeFirstResponder;}}
+		public System.Boolean CanResignFirstResponder {get{return m_helper.CanResignFirstResponder;}}
+		public System.Boolean IsFirstResponder {get{return m_helper.IsFirstResponder;}}
+		public MonoTouch.Foundation.NSUndoManager UndoManager {get{return m_helper.UndoManager;}}
+		public MonoTouch.UIKit.UIView InputAccessoryView {get{return m_helper.InputAccessoryView;}}
+		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
+		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
+		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Methods
+		public  void CreatePath () { m_helper.CreatePath();}
+		public  void InvalidatePath () { m_helper.InvalidatePath();}
+		public  void ApplyStrokeProperties (MonoTouch.CoreGraphics.CGContext context , System.Single zoomScale) { m_helper.ApplyStrokeProperties(context , zoomScale);}
+		public  void ApplyFillProperties (MonoTouch.CoreGraphics.CGContext context , System.Single zoomScale) { m_helper.ApplyFillProperties(context , zoomScale);}
+		public  void StrokePath (MonoTouch.CoreGraphics.CGPath path , MonoTouch.CoreGraphics.CGContext context) { m_helper.StrokePath(path , context);}
+		public  void FillPath (MonoTouch.CoreGraphics.CGPath path , MonoTouch.CoreGraphics.CGContext context) { m_helper.FillPath(path , context);}
+		#endregion
+	}
+	
+	public  partial class MKPolygonView : UIElement
+	{
+		internal override void ArrangeInternal (Rect finalRect)
+		{
+			this.Frame = finalRect;
+		}
+		
+		public static implicit operator MonoTouch.MapKit.MKPolygonView (MKPolygonView element)
+		{
+			return element.m_helper;
+		}
+		
+		internal new MonoTouch.MapKit.MKPolygonView m_helper;
+		protected override void CreateHandle ()
+		{
+			m_helper = new MonoTouch.MapKit.MKPolygonView();
+			m_view = m_helper;
+		}
+		
+		#region Fields
+		#endregion
+		#region Properties
+		public System.IntPtr ClassHandle {get{return m_helper.ClassHandle;}}
+		public MonoTouch.MapKit.MKPolygon Polygon {get{return m_helper.Polygon;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor FillColor {get{return m_helper.FillColor;}set{m_helper.FillColor = value;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor StrokeColor {get{return m_helper.StrokeColor;}set{m_helper.StrokeColor = value;}}
+		public System.Single LineWidth {get{return m_helper.LineWidth;}set{m_helper.LineWidth = value;}}
+		public MonoTouch.CoreGraphics.CGLineJoin LineJoin {get{return m_helper.LineJoin;}set{m_helper.LineJoin = value;}}
+		public MonoTouch.CoreGraphics.CGLineCap Linecap {get{return m_helper.Linecap;}set{m_helper.Linecap = value;}}
+		public System.Single MiterLimit {get{return m_helper.MiterLimit;}set{m_helper.MiterLimit = value;}}
+		public System.Single LineDashPhase {get{return m_helper.LineDashPhase;}set{m_helper.LineDashPhase = value;}}
+		public MonoTouch.Foundation.NSNumber[] LineDashPattern {get{return m_helper.LineDashPattern;}set{m_helper.LineDashPattern = value;}}
+		public MonoTouch.CoreGraphics.CGPath Path {get{return m_helper.Path;}set{m_helper.Path = value;}}
+		public MonoTouch.Foundation.NSObject Overlay {get{return m_helper.Overlay;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor BackgroundColor {get{return m_helper.BackgroundColor;}set{m_helper.BackgroundColor = value;}}
+		public System.Drawing.RectangleF Bounds {get{return m_helper.Bounds;}set{m_helper.Bounds = value;}}
+		public System.Boolean UserInteractionEnabled {get{return m_helper.UserInteractionEnabled;}set{m_helper.UserInteractionEnabled = value;}}
+		public System.Int32 Tag {get{return m_helper.Tag;}set{m_helper.Tag = value;}}
+		public MonoTouch.CoreAnimation.CALayer Layer {get{return m_helper.Layer;}}
+		public System.Drawing.RectangleF Frame {get{return m_helper.Frame;}set{m_helper.Frame = value;}}
+		public System.Drawing.PointF Center {get{return m_helper.Center;}set{m_helper.Center = value;}}
+		public MonoTouch.CoreGraphics.CGAffineTransform Transform {get{return m_helper.Transform;}set{m_helper.Transform = value;}}
+		public System.Boolean MultipleTouchEnabled {get{return m_helper.MultipleTouchEnabled;}set{m_helper.MultipleTouchEnabled = value;}}
+		public System.Boolean ExclusiveTouch {get{return m_helper.ExclusiveTouch;}set{m_helper.ExclusiveTouch = value;}}
+		public System.Boolean AutosizesSubviews {get{return m_helper.AutosizesSubviews;}set{m_helper.AutosizesSubviews = value;}}
+		public MonoTouch.UIKit.UIViewAutoresizing AutoresizingMask {get{return m_helper.AutoresizingMask;}set{m_helper.AutoresizingMask = value;}}
+		public MonoTouch.UIKit.UIView Superview {get{return m_helper.Superview;}}
+		public MonoTouch.UIKit.UIView[] Subviews {get{return m_helper.Subviews;}}
+		public MonoTouch.UIKit.UIWindow Window {get{return m_helper.Window;}}
+		public System.Boolean ClipsToBounds {get{return m_helper.ClipsToBounds;}set{m_helper.ClipsToBounds = value;}}
+		public System.Single Alpha {get{return m_helper.Alpha;}set{m_helper.Alpha = value;}}
+		public System.Boolean Opaque {get{return m_helper.Opaque;}set{m_helper.Opaque = value;}}
+		public System.Boolean ClearsContextBeforeDrawing {get{return m_helper.ClearsContextBeforeDrawing;}set{m_helper.ClearsContextBeforeDrawing = value;}}
+		public System.Boolean Hidden {get{return m_helper.Hidden;}set{m_helper.Hidden = value;}}
+		public MonoTouch.UIKit.UIViewContentMode ContentMode {get{return m_helper.ContentMode;}set{m_helper.ContentMode = value;}}
+		public System.Drawing.RectangleF ContentStretch {get{return m_helper.ContentStretch;}set{m_helper.ContentStretch = value;}}
+		public MonoTouch.UIKit.UIGestureRecognizer[] GestureRecognizers {get{return m_helper.GestureRecognizers;}}
+		public System.Single ContentScaleFactor {get{return m_helper.ContentScaleFactor;}set{m_helper.ContentScaleFactor = value;}}
+		public MonoTouch.UIKit.UIViewPrintFormatter ViewPrintFormatter {get{return m_helper.ViewPrintFormatter;}}
+		public System.Boolean EnableInputClicksWhenVisible {get{return m_helper.EnableInputClicksWhenVisible;}}
+		public MonoTouch.UIKit.UIResponder NextResponder {get{return m_helper.NextResponder;}}
+		public System.Boolean CanBecomeFirstResponder {get{return m_helper.CanBecomeFirstResponder;}}
+		public System.Boolean CanResignFirstResponder {get{return m_helper.CanResignFirstResponder;}}
+		public System.Boolean IsFirstResponder {get{return m_helper.IsFirstResponder;}}
+		public MonoTouch.Foundation.NSUndoManager UndoManager {get{return m_helper.UndoManager;}}
+		public MonoTouch.UIKit.UIView InputAccessoryView {get{return m_helper.InputAccessoryView;}}
+		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
+		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
+		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Methods
+		#endregion
+	}
+	
+	public  partial class MKPolylineView : UIElement
+	{
+		internal override void ArrangeInternal (Rect finalRect)
+		{
+			this.Frame = finalRect;
+		}
+		
+		public static implicit operator MonoTouch.MapKit.MKPolylineView (MKPolylineView element)
+		{
+			return element.m_helper;
+		}
+		
+		internal new MonoTouch.MapKit.MKPolylineView m_helper;
+		protected override void CreateHandle ()
+		{
+			m_helper = new MonoTouch.MapKit.MKPolylineView();
+			m_view = m_helper;
+		}
+		
+		#region Fields
+		#endregion
+		#region Properties
+		public System.IntPtr ClassHandle {get{return m_helper.ClassHandle;}}
+		public MonoTouch.MapKit.MKPolyline Polyline {get{return m_helper.Polyline;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor FillColor {get{return m_helper.FillColor;}set{m_helper.FillColor = value;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor StrokeColor {get{return m_helper.StrokeColor;}set{m_helper.StrokeColor = value;}}
+		public System.Single LineWidth {get{return m_helper.LineWidth;}set{m_helper.LineWidth = value;}}
+		public MonoTouch.CoreGraphics.CGLineJoin LineJoin {get{return m_helper.LineJoin;}set{m_helper.LineJoin = value;}}
+		public MonoTouch.CoreGraphics.CGLineCap Linecap {get{return m_helper.Linecap;}set{m_helper.Linecap = value;}}
+		public System.Single MiterLimit {get{return m_helper.MiterLimit;}set{m_helper.MiterLimit = value;}}
+		public System.Single LineDashPhase {get{return m_helper.LineDashPhase;}set{m_helper.LineDashPhase = value;}}
+		public MonoTouch.Foundation.NSNumber[] LineDashPattern {get{return m_helper.LineDashPattern;}set{m_helper.LineDashPattern = value;}}
+		public MonoTouch.CoreGraphics.CGPath Path {get{return m_helper.Path;}set{m_helper.Path = value;}}
+		public MonoTouch.Foundation.NSObject Overlay {get{return m_helper.Overlay;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor BackgroundColor {get{return m_helper.BackgroundColor;}set{m_helper.BackgroundColor = value;}}
+		public System.Drawing.RectangleF Bounds {get{return m_helper.Bounds;}set{m_helper.Bounds = value;}}
+		public System.Boolean UserInteractionEnabled {get{return m_helper.UserInteractionEnabled;}set{m_helper.UserInteractionEnabled = value;}}
+		public System.Int32 Tag {get{return m_helper.Tag;}set{m_helper.Tag = value;}}
+		public MonoTouch.CoreAnimation.CALayer Layer {get{return m_helper.Layer;}}
+		public System.Drawing.RectangleF Frame {get{return m_helper.Frame;}set{m_helper.Frame = value;}}
+		public System.Drawing.PointF Center {get{return m_helper.Center;}set{m_helper.Center = value;}}
+		public MonoTouch.CoreGraphics.CGAffineTransform Transform {get{return m_helper.Transform;}set{m_helper.Transform = value;}}
+		public System.Boolean MultipleTouchEnabled {get{return m_helper.MultipleTouchEnabled;}set{m_helper.MultipleTouchEnabled = value;}}
+		public System.Boolean ExclusiveTouch {get{return m_helper.ExclusiveTouch;}set{m_helper.ExclusiveTouch = value;}}
+		public System.Boolean AutosizesSubviews {get{return m_helper.AutosizesSubviews;}set{m_helper.AutosizesSubviews = value;}}
+		public MonoTouch.UIKit.UIViewAutoresizing AutoresizingMask {get{return m_helper.AutoresizingMask;}set{m_helper.AutoresizingMask = value;}}
+		public MonoTouch.UIKit.UIView Superview {get{return m_helper.Superview;}}
+		public MonoTouch.UIKit.UIView[] Subviews {get{return m_helper.Subviews;}}
+		public MonoTouch.UIKit.UIWindow Window {get{return m_helper.Window;}}
+		public System.Boolean ClipsToBounds {get{return m_helper.ClipsToBounds;}set{m_helper.ClipsToBounds = value;}}
+		public System.Single Alpha {get{return m_helper.Alpha;}set{m_helper.Alpha = value;}}
+		public System.Boolean Opaque {get{return m_helper.Opaque;}set{m_helper.Opaque = value;}}
+		public System.Boolean ClearsContextBeforeDrawing {get{return m_helper.ClearsContextBeforeDrawing;}set{m_helper.ClearsContextBeforeDrawing = value;}}
+		public System.Boolean Hidden {get{return m_helper.Hidden;}set{m_helper.Hidden = value;}}
+		public MonoTouch.UIKit.UIViewContentMode ContentMode {get{return m_helper.ContentMode;}set{m_helper.ContentMode = value;}}
+		public System.Drawing.RectangleF ContentStretch {get{return m_helper.ContentStretch;}set{m_helper.ContentStretch = value;}}
+		public MonoTouch.UIKit.UIGestureRecognizer[] GestureRecognizers {get{return m_helper.GestureRecognizers;}}
+		public System.Single ContentScaleFactor {get{return m_helper.ContentScaleFactor;}set{m_helper.ContentScaleFactor = value;}}
+		public MonoTouch.UIKit.UIViewPrintFormatter ViewPrintFormatter {get{return m_helper.ViewPrintFormatter;}}
+		public System.Boolean EnableInputClicksWhenVisible {get{return m_helper.EnableInputClicksWhenVisible;}}
+		public MonoTouch.UIKit.UIResponder NextResponder {get{return m_helper.NextResponder;}}
+		public System.Boolean CanBecomeFirstResponder {get{return m_helper.CanBecomeFirstResponder;}}
+		public System.Boolean CanResignFirstResponder {get{return m_helper.CanResignFirstResponder;}}
+		public System.Boolean IsFirstResponder {get{return m_helper.IsFirstResponder;}}
+		public MonoTouch.Foundation.NSUndoManager UndoManager {get{return m_helper.UndoManager;}}
+		public MonoTouch.UIKit.UIView InputAccessoryView {get{return m_helper.InputAccessoryView;}}
+		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
+		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
+		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Methods
+		#endregion
+	}
+	
+	public  partial class ADBannerView : UIElement
+	{
+		internal override void ArrangeInternal (Rect finalRect)
+		{
+			this.Frame = finalRect;
+		}
+		
+		public static implicit operator MonoTouch.iAd.ADBannerView (ADBannerView element)
+		{
+			return element.m_helper;
+		}
+		
+		internal new MonoTouch.iAd.ADBannerView m_helper;
+		protected override void CreateHandle ()
+		{
+			m_helper = new MonoTouch.iAd.ADBannerView();
+			m_view = m_helper;
+		}
+		
+		#region Fields
+		#endregion
+		#region Properties
+		public System.IntPtr ClassHandle {get{return m_helper.ClassHandle;}}
+		public MonoTouch.Foundation.NSObject WeakDelegate {get{return m_helper.WeakDelegate;}set{m_helper.WeakDelegate = value;}}
+		public MonoTouch.iAd.ADBannerViewDelegate Delegate {get{return m_helper.Delegate;}set{m_helper.Delegate = value;}}
+		public System.Boolean BannerLoaded {get{return m_helper.BannerLoaded;}}
+		public System.String AdvertisingSection {get{return m_helper.AdvertisingSection;}set{m_helper.AdvertisingSection = value;}}
+		public System.Boolean BannerViewActionInProgress {get{return m_helper.BannerViewActionInProgress;}}
+		public MonoTouch.Foundation.NSSet RequiredContentSizeIdentifiers {get{return m_helper.RequiredContentSizeIdentifiers;}set{m_helper.RequiredContentSizeIdentifiers = value;}}
+		public System.String CurrentContentSizeIdentifier {get{return m_helper.CurrentContentSizeIdentifier;}set{m_helper.CurrentContentSizeIdentifier = value;}}
+		public MonoTouch.iAd.AdAction ActionShouldBegin {get{return m_helper.ActionShouldBegin;}set{m_helper.ActionShouldBegin = value;}}
+		[TypeConverter(typeof(UIColorConverter))]
+		public MonoTouch.UIKit.UIColor BackgroundColor {get{return m_helper.BackgroundColor;}set{m_helper.BackgroundColor = value;}}
+		public System.Drawing.RectangleF Bounds {get{return m_helper.Bounds;}set{m_helper.Bounds = value;}}
+		public System.Boolean UserInteractionEnabled {get{return m_helper.UserInteractionEnabled;}set{m_helper.UserInteractionEnabled = value;}}
+		public System.Int32 Tag {get{return m_helper.Tag;}set{m_helper.Tag = value;}}
+		public MonoTouch.CoreAnimation.CALayer Layer {get{return m_helper.Layer;}}
+		public System.Drawing.RectangleF Frame {get{return m_helper.Frame;}set{m_helper.Frame = value;}}
+		public System.Drawing.PointF Center {get{return m_helper.Center;}set{m_helper.Center = value;}}
+		public MonoTouch.CoreGraphics.CGAffineTransform Transform {get{return m_helper.Transform;}set{m_helper.Transform = value;}}
+		public System.Boolean MultipleTouchEnabled {get{return m_helper.MultipleTouchEnabled;}set{m_helper.MultipleTouchEnabled = value;}}
+		public System.Boolean ExclusiveTouch {get{return m_helper.ExclusiveTouch;}set{m_helper.ExclusiveTouch = value;}}
+		public System.Boolean AutosizesSubviews {get{return m_helper.AutosizesSubviews;}set{m_helper.AutosizesSubviews = value;}}
+		public MonoTouch.UIKit.UIViewAutoresizing AutoresizingMask {get{return m_helper.AutoresizingMask;}set{m_helper.AutoresizingMask = value;}}
+		public MonoTouch.UIKit.UIView Superview {get{return m_helper.Superview;}}
+		public MonoTouch.UIKit.UIView[] Subviews {get{return m_helper.Subviews;}}
+		public MonoTouch.UIKit.UIWindow Window {get{return m_helper.Window;}}
+		public System.Boolean ClipsToBounds {get{return m_helper.ClipsToBounds;}set{m_helper.ClipsToBounds = value;}}
+		public System.Single Alpha {get{return m_helper.Alpha;}set{m_helper.Alpha = value;}}
+		public System.Boolean Opaque {get{return m_helper.Opaque;}set{m_helper.Opaque = value;}}
+		public System.Boolean ClearsContextBeforeDrawing {get{return m_helper.ClearsContextBeforeDrawing;}set{m_helper.ClearsContextBeforeDrawing = value;}}
+		public System.Boolean Hidden {get{return m_helper.Hidden;}set{m_helper.Hidden = value;}}
+		public MonoTouch.UIKit.UIViewContentMode ContentMode {get{return m_helper.ContentMode;}set{m_helper.ContentMode = value;}}
+		public System.Drawing.RectangleF ContentStretch {get{return m_helper.ContentStretch;}set{m_helper.ContentStretch = value;}}
+		public MonoTouch.UIKit.UIGestureRecognizer[] GestureRecognizers {get{return m_helper.GestureRecognizers;}}
+		public System.Single ContentScaleFactor {get{return m_helper.ContentScaleFactor;}set{m_helper.ContentScaleFactor = value;}}
+		public MonoTouch.UIKit.UIViewPrintFormatter ViewPrintFormatter {get{return m_helper.ViewPrintFormatter;}}
+		public System.Boolean EnableInputClicksWhenVisible {get{return m_helper.EnableInputClicksWhenVisible;}}
+		public MonoTouch.UIKit.UIResponder NextResponder {get{return m_helper.NextResponder;}}
+		public System.Boolean CanBecomeFirstResponder {get{return m_helper.CanBecomeFirstResponder;}}
+		public System.Boolean CanResignFirstResponder {get{return m_helper.CanResignFirstResponder;}}
+		public System.Boolean IsFirstResponder {get{return m_helper.IsFirstResponder;}}
+		public MonoTouch.Foundation.NSUndoManager UndoManager {get{return m_helper.UndoManager;}}
+		public MonoTouch.UIKit.UIView InputAccessoryView {get{return m_helper.InputAccessoryView;}}
+		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
+		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
+		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Methods
+		public  void CancelBannerViewAction () { m_helper.CancelBannerViewAction();}
 		#endregion
 	}
 	

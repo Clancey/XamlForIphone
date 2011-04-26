@@ -39,7 +39,7 @@ namespace XamlForIphone {
 			frame.X = float.Parse (e.NewValue.ToString ());
 			d.Frame = frame;
 		}
-		public static readonly DependencyProperty TopProperty = DependencyProperty.Register ("Top", typeof(int), typeof(Canvas), new PropertyMetadata (OnTopPropertyChanged));
+		public static readonly DependencyProperty TopProperty = DependencyProperty.Register ("Top", typeof(int), typeof(Canvas), new PropertyMetadata (0,OnTopPropertyChanged));
 
 		private static void OnTopPropertyChanged (DependencyObject d, DependencyPropertyChangedEventArgs e)
 		{
@@ -51,9 +51,9 @@ namespace XamlForIphone {
 		public static readonly DependencyProperty ZIndexProperty = DependencyProperty.Register ("ZIndex", typeof(int), typeof(Canvas), new PropertyMetadata ());// DependencyProperty.Lookup (Kind.CANVAS, "ZIndex", typeof (int));
 		//internal static readonly DependencyProperty ZProperty = DependencyProperty.Register ("Z", typeof(int), typeof(Canvas), new PropertyMetadata ());// DependencyProperty.Lookup (Kind.CANVAS, "Z", typeof (double));
 
-		public static double GetLeft (UIElement element)
+		public static int GetLeft (UIElement element)
 		{
-			return (double) element.GetValue (Canvas.LeftProperty);
+			return int.Parse(element.GetValue (Canvas.LeftProperty).ToString());
 		}
 		
 		public static void SetLeft (UIElement element, double length)
@@ -61,9 +61,9 @@ namespace XamlForIphone {
 			element.SetValue (Canvas.LeftProperty, length);
 		}
 		
-		public static double GetTop (UIElement element)
+		public static int GetTop (UIElement element)
 		{
-			return (double) element.GetValue (Canvas.TopProperty);
+			return int.Parse( element.GetValue (Canvas.TopProperty).ToString());
 		}
 		
 		public static void SetTop (UIElement element, double length)

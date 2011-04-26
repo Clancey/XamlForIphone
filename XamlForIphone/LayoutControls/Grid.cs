@@ -16,7 +16,7 @@ using XamlForIphone;
 using System.Drawing;
 namespace XamlForIphone
 {
-	public class Grid : UIView
+	public class Grid : UIElement
 	{
 		public Grid ()
 		{
@@ -199,7 +199,8 @@ namespace XamlForIphone
 				}
 		
 				VisualTreeWalker walker = VisualTreeWalker (this);
-				while (UIElement child = walker.Step ()) {
+				UIElement child = walker.Step ();
+				while (child != null ) {
 					gint32 col, row;
 					gint32 colspan, rowspan;
 					Size child_size = Size (0,0);
@@ -286,14 +287,17 @@ namespace XamlForIphone
 					}
 					node = new GridNode (col_matrix, col + colspan  - 1, col, desired.width);
 					sizes.InsertBefore (node, node->row == node->col ? separator->next : separator);
+					//Get the next
+					child = walker.Step ();
 				}
 				
 				sizes.Unlink (separator);
-		
-				while (GridNode node= (GridNode ) sizes.Last ()) {
-					node.matrix [node.row][node.col].desired_size = Math.Max (node.matrix [node.row][node.col].desired_size, node.size);
+				GridNode gridNode = (GridNode ) sizes.Last ();
+				while (gridNode != null) {
+					gridNode.matrix [gridNode.row][gridNode.col].desired_size = Math.Max (gridNode.matrix [gridNode.row][gridNode.col].desired_size, gridNode.size);
 					AllocateDesiredSize (row_count, col_count);
-					sizes.Remove (node);
+					sizes.Remove (gridNode);
+					gridNode = (GridNode ) sizes.Last ();
 				}
 		
 				sizes.Append (separator);
@@ -324,18 +328,6 @@ namespace XamlForIphone
 
 
 
-
-#include <config.h>
-#include <math.h>
-
-#include "deployment.h"
-#include "brush.h"
-#include "rect.h"
-#include "canvas.h"
-#include "grid.h"
-#include "runtime.h"
-#include "namescope.h"
-#include "collection.h"
 
 namespace Moonlight {
 
@@ -807,5 +799,5 @@ GridWalker::GridWalker (Grid *grid, Segment **row_matrix, int row_count, Segment
 
 };
 
-
  */
+ 

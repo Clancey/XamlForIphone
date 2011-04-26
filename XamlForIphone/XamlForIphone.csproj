@@ -257,6 +257,7 @@
     <Compile Include="iPhone\UIColorConverter.cs" />
     <Compile Include="iPhone\UIKit.g.cs" />
     <Compile Include="iPhone\UIView.cs" />
+    <Compile Include="iPhone\UIButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="System.Xaml\System.Windows.Markup\ChangeLog" />
