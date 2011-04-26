@@ -31,6 +31,7 @@ using Mono;
 using System;
 using System.Runtime.InteropServices;
 using XamlForIphone;
+using System.Drawing;
 
 namespace System.Windows {
 
@@ -60,6 +61,14 @@ namespace System.Windows {
 			this.y = location.Y;
 			this.w = size.Width;
 			this.h = size.Height;
+		}
+		
+		public Rect (RectangleF rect)
+		{
+			this.x = rect.X;
+			this.y = rect.Y;
+			this.w = rect.Width;
+			this.h = rect.Height;
 		}
 		
 		public override string ToString ()
@@ -271,6 +280,10 @@ namespace System.Windows {
 
 			return String.Format ("{0},{1},{2},{3}", x.ToString (format, provider), y.ToString (format, provider),
 				w.ToString (format, provider), h.ToString (format, provider));
+		}
+		public static implicit operator RectangleF (Rect rect)
+		{
+			return new RectangleF((float)rect.x,(float)rect.y,(float)rect.w,(float)rect.h);
 		}
 	}
 }

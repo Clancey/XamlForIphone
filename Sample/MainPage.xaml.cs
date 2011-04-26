@@ -5,7 +5,7 @@ using System.Net;
 
 namespace SilverlightApplication1
 {
-	public partial class MainPage : XamlForIphone.UIView
+	public partial class MainPage //: XamlForIphone.UIView
 	{
 		public MainPage()
 		{

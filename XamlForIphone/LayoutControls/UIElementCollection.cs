@@ -32,9 +32,9 @@ using XamlForIphone;
 
 namespace System.Windows.Controls
 {
-	public sealed partial class UIElementCollection : DependencyObjectCollection <IDependencyObject>
+	public sealed partial class UIElementCollection : DependencyObjectCollection <DependencyObject>
 	{
-		internal List<IDependencyObject> z_sorted = new List<IDependencyObject>();
+		internal List<DependencyObject> z_sorted = new List<DependencyObject>();
 		internal void ResortByZIndex()
 		{
 			//z_sorted = this.OrderBy(x=> Canvas.GetZIndex(x)).ToList();

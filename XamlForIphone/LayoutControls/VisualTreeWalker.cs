@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Windows;
 using System.Collections;
 using System.Windows.Controls;
+using System.Collections.ObjectModel;
 namespace XamlForIphone
 {
 		enum VisualTreeWalkerDirection {
@@ -23,13 +24,13 @@ namespace XamlForIphone
 			if(content == null)
 				return;
 			
-			if(item is IList)
+			if(content is IList)
 			{
 				collection = content as IList;
 			}
 
 		}
-		DependencyObject content;
+		object content;
 		IList collection;
 		int index;
 		VisualTreeWalkerDirection direction = VisualTreeWalkerDirection.Logical;
@@ -47,7 +48,7 @@ namespace XamlForIphone
 				
 				if (count == 1 && index == 0) {
 					index ++;
-					return collection[0] as UIElement;
+					return (UIElement)collection[0];
 				}
 		
 				if (direction == VisualTreeWalkerDirection.ZForward || direction == VisualTreeWalkerDirection.ZReverse) {
@@ -64,17 +65,17 @@ namespace XamlForIphone
 		
 				switch (direction) {
 					case VisualTreeWalkerDirection.ZForward:
-						result = uiecollection.z_sorted[index] as UIElement;
+						result = (UIElement)uiecollection.z_sorted[index];
 						break;
 					case VisualTreeWalkerDirection.ZReverse:
 						result = (UIElement)uiecollection.z_sorted[count - (index + 1)];
 						break;
 					case VisualTreeWalkerDirection.Logical: {
-						result = collection[index] as UIElement;
+						result = (UIElement)collection[index];
 						break;
 					}
 					case VisualTreeWalkerDirection.LogicalReverse: {
-						result = collection[(count - (index + 1))] as UIElement;
+						result = (UIElement)collection[(count - (index + 1))];
 						break;
 					}
 				}

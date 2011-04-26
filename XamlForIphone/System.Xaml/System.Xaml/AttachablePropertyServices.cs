@@ -48,13 +48,13 @@ namespace System.Xaml
 			}
 			t [name] = value;
 			//DependencyObject.propertyDeclarations
-			if(instance is IDependencyObject)
+			if(instance is DependencyObject)
 			{
 				var dependancy = DependencyObject.propertyDeclarations[name.DeclaringType][name.MemberName];
 				// = name.DeclaringType.GetProperty(name.MemberName);
 				//var dependancy = prop.GetValue(null,null);// as DependencyProperty;
 				Console.WriteLine(dependancy);
-				(instance as IDependencyObject).SetValue(dependancy,value);
+				(instance as DependencyObject).SetValue(dependancy,value);
 			}
 		}
 

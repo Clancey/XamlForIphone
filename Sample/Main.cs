@@ -48,7 +48,7 @@ namespace Sample
 				frame.Height -=20;
 				var directory = Path.Combine(NSBundle.MainBundle.ResourcePath,"MainPage.xaml");
 				XamlXmlReader reader = new XamlXmlReader(directory);
-				UIView obj = (UIView)XamlServices.Load(reader);
+				var obj = (XamlForIphone.Canvas)XamlServices.Load(reader);
 				obj.Frame = frame;
 				this.InvokeOnMainThread( delegate {
 					loadingLabel.RemoveFromSuperview();

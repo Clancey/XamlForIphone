@@ -31,7 +31,7 @@ namespace System.Windows.Controls
     /// </code>
     /// </example>
     /// <QualityBand>Stable</QualityBand>
-    public partial class ObjectCollection : ObservableCollection<object>
+    public partial class ObjectCollection : Collection<object>, IList
     {
         /// <summary>
         /// Initializes a new instance of the ObjectCollection class.

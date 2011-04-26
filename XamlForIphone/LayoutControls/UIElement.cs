@@ -35,9 +35,10 @@ using System.Windows;
 //using System.Windows.Media;
 //using System.Windows.Input;
 using Mono;
+using System.Windows.Controls;
 
-namespace System.Windows {
-	public abstract partial class UIElement : DependencyObject {
+namespace XamlForIphone {
+	public abstract partial class UIElement : DependencyObject ,IDependencyObject {
 
 		static UIElement ()
 		{
@@ -83,8 +84,8 @@ namespace System.Windows {
 			
 		}
 
-		internal DependencyObject SubtreeObject {
-			get; private set;
+		internal object SubtreeObject {
+			get; set;
 		}
 
 		internal UIElement VisualParent {
@@ -107,19 +108,14 @@ namespace System.Windows {
 		
 		//internal abstract void uielement_update_layout();
 
-
+		internal Size desiredSize  = new Size(0,0);
 		public Size DesiredSize {
 			get {
-				return new Size (0, 0);
+				return desiredSize;
 			}
 		}
 
-		public Size RenderSize {
-			get {
-				return new Size (0, 0);
-			}
-		}
-		
+
 		static void EnsureDesignMode ()
 		{
 			// NOTE:

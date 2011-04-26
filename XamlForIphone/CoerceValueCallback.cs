@@ -25,5 +25,5 @@
 
 namespace System.Windows {
 
-	public delegate object CoerceValueCallback (IDependencyObject d, object baseValue);
+	public delegate object CoerceValueCallback (DependencyObject d, object baseValue);
 }

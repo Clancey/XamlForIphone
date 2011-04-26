@@ -33,10 +33,10 @@ using System.Collections.Generic;
 using System.Drawing;
 
 namespace System.Windows {
-	public class DependencyObject : MonoTouch.UIKit.UIView, IDependencyObject{
+	public partial class DependencyObject : IDependencyObject{
 		public static Dictionary<Type,Dictionary<string,DependencyProperty>> propertyDeclarations = new Dictionary<Type,Dictionary<string,DependencyProperty>>();
 		private Dictionary<DependencyProperty,object> properties = new Dictionary<DependencyProperty,object>();
-
+		public RectangleF Frame {get;set;}
 		[MonoTODO]
 		public bool IsSealed {
 			get { return false; }
@@ -65,11 +65,12 @@ namespace System.Windows {
 			if (pm.CoerceValueCallback != null)
 				pm.CoerceValueCallback (this, GetValue (dp));
 		}
-
+		/*
 		public sealed override bool Equals (object obj)
 		{
 			throw new NotImplementedException("Equals");
 		}
+		*/
 
 		public sealed override int GetHashCode ()
 		{

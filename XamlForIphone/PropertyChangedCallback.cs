@@ -25,5 +25,5 @@
 
 namespace System.Windows {
 
-	public delegate void PropertyChangedCallback (IDependencyObject d, DependencyPropertyChangedEventArgs e);
+	public delegate void PropertyChangedCallback (DependencyObject d, DependencyPropertyChangedEventArgs e);
 }

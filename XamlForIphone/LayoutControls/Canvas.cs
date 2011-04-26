@@ -33,7 +33,7 @@ namespace XamlForIphone {
 	public partial class Canvas : Panel {
 		public static readonly DependencyProperty LeftProperty = DependencyProperty.Register ("Left", typeof(int), typeof(Canvas), new PropertyMetadata (0, OnLeftPropertyChanged));
 
-		private static void OnLeftPropertyChanged (IDependencyObject d, DependencyPropertyChangedEventArgs e)
+		private static void OnLeftPropertyChanged (DependencyObject d, DependencyPropertyChangedEventArgs e)
 		{
 			var frame = d.Frame;
 			frame.X = float.Parse (e.NewValue.ToString ());
@@ -41,7 +41,7 @@ namespace XamlForIphone {
 		}
 		public static readonly DependencyProperty TopProperty = DependencyProperty.Register ("Top", typeof(int), typeof(Canvas), new PropertyMetadata (OnTopPropertyChanged));
 
-		private static void OnTopPropertyChanged (IDependencyObject d, DependencyPropertyChangedEventArgs e)
+		private static void OnTopPropertyChanged (DependencyObject d, DependencyPropertyChangedEventArgs e)
 		{
 			var frame = d.Frame;
 			frame.Y = float.Parse (e.NewValue.ToString ());
@@ -90,20 +90,6 @@ namespace XamlForIphone {
 		{
 			return base.MeasureOverride (constraint);
 		}
-		internal override void ArrangeInternal (Rect finalRect)
-		{
-			VisualTreeWalker walker = new VisualTreeWalker (this);
-			var child = walker.Step();
-			while (child != null) {
-				Size desired = child.DesiredSize;
-				Rect child_final = new Rect (GetLeft (child), GetTop (child),
-							 desired.Width, desired.Height);
-				child.Arrange (child_final);
-				//child->ClearValue (LayoutInformation::LayoutClipProperty);
-				child = walker.Step();
-			}
 
-			//return finalSize;
-		}
 	}
 }

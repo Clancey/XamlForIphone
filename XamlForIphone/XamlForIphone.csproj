@@ -98,18 +98,12 @@
     <Compile Include="DependencyPropertyKey.cs" />
     <Compile Include="LocalValueEnumerator.cs" />
     <Compile Include="DependencyPropertyChangedEventArgs.cs" />
-    <Compile Include="DispacherTemplate.g.cs">
-      <DependentUpon>DispacherTemplate.tt</DependentUpon>
-    </Compile>
     <Compile Include="DependencyObjectType.cs" />
     <Compile Include="PropertyMetadata.cs" />
     <Compile Include="ValidateValueCallback.cs" />
     <Compile Include="LocalValueEntry.cs" />
     <Compile Include="PropertyChangedCallback.cs" />
     <Compile Include="CoerceValueCallback.cs" />
-    <Compile Include="RectConstructor.g.cs">
-      <DependentUpon>RectConstructor.tt</DependentUpon>
-    </Compile>
     <Compile Include="System.Xaml\System.Windows.Markup\AmbientAttribute.cs" />
     <Compile Include="System.Xaml\System.Windows.Markup\ArrayExtension.cs" />
     <Compile Include="System.Xaml\System.Windows.Markup\ConstructorArgumentAttribute.cs" />
@@ -232,8 +226,6 @@
     <Compile Include="System.Xaml\System.Xaml.Schema\XamlValueConverter.cs" />
     <Compile Include="VerticalAlignment.cs" />
     <Compile Include="HorizontalAlignment.cs" />
-    <Compile Include="IUIView.cs" />
-    <Compile Include="Util.cs" />
     <Compile Include="Kind.cs" />
     <Compile Include="DependencyObject.cs" />
     <Compile Include="LayoutControls\Grid.cs" />
@@ -258,16 +250,15 @@
     <Compile Include="System.Xaml\Locale.cs" />
     <Compile Include="System.Xaml\MonoTODOAttribute.cs" />
     <Compile Include="System.Xaml\Assembly\AssemblyInfo.cs" />
+    <Compile Include="iPhone\UITextField.cs" />
+    <Compile Include="iPhone\IViewHelper.cs" />
+    <Compile Include="iPhone\ViewHelper.cs" />
+    <Compile Include="iPhone\UIElement.cs" />
+    <Compile Include="iPhone\UIColorConverter.cs" />
+    <Compile Include="iPhone\UIKit.g.cs" />
+    <Compile Include="iPhone\UIView.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DispacherTemplate.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DispacherTemplate.g.cs</LastGenOutput>
-    </None>
-    <None Include="RectConstructor.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RectConstructor.g.cs</LastGenOutput>
-    </None>
     <None Include="System.Xaml\System.Windows.Markup\ChangeLog" />
     <None Include="System.Xaml\System.Xaml\ChangeLog" />
     <None Include="System.Xaml\System.Xaml.Schema\ChangeLog" />
@@ -279,7 +270,7 @@
     </None>
     <None Include="System.Xaml\Assembly\ChangeLog" />
     <None Include="System.Xaml\System.Xaml.Permissions\ChangeLog" />
-     <None Include="DispacherTemplate.cs">
+    <None Include="DispacherTemplate.cs">
       <Visible>False</Visible>
     </None>
     <None Include="RectConstructor.cs">

@@ -93,7 +93,6 @@
     <Compile Include="PhoneApplicationPage.cs" />
     <Compile Include="TextBlock.cs" />
     <Compile Include="MainPage.xaml.cs" />
-    <Compile Include="UIGrid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />

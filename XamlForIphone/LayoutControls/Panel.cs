@@ -55,10 +55,9 @@ namespace XamlForIphone {
 		
 		public Panel()
 		{
-			Children.CollectionChanged += HandleChildrenCollectionChanged;	
+			//Children.CollectionChanged += HandleChildrenCollectionChanged;	
+			SubtreeObject = Children;
 		}
-
-		internal abstract void HandleChildrenCollectionChanged (object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
-		
+	
 	}
 }
