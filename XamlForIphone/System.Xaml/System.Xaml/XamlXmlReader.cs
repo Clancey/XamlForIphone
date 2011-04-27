@@ -251,6 +251,8 @@ namespace System.Xaml
 		// Note that it could return invalid (None) node to tell the caller that it is not really an object element.
 		IEnumerable<XamlXmlNodeInfo> ReadObjectElement (XamlType parentType, XamlMember currentMember)
 		{
+			var theReader = r;
+			
 			if (r.NodeType != XmlNodeType.Element) {
 				//throw new XamlParseException (String.Format ("Element is expected, but got {0}", r.NodeType));
 				yield return Node (XamlNodeType.Value, r.Value);
@@ -434,6 +436,7 @@ namespace System.Xaml
 						XamlDirective d = FindStandardDirective (r.LocalName, AllowedMemberLocations.Attribute);
 						if (d != null) {
 							l.Add (new Pair (d, r.Value));
+							//atts.Add(d,r.Value);
 							continue;
 						}
 						throw new NotSupportedException (String.Format ("Attribute '{0}' is not supported", r.Name));

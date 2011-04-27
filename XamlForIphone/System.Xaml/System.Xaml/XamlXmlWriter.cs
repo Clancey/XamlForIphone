@@ -118,7 +118,7 @@ namespace System.Xaml
 				return;
 
 			intl.CloseAll ();
-
+			intl = null;
 			if (settings.CloseOutput)
 				w.Close ();
 		}

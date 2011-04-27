@@ -7,7 +7,7 @@ namespace XamlForIphone
 	{
 		public Canvas ()
 		{
-			
+			Console.WriteLine("i am created!");	
 		}
 		
 		internal override void ArrangeInternal (Rect finalRect)

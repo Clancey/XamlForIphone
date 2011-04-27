@@ -280,6 +280,18 @@
     <None Include="UIGrid.cs">
       <Visible>False</Visible>
     </None>
+    <None Include="IUIView.cs">
+      <Visible>False</Visible>
+    </None>
+    <None Include="System.Xaml\System.Xaml.dll.sources">
+      <Visible>False</Visible>
+    </None>
+    <None Include="System.Xaml\System.Xaml_test.dll.sources">
+      <Visible>False</Visible>
+    </None>
+    <None Include="Util.cs">
+      <Visible>False</Visible>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LayoutControls\" />

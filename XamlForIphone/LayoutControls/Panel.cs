@@ -37,16 +37,11 @@ namespace XamlForIphone {
 	[ContentProperty ("Children")]
 	public abstract partial class Panel : FrameworkElement {
 
-		public static readonly DependencyProperty ChildrenProperty = DependencyProperty.Register ("Children", typeof(ObjectCollection), typeof(Panel), new PropertyMetadata(new ObjectCollection()));
+		//public static readonly DependencyProperty ChildrenProperty = DependencyProperty.Register ("Children", typeof(ObjectCollection), typeof(Panel), new PropertyMetadata(new ObjectCollection()));
 		
 		public static readonly DependencyProperty IsItemsHostProperty  = DependencyProperty.Register ("IsItemsHost", typeof(bool), typeof(Panel), new PropertyMetadata());
 			
-		public ObjectCollection Children {
-			get { 
-				var thevalue = GetValue (ChildrenProperty);
-				return (ObjectCollection) thevalue; }
-			set { SetValue (ChildrenProperty, value); }
-		}
+		public ObjectCollection Children {get;set;}
 		
 		public bool IsItemsHost {
 			get { return (bool) GetValue (IsItemsHostProperty); }
@@ -55,6 +50,7 @@ namespace XamlForIphone {
 		
 		public Panel()
 		{
+			Children = new ObjectCollection();
 			//Children.CollectionChanged += HandleChildrenCollectionChanged;	
 			SubtreeObject = Children;
 		}

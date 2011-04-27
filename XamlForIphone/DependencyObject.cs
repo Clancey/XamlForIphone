@@ -31,6 +31,7 @@
 using System.Collections.Generic;
 //using System.Windows.Threading;
 using System.Drawing;
+using System.Xaml;
 
 namespace System.Windows {
 	public partial class DependencyObject : IDependencyObject{
@@ -155,6 +156,8 @@ namespace System.Windows {
 			else
 				throw new ArgumentException("A property named " + dp.Name + " already exists on " + t.Name);
 		}
+		
+		internal static NameScope name_scope = new NameScope();
 				
 
 	}

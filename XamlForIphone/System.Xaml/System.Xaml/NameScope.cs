@@ -33,7 +33,7 @@ namespace System.Xaml
 {
 	class NameScope : INameScope
 	{
-		Dictionary<string,object> table = new Dictionary<string,object> ();
+		internal Dictionary<string,object> table = new Dictionary<string,object> ();
 
 		public object FindName (string name)
 		{
@@ -49,12 +49,21 @@ namespace System.Xaml
 
 		public void RegisterName (string name, object scopedElement)
 		{
-			table.Add (name, scopedElement);
+			object obj;
+			if(!table.TryGetValue(name,out obj))
+				table.Add (name, scopedElement);
 		}
 
 		public void UnregisterName (string name)
 		{
 			table.Remove (name);
+		}
+		public void Add(NameScope scope)
+		{
+			foreach(var name in scope.table)
+			{
+				this.RegisterName(name.Key,name.Value);
+			}
 		}
 	}
 }

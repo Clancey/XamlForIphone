@@ -31,6 +31,7 @@ using System.Xaml;
 using System.Xaml.Schema;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Windows;
 
 // To use this under .NET, compile sources as:
 //
@@ -210,7 +211,7 @@ namespace System.Xaml
 		
 		XamlObjectWriter source;
 		XamlSchemaContext sctx;
-		INameScope name_scope = new NameScope ();
+		NameScope name_scope = new NameScope ();
 		List<NameFixupRequired> pending_name_references = new List<NameFixupRequired> ();
 		AmbientProvider ambient_provider = new AmbientProvider ();
 
@@ -249,7 +250,7 @@ namespace System.Xaml
 
 			var state = object_states.Pop ();
 			var obj = state.Value;
-			
+			DependencyObject.name_scope.Add(name_scope);
 			if (obj is MarkupExtension) {
 				try {
 					obj = ((MarkupExtension) obj).ProvideValue (service_provider);
@@ -352,10 +353,21 @@ namespace System.Xaml
 			// FIXME: this may need more strict match. RuntimeBinder may be useful here.
 			var eventMethodParams = ev.EventHandlerType.GetMethod ("Invoke").GetParameters ();
 			var mi = xt.UnderlyingType.GetMethod (mn, (from pi in eventMethodParams select pi.ParameterType).ToArray ());
-			if (mi == null)
-				throw new XamlObjectWriterException (String.Format ("Referenced value method {0} in type {1} indicated by event {2} was not found", mn, value, member));
+			if (mi == null){
+				var obj2 = object_states.LastOrDefault();
+				if (obj2 == null)
+					throw new XamlObjectWriterException (String.Format ("Referenced value method {0} in type {1} indicated by event {2} was not found", mn, value, member));
+				mi = obj2.Type.UnderlyingType.GetMethod(mn,(from pi in eventMethodParams select pi.ParameterType).ToArray ());
+				if(mi == null)
+					
+					throw new XamlObjectWriterException (String.Format ("Referenced value method {0} in type {1} indicated by event {2} was not found", mn, value, member));
+				xt = obj2.Type;
+			}
+				
 			var obj = object_states.Peek ().Value;
-			ev.AddEventHandler (obj, Delegate.CreateDelegate (ev.EventHandlerType, obj, mi));
+			var objDel = object_states.Where(x=> x.Type == xt).First().Value;
+			var del =  Delegate.CreateDelegate (ev.EventHandlerType, objDel, mi);
+			ev.AddEventHandler (obj,del);
 		}
 
 		void SetValue (XamlMember member, object value)

@@ -1,5 +1,5 @@
-﻿<sample:MainPage 
-    x:Class="WindowsPhoneApplication1.MainPage"
+﻿<Canvas 
+    x:Class="Canvas"
     xmlns="clr-namespace:XamlForIphone;assembly=XamlForIphone"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sample="clr-namespace:SilverlightApplication1;assembly=Sample"
@@ -12,7 +12,8 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True"
-    BackgroundColor = "Gray">    
-    	<UITextView Canvas.Left="25" Canvas.Top="20" x:Name ="CodeTb" BackgroundColor = "White" Height="300" Width="300" />
-    	<UIButton Canvas.Left = "25" Canvas.Top = "320" x:Name ="btnGenerate" Text = "Generate" Height="35" Width="200" TouchDown="HandleBtnTouchDown"/>
-</sample:MainPage>
+    BackgroundColor = "Blue">    
+    	<UITextField Canvas.Left="100" BackgroundColor = "Yellow" TextColor ="Blue" Canvas.Top="20" Name="uITextField1" Text="MY this was from xaml" Height="25" Width="200" />
+    	<UITextField Canvas.Left="50" BackgroundColor = "Purple" TextColor ="White" Canvas.Top="200" TextAlignment="Center" Name="uITextField1" Text="tb 2" Height="35" Width="200" />
+    	<UIButton Canvas.Left = "25" Canvas.Top = "100" Text = "Hi" Height="35" Width="200"/>
+</Canvas>

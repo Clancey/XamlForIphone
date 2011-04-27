@@ -158,7 +158,7 @@ namespace XamlForIphone {
 
 		public new object FindName (string name)
 		{
-			return null;// base.FindName (name);
+			return name_scope.FindName(name);
 		}
 		/*
 		internal void SetTemplateBinding (DependencyProperty dp, TemplateBindingExpression tb)

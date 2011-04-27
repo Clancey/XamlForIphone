@@ -28,9 +28,11 @@ using System.Windows;
 using Mono;
 using System.Windows.Markup;
 using XamlForIphone;
+using System;
 
 namespace XamlForIphone {
 	public partial class Canvas : Panel {
+
 		public static readonly DependencyProperty LeftProperty = DependencyProperty.Register ("Left", typeof(int), typeof(Canvas), new PropertyMetadata (0, OnLeftPropertyChanged));
 
 		private static void OnLeftPropertyChanged (DependencyObject d, DependencyPropertyChangedEventArgs e)

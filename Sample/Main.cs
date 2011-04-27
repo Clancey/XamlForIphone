@@ -11,6 +11,7 @@ using System.Xml;
 using System.IO;
 using Microsoft.Phone.Controls;
 using System.Threading;
+using SilverlightApplication1;
 
 namespace Sample
 {
@@ -27,34 +28,44 @@ namespace Sample
 	{
 		// This method is invoked when the application has loaded its UI and its ready to run
 		UILabel loadingLabel;
+		public UINavigationController navigationController;
+		public UIViewController mainvc;
+		public UIViewController secondaryVc;
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
 			// If you have defined a view, add it here:
-			// window.AddSubview (navigationController.View);
+			mainvc = new UIViewController();
+			secondaryVc = new UIViewController();
+			navigationController = new UINavigationController(mainvc);
 			loadingLabel = new UILabel(window.Bounds);
 			loadingLabel.Text = "Loading";
 			loadingLabel.TextAlignment = UITextAlignment.Center;
-			window.AddSubview(loadingLabel);
+			mainvc.View.AddSubview(loadingLabel);
+			window.AddSubview (navigationController.View);
 			window.MakeKeyAndVisible ();
-			Thread thread = new Thread(start);
-			thread.Start();
+			//navigationController.PushViewController(vc,false);
+			start();
+			//Thread thread = new Thread(start);
+			//thread.Start();
 			return true;
 		}
+		MainPage mainPage;
 		public void start()
 		{
 			using(new NSAutoreleasePool()) {
 				var frame = window.Frame;
-				frame.Y += 20;
-				frame.Height -=20;
 				var directory = Path.Combine(NSBundle.MainBundle.ResourcePath,"MainPage.xaml");
 				XamlXmlReader reader = new XamlXmlReader(directory);
-				var obj = (XamlForIphone.Canvas)XamlServices.Load(reader);
-				obj.Frame = frame;
+				mainPage = (MainPage)XamlServices.Load(reader);
+				mainPage.Frame = frame;
 				this.InvokeOnMainThread( delegate {
 					loadingLabel.RemoveFromSuperview();
 					loadingLabel = null;
-					window.AddSubview(obj);
+					mainvc.View.AddSubview(mainPage);
 				});
+				TextReader tr = new StreamReader(Path.Combine(NSBundle.MainBundle.ResourcePath,"load.xaml"));
+				var tb = mainPage.FindName("CodeTb");
+				((XamlForIphone.UITextView)tb).Text = tr.ReadToEnd() ;
 			}
 		}
 		

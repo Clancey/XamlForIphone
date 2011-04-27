@@ -9,6 +9,7 @@ namespace XamlForIphone
 		public UIElement ()
 		{
 			CreateHandle();
+			setupEvents();
 		}
 		
 		internal MonoTouch.UIKit.UIView m_helper;
@@ -24,8 +25,12 @@ namespace XamlForIphone
 			m_helper = new ViewHelper (this);
 			m_view = m_helper;
 		}
+		internal virtual void setupEvents()
+		{
+			
+		}
 		
-		
+		public string Name {get;set;}
 		public virtual new RectangleF Frame {
 			get {return m_view.Frame;}
 			set {m_view.Frame = value;}

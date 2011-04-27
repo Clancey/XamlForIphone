@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.Windows;
+using System.Drawing;
 namespace XamlForIphone
 {
 	public  partial class UIView : UIElement
@@ -62,6 +63,12 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
 		#endregion
 		#region Methods
 		public  void Add (MonoTouch.UIKit.UIView view) { m_helper.Add(view);}
@@ -191,6 +198,87 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		public event EventHandler RegionWillChange;
+		public event EventHandler RegionChanged;
+		public event EventHandler WillStartLoadingMap;
+		public event EventHandler MapLoaded;
+		public event EventHandler LoadingMapFailed;
+		public event EventHandler DidAddAnnotationViews;
+		public event EventHandler CalloutAccessoryControlTapped;
+		public event EventHandler ChangedDragState;
+		public event EventHandler DidAddOverlayViews;
+		public event EventHandler DidSelectAnnotationView;
+		public event EventHandler DidFailToLocateUser;
+		public event EventHandler DidDeselectAnnotationView;
+		public event EventHandler WillStartLocatingUser;
+		public event EventHandler DidStopLocatingUser;
+		public event EventHandler DidUpdateUserLocation;
+		internal override void setupEvents ()
+		{
+			m_helper.RegionWillChange+=  delegate (System.Object sender,MonoTouch.MapKit.MKMapViewChangeEventArgs e){
+			if(RegionWillChange != null)
+			RegionWillChange(sender,e);
+			};
+			m_helper.RegionChanged+=  delegate (System.Object sender,MonoTouch.MapKit.MKMapViewChangeEventArgs e){
+			if(RegionChanged != null)
+			RegionChanged(sender,e);
+			};
+			m_helper.WillStartLoadingMap+=  delegate (System.Object sender,System.EventArgs e){
+			if(WillStartLoadingMap != null)
+			WillStartLoadingMap(sender,e);
+			};
+			m_helper.MapLoaded+=  delegate (System.Object sender,System.EventArgs e){
+			if(MapLoaded != null)
+			MapLoaded(sender,e);
+			};
+			m_helper.LoadingMapFailed+=  delegate (System.Object sender,MonoTouch.Foundation.NSErrorEventArgs e){
+			if(LoadingMapFailed != null)
+			LoadingMapFailed(sender,e);
+			};
+			m_helper.DidAddAnnotationViews+=  delegate (System.Object sender,MonoTouch.MapKit.MKMapViewAnnotationEventArgs e){
+			if(DidAddAnnotationViews != null)
+			DidAddAnnotationViews(sender,e);
+			};
+			m_helper.CalloutAccessoryControlTapped+=  delegate (System.Object sender,MonoTouch.MapKit.MKMapViewAccessoryTappedEventArgs e){
+			if(CalloutAccessoryControlTapped != null)
+			CalloutAccessoryControlTapped(sender,e);
+			};
+			m_helper.ChangedDragState+=  delegate (System.Object sender,MonoTouch.MapKit.MKMapViewDragStateEventArgs e){
+			if(ChangedDragState != null)
+			ChangedDragState(sender,e);
+			};
+			m_helper.DidAddOverlayViews+=  delegate (System.Object sender,MonoTouch.MapKit.MKOverlayViewsEventArgs e){
+			if(DidAddOverlayViews != null)
+			DidAddOverlayViews(sender,e);
+			};
+			m_helper.DidSelectAnnotationView+=  delegate (System.Object sender,MonoTouch.MapKit.MKAnnotationViewEventArgs e){
+			if(DidSelectAnnotationView != null)
+			DidSelectAnnotationView(sender,e);
+			};
+			m_helper.DidFailToLocateUser+=  delegate (System.Object sender,MonoTouch.Foundation.NSErrorEventArgs e){
+			if(DidFailToLocateUser != null)
+			DidFailToLocateUser(sender,e);
+			};
+			m_helper.DidDeselectAnnotationView+=  delegate (System.Object sender,MonoTouch.MapKit.MKAnnotationViewEventArgs e){
+			if(DidDeselectAnnotationView != null)
+			DidDeselectAnnotationView(sender,e);
+			};
+			m_helper.WillStartLocatingUser+=  delegate (System.Object sender,System.EventArgs e){
+			if(WillStartLocatingUser != null)
+			WillStartLocatingUser(sender,e);
+			};
+			m_helper.DidStopLocatingUser+=  delegate (System.Object sender,System.EventArgs e){
+			if(DidStopLocatingUser != null)
+			DidStopLocatingUser(sender,e);
+			};
+			m_helper.DidUpdateUserLocation+=  delegate (System.Object sender,MonoTouch.MapKit.MKUserLocationEventArgs e){
+			if(DidUpdateUserLocation != null)
+			DidUpdateUserLocation(sender,e);
+			};
+		}
+		
+		#endregion
 		#region Methods
 		public  void AddAnnotation (MonoTouch.MapKit.MKAnnotation annotation) { m_helper.AddAnnotation(annotation);}
 		public  void AddAnnotation (MonoTouch.MapKit.MKAnnotation[] annotations) { m_helper.AddAnnotation(annotations);}
@@ -289,6 +377,12 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
+		#endregion
 		#region Methods
 		public  System.Drawing.PointF PointForMapPoint (MonoTouch.MapKit.MKMapPoint mapPoint) {return  m_helper.PointForMapPoint(mapPoint);}
 		public  MonoTouch.MapKit.MKMapPoint MapPointForPoint (System.Drawing.PointF point) {return  m_helper.MapPointForPoint(point);}
@@ -369,6 +463,42 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		public event EventHandler Clicked;
+		public event EventHandler Canceled;
+		public event EventHandler WillPresent;
+		public event EventHandler Presented;
+		public event EventHandler WillDismiss;
+		public event EventHandler Dismissed;
+		internal override void setupEvents ()
+		{
+			m_helper.Clicked+=  delegate (System.Object sender,MonoTouch.UIKit.UIButtonEventArgs e){
+			if(Clicked != null)
+			Clicked(sender,e);
+			};
+			m_helper.Canceled+=  delegate (System.Object sender,System.EventArgs e){
+			if(Canceled != null)
+			Canceled(sender,e);
+			};
+			m_helper.WillPresent+=  delegate (System.Object sender,System.EventArgs e){
+			if(WillPresent != null)
+			WillPresent(sender,e);
+			};
+			m_helper.Presented+=  delegate (System.Object sender,System.EventArgs e){
+			if(Presented != null)
+			Presented(sender,e);
+			};
+			m_helper.WillDismiss+=  delegate (System.Object sender,MonoTouch.UIKit.UIButtonEventArgs e){
+			if(WillDismiss != null)
+			WillDismiss(sender,e);
+			};
+			m_helper.Dismissed+=  delegate (System.Object sender,MonoTouch.UIKit.UIButtonEventArgs e){
+			if(Dismissed != null)
+			Dismissed(sender,e);
+			};
+		}
+		
 		#endregion
 		#region Methods
 		public  void Add (System.String name) { m_helper.Add(name);}
@@ -452,6 +582,42 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		public event EventHandler Clicked;
+		public event EventHandler Canceled;
+		public event EventHandler WillPresent;
+		public event EventHandler Presented;
+		public event EventHandler WillDismiss;
+		public event EventHandler Dismissed;
+		internal override void setupEvents ()
+		{
+			m_helper.Clicked+=  delegate (System.Object sender,MonoTouch.UIKit.UIButtonEventArgs e){
+			if(Clicked != null)
+			Clicked(sender,e);
+			};
+			m_helper.Canceled+=  delegate (System.Object sender,System.EventArgs e){
+			if(Canceled != null)
+			Canceled(sender,e);
+			};
+			m_helper.WillPresent+=  delegate (System.Object sender,System.EventArgs e){
+			if(WillPresent != null)
+			WillPresent(sender,e);
+			};
+			m_helper.Presented+=  delegate (System.Object sender,System.EventArgs e){
+			if(Presented != null)
+			Presented(sender,e);
+			};
+			m_helper.WillDismiss+=  delegate (System.Object sender,MonoTouch.UIKit.UIButtonEventArgs e){
+			if(WillDismiss != null)
+			WillDismiss(sender,e);
+			};
+			m_helper.Dismissed+=  delegate (System.Object sender,MonoTouch.UIKit.UIButtonEventArgs e){
+			if(Dismissed != null)
+			Dismissed(sender,e);
+			};
+		}
+		
+		#endregion
 		#region Methods
 		public  System.Int32 AddButton (System.String title) {return  m_helper.AddButton(title);}
 		public  System.String ButtonTitle (System.Int32 index) {return  m_helper.ButtonTitle(index);}
@@ -529,6 +695,97 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		public event EventHandler TouchDown;
+		public event EventHandler TouchDownRepeat;
+		public event EventHandler TouchDragInside;
+		public event EventHandler TouchDragOutside;
+		public event EventHandler TouchDragEnter;
+		public event EventHandler TouchDragExit;
+		public event EventHandler TouchUpInside;
+		public event EventHandler TouchUpOutside;
+		public event EventHandler TouchCancel;
+		public event EventHandler ValueChanged;
+		public event EventHandler EditingDidBegin;
+		public event EventHandler EditingChanged;
+		public event EventHandler EditingDidEnd;
+		public event EventHandler EditingDidEndOnExit;
+		public event EventHandler AllTouchEvents;
+		public event EventHandler AllEditingEvents;
+		public event EventHandler AllEvents;
+		internal override void setupEvents ()
+		{
+			m_helper.TouchDown+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDown != null)
+			TouchDown(sender,e);
+			};
+			m_helper.TouchDownRepeat+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDownRepeat != null)
+			TouchDownRepeat(sender,e);
+			};
+			m_helper.TouchDragInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragInside != null)
+			TouchDragInside(sender,e);
+			};
+			m_helper.TouchDragOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragOutside != null)
+			TouchDragOutside(sender,e);
+			};
+			m_helper.TouchDragEnter+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragEnter != null)
+			TouchDragEnter(sender,e);
+			};
+			m_helper.TouchDragExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragExit != null)
+			TouchDragExit(sender,e);
+			};
+			m_helper.TouchUpInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpInside != null)
+			TouchUpInside(sender,e);
+			};
+			m_helper.TouchUpOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpOutside != null)
+			TouchUpOutside(sender,e);
+			};
+			m_helper.TouchCancel+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchCancel != null)
+			TouchCancel(sender,e);
+			};
+			m_helper.ValueChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(ValueChanged != null)
+			ValueChanged(sender,e);
+			};
+			m_helper.EditingDidBegin+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidBegin != null)
+			EditingDidBegin(sender,e);
+			};
+			m_helper.EditingChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingChanged != null)
+			EditingChanged(sender,e);
+			};
+			m_helper.EditingDidEnd+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEnd != null)
+			EditingDidEnd(sender,e);
+			};
+			m_helper.EditingDidEndOnExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEndOnExit != null)
+			EditingDidEndOnExit(sender,e);
+			};
+			m_helper.AllTouchEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllTouchEvents != null)
+			AllTouchEvents(sender,e);
+			};
+			m_helper.AllEditingEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEditingEvents != null)
+			AllEditingEvents(sender,e);
+			};
+			m_helper.AllEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEvents != null)
+			AllEvents(sender,e);
+			};
+		}
+		
 		#endregion
 		#region Methods
 		public  void AddTarget (System.EventHandler notification , MonoTouch.UIKit.UIControlEvent events) { m_helper.AddTarget(notification , events);}
@@ -611,6 +868,12 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
 		#endregion
 		#region Methods
 		public  System.Int32 RowsInComponent (System.Int32 component) {return  m_helper.RowsInComponent(component);}
@@ -698,6 +961,97 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		public event EventHandler TouchDown;
+		public event EventHandler TouchDownRepeat;
+		public event EventHandler TouchDragInside;
+		public event EventHandler TouchDragOutside;
+		public event EventHandler TouchDragEnter;
+		public event EventHandler TouchDragExit;
+		public event EventHandler TouchUpInside;
+		public event EventHandler TouchUpOutside;
+		public event EventHandler TouchCancel;
+		public event EventHandler ValueChanged;
+		public event EventHandler EditingDidBegin;
+		public event EventHandler EditingChanged;
+		public event EventHandler EditingDidEnd;
+		public event EventHandler EditingDidEndOnExit;
+		public event EventHandler AllTouchEvents;
+		public event EventHandler AllEditingEvents;
+		public event EventHandler AllEvents;
+		internal override void setupEvents ()
+		{
+			m_helper.TouchDown+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDown != null)
+			TouchDown(sender,e);
+			};
+			m_helper.TouchDownRepeat+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDownRepeat != null)
+			TouchDownRepeat(sender,e);
+			};
+			m_helper.TouchDragInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragInside != null)
+			TouchDragInside(sender,e);
+			};
+			m_helper.TouchDragOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragOutside != null)
+			TouchDragOutside(sender,e);
+			};
+			m_helper.TouchDragEnter+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragEnter != null)
+			TouchDragEnter(sender,e);
+			};
+			m_helper.TouchDragExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragExit != null)
+			TouchDragExit(sender,e);
+			};
+			m_helper.TouchUpInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpInside != null)
+			TouchUpInside(sender,e);
+			};
+			m_helper.TouchUpOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpOutside != null)
+			TouchUpOutside(sender,e);
+			};
+			m_helper.TouchCancel+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchCancel != null)
+			TouchCancel(sender,e);
+			};
+			m_helper.ValueChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(ValueChanged != null)
+			ValueChanged(sender,e);
+			};
+			m_helper.EditingDidBegin+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidBegin != null)
+			EditingDidBegin(sender,e);
+			};
+			m_helper.EditingChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingChanged != null)
+			EditingChanged(sender,e);
+			};
+			m_helper.EditingDidEnd+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEnd != null)
+			EditingDidEnd(sender,e);
+			};
+			m_helper.EditingDidEndOnExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEndOnExit != null)
+			EditingDidEndOnExit(sender,e);
+			};
+			m_helper.AllTouchEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllTouchEvents != null)
+			AllTouchEvents(sender,e);
+			};
+			m_helper.AllEditingEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEditingEvents != null)
+			AllEditingEvents(sender,e);
+			};
+			m_helper.AllEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEvents != null)
+			AllEvents(sender,e);
+			};
+		}
+		
 		#endregion
 		#region Methods
 		public  void InsertSegment (System.String title , System.Int32 pos , System.Boolean animated) { m_helper.InsertSegment(title , pos , animated);}
@@ -828,6 +1182,62 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		public event EventHandler Scrolled;
+		public event EventHandler DraggingStarted;
+		public event EventHandler DraggingEnded;
+		public event EventHandler DecelerationStarted;
+		public event EventHandler DecelerationEnded;
+		public event EventHandler ScrollAnimationEnded;
+		public event EventHandler ScrolledToTop;
+		public event EventHandler ZoomingEnded;
+		public event EventHandler DidZoom;
+		public event EventHandler ZoomingStarted;
+		internal override void setupEvents ()
+		{
+			m_helper.Scrolled+=  delegate (System.Object sender,System.EventArgs e){
+			if(Scrolled != null)
+			Scrolled(sender,e);
+			};
+			m_helper.DraggingStarted+=  delegate (System.Object sender,System.EventArgs e){
+			if(DraggingStarted != null)
+			DraggingStarted(sender,e);
+			};
+			m_helper.DraggingEnded+=  delegate (System.Object sender,MonoTouch.UIKit.DraggingEventArgs e){
+			if(DraggingEnded != null)
+			DraggingEnded(sender,e);
+			};
+			m_helper.DecelerationStarted+=  delegate (System.Object sender,System.EventArgs e){
+			if(DecelerationStarted != null)
+			DecelerationStarted(sender,e);
+			};
+			m_helper.DecelerationEnded+=  delegate (System.Object sender,System.EventArgs e){
+			if(DecelerationEnded != null)
+			DecelerationEnded(sender,e);
+			};
+			m_helper.ScrollAnimationEnded+=  delegate (System.Object sender,System.EventArgs e){
+			if(ScrollAnimationEnded != null)
+			ScrollAnimationEnded(sender,e);
+			};
+			m_helper.ScrolledToTop+=  delegate (System.Object sender,System.EventArgs e){
+			if(ScrolledToTop != null)
+			ScrolledToTop(sender,e);
+			};
+			m_helper.ZoomingEnded+=  delegate (System.Object sender,MonoTouch.UIKit.ZoomingEndedEventArgs e){
+			if(ZoomingEnded != null)
+			ZoomingEnded(sender,e);
+			};
+			m_helper.DidZoom+=  delegate (System.Object sender,System.EventArgs e){
+			if(DidZoom != null)
+			DidZoom(sender,e);
+			};
+			m_helper.ZoomingStarted+=  delegate (System.Object sender,MonoTouch.UIKit.UIScrollViewZoomingEventArgs e){
+			if(ZoomingStarted != null)
+			ZoomingStarted(sender,e);
+			};
+		}
+		
+		#endregion
 		#region Methods
 		public  void ReloadData () { m_helper.ReloadData();}
 		public  void ReloadSectionIndexTitles () { m_helper.ReloadSectionIndexTitles();}
@@ -938,6 +1348,12 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
 		#endregion
 		#region Methods
 		public  void PrepareForReuse () { m_helper.PrepareForReuse();}
@@ -1051,6 +1467,107 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		public event EventHandler Started;
+		public event EventHandler Ended;
+		public event EventHandler TouchDown;
+		public event EventHandler TouchDownRepeat;
+		public event EventHandler TouchDragInside;
+		public event EventHandler TouchDragOutside;
+		public event EventHandler TouchDragEnter;
+		public event EventHandler TouchDragExit;
+		public event EventHandler TouchUpInside;
+		public event EventHandler TouchUpOutside;
+		public event EventHandler TouchCancel;
+		public event EventHandler ValueChanged;
+		public event EventHandler EditingDidBegin;
+		public event EventHandler EditingChanged;
+		public event EventHandler EditingDidEnd;
+		public event EventHandler EditingDidEndOnExit;
+		public event EventHandler AllTouchEvents;
+		public event EventHandler AllEditingEvents;
+		public event EventHandler AllEvents;
+		internal override void setupEvents ()
+		{
+			m_helper.Started+=  delegate (System.Object sender,System.EventArgs e){
+			if(Started != null)
+			Started(sender,e);
+			};
+			m_helper.Ended+=  delegate (System.Object sender,System.EventArgs e){
+			if(Ended != null)
+			Ended(sender,e);
+			};
+			m_helper.TouchDown+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDown != null)
+			TouchDown(sender,e);
+			};
+			m_helper.TouchDownRepeat+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDownRepeat != null)
+			TouchDownRepeat(sender,e);
+			};
+			m_helper.TouchDragInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragInside != null)
+			TouchDragInside(sender,e);
+			};
+			m_helper.TouchDragOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragOutside != null)
+			TouchDragOutside(sender,e);
+			};
+			m_helper.TouchDragEnter+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragEnter != null)
+			TouchDragEnter(sender,e);
+			};
+			m_helper.TouchDragExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragExit != null)
+			TouchDragExit(sender,e);
+			};
+			m_helper.TouchUpInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpInside != null)
+			TouchUpInside(sender,e);
+			};
+			m_helper.TouchUpOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpOutside != null)
+			TouchUpOutside(sender,e);
+			};
+			m_helper.TouchCancel+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchCancel != null)
+			TouchCancel(sender,e);
+			};
+			m_helper.ValueChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(ValueChanged != null)
+			ValueChanged(sender,e);
+			};
+			m_helper.EditingDidBegin+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidBegin != null)
+			EditingDidBegin(sender,e);
+			};
+			m_helper.EditingChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingChanged != null)
+			EditingChanged(sender,e);
+			};
+			m_helper.EditingDidEnd+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEnd != null)
+			EditingDidEnd(sender,e);
+			};
+			m_helper.EditingDidEndOnExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEndOnExit != null)
+			EditingDidEndOnExit(sender,e);
+			};
+			m_helper.AllTouchEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllTouchEvents != null)
+			AllTouchEvents(sender,e);
+			};
+			m_helper.AllEditingEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEditingEvents != null)
+			AllEditingEvents(sender,e);
+			};
+			m_helper.AllEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEvents != null)
+			AllEvents(sender,e);
+			};
+		}
+		
+		#endregion
 		#region Methods
 		public  System.Drawing.RectangleF BorderRect (System.Drawing.RectangleF forBounds) {return  m_helper.BorderRect(forBounds);}
 		public  System.Drawing.RectangleF TextRect (System.Drawing.RectangleF forBounds) {return  m_helper.TextRect(forBounds);}
@@ -1075,12 +1592,33 @@ namespace XamlForIphone
 		{
 			return element.m_helper;
 		}
-		
+		MonoTouch.UIKit.UIButton dismiss;
 		internal new MonoTouch.UIKit.UITextView m_helper;
 		protected override void CreateHandle ()
 		{
 			m_helper = new MonoTouch.UIKit.UITextView();
+			m_helper.Editable = true;
+			var accessFrame = new RectangleF(0, 0, 300, 25);
+			var inputAccessoryView =new MonoTouch.UIKit.UIView(accessFrame);;
+			//inputAccessoryView.BackgroundColor = MonoTouch.UIKit.UIColor.Blue;
+			dismiss = MonoTouch.UIKit.UIButton.FromType(MonoTouch.UIKit.UIButtonType.RoundedRect);
+			dismiss.Frame = new System.Drawing.RectangleF(0, 0, 158, 25);
+			
+				dismiss.SetTitle("Dismiss",MonoTouch.UIKit.UIControlState.Normal);
+				dismiss.TouchDown += delegate {
+					m_helper.BecomeFirstResponder();
+					m_helper.ResignFirstResponder();
+				};
+			inputAccessoryView.AddSubview(dismiss);
+			
+			m_helper.InputAccessoryView = inputAccessoryView;
+			//m_helper.Started += delegate {
+				//dismiss = MonoTouch.UIKit.UIButton.FromType(MonoTouch.UIKit.UIButtonType.InfoDark);
+				//m_helper.InputView = dismiss;
+			
+			//};
 			m_view = m_helper;
+			
 		}
 		
 		#region Fields
@@ -1174,6 +1712,132 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		public event EventHandler Started;
+		public event EventHandler Ended;
+		public event EventHandler Changed;
+		public event EventHandler SelectionChanged;
+		public event EventHandler Scrolled;
+		public event EventHandler DraggingStarted;
+		public event EventHandler DraggingEnded;
+		public event EventHandler DecelerationStarted;
+		public event EventHandler DecelerationEnded;
+		public event EventHandler ScrollAnimationEnded;
+		public event EventHandler ScrolledToTop;
+		public event EventHandler ZoomingEnded;
+		public event EventHandler DidZoom;
+		public event EventHandler ZoomingStarted;
+		//public event EventHandler Scrolled;
+		//public event EventHandler DraggingStarted;
+		//public event EventHandler DraggingEnded;
+		//public event EventHandler DecelerationStarted;
+		//public event EventHandler DecelerationEnded;
+		//public event EventHandler ScrollAnimationEnded;
+		//public event EventHandler ScrolledToTop;
+		//public event EventHandler ZoomingEnded;
+		//public event EventHandler DidZoom;
+		//public event EventHandler ZoomingStarted;
+		internal override void setupEvents ()
+		{
+			m_helper.Started+=  delegate (System.Object sender,System.EventArgs e){
+			if(Started != null)
+			Started(sender,e);
+			};
+			m_helper.Ended+=  delegate (System.Object sender,System.EventArgs e){
+			if(Ended != null)
+			Ended(sender,e);
+			};
+			m_helper.Changed+=  delegate (System.Object sender,System.EventArgs e){
+			if(Changed != null)
+			Changed(sender,e);
+			};
+			m_helper.SelectionChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(SelectionChanged != null)
+			SelectionChanged(sender,e);
+			};
+			m_helper.Scrolled+=  delegate (System.Object sender,System.EventArgs e){
+			if(Scrolled != null)
+			Scrolled(sender,e);
+			};
+			m_helper.DraggingStarted+=  delegate (System.Object sender,System.EventArgs e){
+			if(DraggingStarted != null)
+			DraggingStarted(sender,e);
+			};
+			m_helper.DraggingEnded+=  delegate (System.Object sender,MonoTouch.UIKit.DraggingEventArgs e){
+			if(DraggingEnded != null)
+			DraggingEnded(sender,e);
+			};
+			m_helper.DecelerationStarted+=  delegate (System.Object sender,System.EventArgs e){
+			if(DecelerationStarted != null)
+			DecelerationStarted(sender,e);
+			};
+			m_helper.DecelerationEnded+=  delegate (System.Object sender,System.EventArgs e){
+			if(DecelerationEnded != null)
+			DecelerationEnded(sender,e);
+			};
+			m_helper.ScrollAnimationEnded+=  delegate (System.Object sender,System.EventArgs e){
+			if(ScrollAnimationEnded != null)
+			ScrollAnimationEnded(sender,e);
+			};
+			m_helper.ScrolledToTop+=  delegate (System.Object sender,System.EventArgs e){
+			if(ScrolledToTop != null)
+			ScrolledToTop(sender,e);
+			};
+			m_helper.ZoomingEnded+=  delegate (System.Object sender,MonoTouch.UIKit.ZoomingEndedEventArgs e){
+			if(ZoomingEnded != null)
+			ZoomingEnded(sender,e);
+			};
+			m_helper.DidZoom+=  delegate (System.Object sender,System.EventArgs e){
+			if(DidZoom != null)
+			DidZoom(sender,e);
+			};
+			m_helper.ZoomingStarted+=  delegate (System.Object sender,MonoTouch.UIKit.UIScrollViewZoomingEventArgs e){
+			if(ZoomingStarted != null)
+			ZoomingStarted(sender,e);
+			};
+			m_helper.Scrolled+=  delegate (System.Object sender,System.EventArgs e){
+			if(Scrolled != null)
+			Scrolled(sender,e);
+			};
+			m_helper.DraggingStarted+=  delegate (System.Object sender,System.EventArgs e){
+			if(DraggingStarted != null)
+			DraggingStarted(sender,e);
+			};
+			m_helper.DraggingEnded+=  delegate (System.Object sender,MonoTouch.UIKit.DraggingEventArgs e){
+			if(DraggingEnded != null)
+			DraggingEnded(sender,e);
+			};
+			m_helper.DecelerationStarted+=  delegate (System.Object sender,System.EventArgs e){
+			if(DecelerationStarted != null)
+			DecelerationStarted(sender,e);
+			};
+			m_helper.DecelerationEnded+=  delegate (System.Object sender,System.EventArgs e){
+			if(DecelerationEnded != null)
+			DecelerationEnded(sender,e);
+			};
+			m_helper.ScrollAnimationEnded+=  delegate (System.Object sender,System.EventArgs e){
+			if(ScrollAnimationEnded != null)
+			ScrollAnimationEnded(sender,e);
+			};
+			m_helper.ScrolledToTop+=  delegate (System.Object sender,System.EventArgs e){
+			if(ScrolledToTop != null)
+			ScrolledToTop(sender,e);
+			};
+			m_helper.ZoomingEnded+=  delegate (System.Object sender,MonoTouch.UIKit.ZoomingEndedEventArgs e){
+			if(ZoomingEnded != null)
+			ZoomingEnded(sender,e);
+			};
+			m_helper.DidZoom+=  delegate (System.Object sender,System.EventArgs e){
+			if(DidZoom != null)
+			DidZoom(sender,e);
+			};
+			m_helper.ZoomingStarted+=  delegate (System.Object sender,MonoTouch.UIKit.UIScrollViewZoomingEventArgs e){
+			if(ZoomingStarted != null)
+			ZoomingStarted(sender,e);
+			};
+		}
+		
+		#endregion
 		#region Methods
 		public  void ScrollRangeToVisible (MonoTouch.Foundation.NSRange range) { m_helper.ScrollRangeToVisible(range);}
 		#endregion
@@ -1242,6 +1906,12 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
 		#endregion
 		#region Methods
 		public  void MakeKeyAndVisible () { m_helper.MakeKeyAndVisible();}
@@ -1318,6 +1988,12 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
+		#endregion
 		#region Methods
 		public  System.Drawing.SizeF SizeThatFits (System.Drawing.SizeF f) {return  m_helper.SizeThatFits(f);}
 		#endregion
@@ -1385,6 +2061,12 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
 		#endregion
 		#region Methods
 		public  void StartAnimating () { m_helper.StartAnimating();}
@@ -1470,6 +2152,97 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		public event EventHandler TouchDown;
+		public event EventHandler TouchDownRepeat;
+		public event EventHandler TouchDragInside;
+		public event EventHandler TouchDragOutside;
+		public event EventHandler TouchDragEnter;
+		public event EventHandler TouchDragExit;
+		public event EventHandler TouchUpInside;
+		public event EventHandler TouchUpOutside;
+		public event EventHandler TouchCancel;
+		public event EventHandler ValueChanged;
+		public event EventHandler EditingDidBegin;
+		public event EventHandler EditingChanged;
+		public event EventHandler EditingDidEnd;
+		public event EventHandler EditingDidEndOnExit;
+		public event EventHandler AllTouchEvents;
+		public event EventHandler AllEditingEvents;
+		public event EventHandler AllEvents;
+		internal override void setupEvents ()
+		{
+			m_helper.TouchDown+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDown != null)
+			TouchDown(sender,e);
+			};
+			m_helper.TouchDownRepeat+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDownRepeat != null)
+			TouchDownRepeat(sender,e);
+			};
+			m_helper.TouchDragInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragInside != null)
+			TouchDragInside(sender,e);
+			};
+			m_helper.TouchDragOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragOutside != null)
+			TouchDragOutside(sender,e);
+			};
+			m_helper.TouchDragEnter+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragEnter != null)
+			TouchDragEnter(sender,e);
+			};
+			m_helper.TouchDragExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragExit != null)
+			TouchDragExit(sender,e);
+			};
+			m_helper.TouchUpInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpInside != null)
+			TouchUpInside(sender,e);
+			};
+			m_helper.TouchUpOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpOutside != null)
+			TouchUpOutside(sender,e);
+			};
+			m_helper.TouchCancel+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchCancel != null)
+			TouchCancel(sender,e);
+			};
+			m_helper.ValueChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(ValueChanged != null)
+			ValueChanged(sender,e);
+			};
+			m_helper.EditingDidBegin+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidBegin != null)
+			EditingDidBegin(sender,e);
+			};
+			m_helper.EditingChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingChanged != null)
+			EditingChanged(sender,e);
+			};
+			m_helper.EditingDidEnd+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEnd != null)
+			EditingDidEnd(sender,e);
+			};
+			m_helper.EditingDidEndOnExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEndOnExit != null)
+			EditingDidEndOnExit(sender,e);
+			};
+			m_helper.AllTouchEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllTouchEvents != null)
+			AllTouchEvents(sender,e);
+			};
+			m_helper.AllEditingEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEditingEvents != null)
+			AllEditingEvents(sender,e);
+			};
+			m_helper.AllEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEvents != null)
+			AllEvents(sender,e);
+			};
+		}
+		
 		#endregion
 		#region Methods
 		public  void MoveTo (System.Drawing.PointF point) { m_helper.MoveTo(point);}
@@ -1580,6 +2353,97 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		public event EventHandler TouchDown;
+		public event EventHandler TouchDownRepeat;
+		public event EventHandler TouchDragInside;
+		public event EventHandler TouchDragOutside;
+		public event EventHandler TouchDragEnter;
+		public event EventHandler TouchDragExit;
+		public event EventHandler TouchUpInside;
+		public event EventHandler TouchUpOutside;
+		public event EventHandler TouchCancel;
+		public event EventHandler ValueChanged;
+		public event EventHandler EditingDidBegin;
+		public event EventHandler EditingChanged;
+		public event EventHandler EditingDidEnd;
+		public event EventHandler EditingDidEndOnExit;
+		public event EventHandler AllTouchEvents;
+		public event EventHandler AllEditingEvents;
+		public event EventHandler AllEvents;
+		internal override void setupEvents ()
+		{
+			m_helper.TouchDown+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDown != null)
+			TouchDown(sender,e);
+			};
+			m_helper.TouchDownRepeat+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDownRepeat != null)
+			TouchDownRepeat(sender,e);
+			};
+			m_helper.TouchDragInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragInside != null)
+			TouchDragInside(sender,e);
+			};
+			m_helper.TouchDragOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragOutside != null)
+			TouchDragOutside(sender,e);
+			};
+			m_helper.TouchDragEnter+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragEnter != null)
+			TouchDragEnter(sender,e);
+			};
+			m_helper.TouchDragExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragExit != null)
+			TouchDragExit(sender,e);
+			};
+			m_helper.TouchUpInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpInside != null)
+			TouchUpInside(sender,e);
+			};
+			m_helper.TouchUpOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpOutside != null)
+			TouchUpOutside(sender,e);
+			};
+			m_helper.TouchCancel+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchCancel != null)
+			TouchCancel(sender,e);
+			};
+			m_helper.ValueChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(ValueChanged != null)
+			ValueChanged(sender,e);
+			};
+			m_helper.EditingDidBegin+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidBegin != null)
+			EditingDidBegin(sender,e);
+			};
+			m_helper.EditingChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingChanged != null)
+			EditingChanged(sender,e);
+			};
+			m_helper.EditingDidEnd+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEnd != null)
+			EditingDidEnd(sender,e);
+			};
+			m_helper.EditingDidEndOnExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEndOnExit != null)
+			EditingDidEndOnExit(sender,e);
+			};
+			m_helper.AllTouchEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllTouchEvents != null)
+			AllTouchEvents(sender,e);
+			};
+			m_helper.AllEditingEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEditingEvents != null)
+			AllEditingEvents(sender,e);
+			};
+			m_helper.AllEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEvents != null)
+			AllEvents(sender,e);
+			};
+		}
+		
+		#endregion
 		#region Methods
 		public  void SetTitle (System.String title , MonoTouch.UIKit.UIControlState forState) { m_helper.SetTitle(title , forState);}
 		public  void SetTitleColor (MonoTouch.UIKit.UIColor color , MonoTouch.UIKit.UIControlState forState) { m_helper.SetTitleColor(color , forState);}
@@ -1675,6 +2539,12 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
+		#endregion
 		#region Methods
 		public  System.Drawing.RectangleF TextRectForBounds (System.Drawing.RectangleF bounds , System.Int32 numberOfLines) {return  m_helper.TextRectForBounds(bounds , numberOfLines);}
 		public  void DrawText (System.Drawing.RectangleF rect) { m_helper.DrawText(rect);}
@@ -1748,6 +2618,12 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
 		#endregion
 		#region Methods
 		public  void StartAnimating () { m_helper.StartAnimating();}
@@ -1834,6 +2710,97 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		public event EventHandler TouchDown;
+		public event EventHandler TouchDownRepeat;
+		public event EventHandler TouchDragInside;
+		public event EventHandler TouchDragOutside;
+		public event EventHandler TouchDragEnter;
+		public event EventHandler TouchDragExit;
+		public event EventHandler TouchUpInside;
+		public event EventHandler TouchUpOutside;
+		public event EventHandler TouchCancel;
+		public event EventHandler ValueChanged;
+		public event EventHandler EditingDidBegin;
+		public event EventHandler EditingChanged;
+		public event EventHandler EditingDidEnd;
+		public event EventHandler EditingDidEndOnExit;
+		public event EventHandler AllTouchEvents;
+		public event EventHandler AllEditingEvents;
+		public event EventHandler AllEvents;
+		internal override void setupEvents ()
+		{
+			m_helper.TouchDown+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDown != null)
+			TouchDown(sender,e);
+			};
+			m_helper.TouchDownRepeat+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDownRepeat != null)
+			TouchDownRepeat(sender,e);
+			};
+			m_helper.TouchDragInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragInside != null)
+			TouchDragInside(sender,e);
+			};
+			m_helper.TouchDragOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragOutside != null)
+			TouchDragOutside(sender,e);
+			};
+			m_helper.TouchDragEnter+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragEnter != null)
+			TouchDragEnter(sender,e);
+			};
+			m_helper.TouchDragExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragExit != null)
+			TouchDragExit(sender,e);
+			};
+			m_helper.TouchUpInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpInside != null)
+			TouchUpInside(sender,e);
+			};
+			m_helper.TouchUpOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpOutside != null)
+			TouchUpOutside(sender,e);
+			};
+			m_helper.TouchCancel+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchCancel != null)
+			TouchCancel(sender,e);
+			};
+			m_helper.ValueChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(ValueChanged != null)
+			ValueChanged(sender,e);
+			};
+			m_helper.EditingDidBegin+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidBegin != null)
+			EditingDidBegin(sender,e);
+			};
+			m_helper.EditingChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingChanged != null)
+			EditingChanged(sender,e);
+			};
+			m_helper.EditingDidEnd+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEnd != null)
+			EditingDidEnd(sender,e);
+			};
+			m_helper.EditingDidEndOnExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEndOnExit != null)
+			EditingDidEndOnExit(sender,e);
+			};
+			m_helper.AllTouchEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllTouchEvents != null)
+			AllTouchEvents(sender,e);
+			};
+			m_helper.AllEditingEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEditingEvents != null)
+			AllEditingEvents(sender,e);
+			};
+			m_helper.AllEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEvents != null)
+			AllEvents(sender,e);
+			};
+		}
+		
+		#endregion
 		#region Methods
 		public  void SetDate (MonoTouch.Foundation.NSDate date , System.Boolean animated) { m_helper.SetDate(date , animated);}
 		#endregion
@@ -1907,6 +2874,12 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
 		#endregion
 		#region Methods
 		public  void PushNavigationItem (MonoTouch.UIKit.UINavigationItem item , System.Boolean animated) { m_helper.PushNavigationItem(item , animated);}
@@ -1989,6 +2962,97 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		public event EventHandler TouchDown;
+		public event EventHandler TouchDownRepeat;
+		public event EventHandler TouchDragInside;
+		public event EventHandler TouchDragOutside;
+		public event EventHandler TouchDragEnter;
+		public event EventHandler TouchDragExit;
+		public event EventHandler TouchUpInside;
+		public event EventHandler TouchUpOutside;
+		public event EventHandler TouchCancel;
+		public event EventHandler ValueChanged;
+		public event EventHandler EditingDidBegin;
+		public event EventHandler EditingChanged;
+		public event EventHandler EditingDidEnd;
+		public event EventHandler EditingDidEndOnExit;
+		public event EventHandler AllTouchEvents;
+		public event EventHandler AllEditingEvents;
+		public event EventHandler AllEvents;
+		internal override void setupEvents ()
+		{
+			m_helper.TouchDown+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDown != null)
+			TouchDown(sender,e);
+			};
+			m_helper.TouchDownRepeat+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDownRepeat != null)
+			TouchDownRepeat(sender,e);
+			};
+			m_helper.TouchDragInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragInside != null)
+			TouchDragInside(sender,e);
+			};
+			m_helper.TouchDragOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragOutside != null)
+			TouchDragOutside(sender,e);
+			};
+			m_helper.TouchDragEnter+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragEnter != null)
+			TouchDragEnter(sender,e);
+			};
+			m_helper.TouchDragExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragExit != null)
+			TouchDragExit(sender,e);
+			};
+			m_helper.TouchUpInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpInside != null)
+			TouchUpInside(sender,e);
+			};
+			m_helper.TouchUpOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpOutside != null)
+			TouchUpOutside(sender,e);
+			};
+			m_helper.TouchCancel+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchCancel != null)
+			TouchCancel(sender,e);
+			};
+			m_helper.ValueChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(ValueChanged != null)
+			ValueChanged(sender,e);
+			};
+			m_helper.EditingDidBegin+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidBegin != null)
+			EditingDidBegin(sender,e);
+			};
+			m_helper.EditingChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingChanged != null)
+			EditingChanged(sender,e);
+			};
+			m_helper.EditingDidEnd+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEnd != null)
+			EditingDidEnd(sender,e);
+			};
+			m_helper.EditingDidEndOnExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEndOnExit != null)
+			EditingDidEndOnExit(sender,e);
+			};
+			m_helper.AllTouchEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllTouchEvents != null)
+			AllTouchEvents(sender,e);
+			};
+			m_helper.AllEditingEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEditingEvents != null)
+			AllEditingEvents(sender,e);
+			};
+			m_helper.AllEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEvents != null)
+			AllEvents(sender,e);
+			};
+		}
+		
+		#endregion
 		#region Methods
 		public  void UpdateCurrentPageDisplay () { m_helper.UpdateCurrentPageDisplay();}
 		public  System.Drawing.SizeF SizeForNumberOfPages (System.Int32 pageCount) {return  m_helper.SizeForNumberOfPages(pageCount);}
@@ -2056,6 +3120,12 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
 		#endregion
 		#region Methods
 		#endregion
@@ -2151,6 +3221,62 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		public event EventHandler Scrolled;
+		public event EventHandler DraggingStarted;
+		public event EventHandler DraggingEnded;
+		public event EventHandler DecelerationStarted;
+		public event EventHandler DecelerationEnded;
+		public event EventHandler ScrollAnimationEnded;
+		public event EventHandler ScrolledToTop;
+		public event EventHandler ZoomingEnded;
+		public event EventHandler DidZoom;
+		public event EventHandler ZoomingStarted;
+		internal override void setupEvents ()
+		{
+			m_helper.Scrolled+=  delegate (System.Object sender,System.EventArgs e){
+			if(Scrolled != null)
+			Scrolled(sender,e);
+			};
+			m_helper.DraggingStarted+=  delegate (System.Object sender,System.EventArgs e){
+			if(DraggingStarted != null)
+			DraggingStarted(sender,e);
+			};
+			m_helper.DraggingEnded+=  delegate (System.Object sender,MonoTouch.UIKit.DraggingEventArgs e){
+			if(DraggingEnded != null)
+			DraggingEnded(sender,e);
+			};
+			m_helper.DecelerationStarted+=  delegate (System.Object sender,System.EventArgs e){
+			if(DecelerationStarted != null)
+			DecelerationStarted(sender,e);
+			};
+			m_helper.DecelerationEnded+=  delegate (System.Object sender,System.EventArgs e){
+			if(DecelerationEnded != null)
+			DecelerationEnded(sender,e);
+			};
+			m_helper.ScrollAnimationEnded+=  delegate (System.Object sender,System.EventArgs e){
+			if(ScrollAnimationEnded != null)
+			ScrollAnimationEnded(sender,e);
+			};
+			m_helper.ScrolledToTop+=  delegate (System.Object sender,System.EventArgs e){
+			if(ScrolledToTop != null)
+			ScrolledToTop(sender,e);
+			};
+			m_helper.ZoomingEnded+=  delegate (System.Object sender,MonoTouch.UIKit.ZoomingEndedEventArgs e){
+			if(ZoomingEnded != null)
+			ZoomingEnded(sender,e);
+			};
+			m_helper.DidZoom+=  delegate (System.Object sender,System.EventArgs e){
+			if(DidZoom != null)
+			DidZoom(sender,e);
+			};
+			m_helper.ZoomingStarted+=  delegate (System.Object sender,MonoTouch.UIKit.UIScrollViewZoomingEventArgs e){
+			if(ZoomingStarted != null)
+			ZoomingStarted(sender,e);
+			};
+		}
+		
+		#endregion
 		#region Methods
 		public  void SetContentOffset (System.Drawing.PointF contentOffset , System.Boolean animated) { m_helper.SetContentOffset(contentOffset , animated);}
 		public  void ScrollRectToVisible (System.Drawing.RectangleF rect , System.Boolean animated) { m_helper.ScrollRectToVisible(rect , animated);}
@@ -2244,6 +3370,52 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		public event EventHandler OnEditingStarted;
+		public event EventHandler OnEditingStopped;
+		public event EventHandler TextChanged;
+		public event EventHandler SearchButtonClicked;
+		public event EventHandler BookmarkButtonClicked;
+		public event EventHandler CancelButtonClicked;
+		public event EventHandler SelectedScopeButtonIndexChanged;
+		public event EventHandler ListButtonClicked;
+		internal override void setupEvents ()
+		{
+			m_helper.OnEditingStarted+=  delegate (System.Object sender,System.EventArgs e){
+			if(OnEditingStarted != null)
+			OnEditingStarted(sender,e);
+			};
+			m_helper.OnEditingStopped+=  delegate (System.Object sender,System.EventArgs e){
+			if(OnEditingStopped != null)
+			OnEditingStopped(sender,e);
+			};
+			m_helper.TextChanged+=  delegate (System.Object sender,MonoTouch.UIKit.UISearchBarTextChangedEventArgs e){
+			if(TextChanged != null)
+			TextChanged(sender,e);
+			};
+			m_helper.SearchButtonClicked+=  delegate (System.Object sender,System.EventArgs e){
+			if(SearchButtonClicked != null)
+			SearchButtonClicked(sender,e);
+			};
+			m_helper.BookmarkButtonClicked+=  delegate (System.Object sender,System.EventArgs e){
+			if(BookmarkButtonClicked != null)
+			BookmarkButtonClicked(sender,e);
+			};
+			m_helper.CancelButtonClicked+=  delegate (System.Object sender,System.EventArgs e){
+			if(CancelButtonClicked != null)
+			CancelButtonClicked(sender,e);
+			};
+			m_helper.SelectedScopeButtonIndexChanged+=  delegate (System.Object sender,MonoTouch.UIKit.UISearchBarButtonIndexEventArgs e){
+			if(SelectedScopeButtonIndexChanged != null)
+			SelectedScopeButtonIndexChanged(sender,e);
+			};
+			m_helper.ListButtonClicked+=  delegate (System.Object sender,System.EventArgs e){
+			if(ListButtonClicked != null)
+			ListButtonClicked(sender,e);
+			};
+		}
+		
+		#endregion
 		#region Methods
 		public  void SetShowsCancelButton (System.Boolean showsCancelButton , System.Boolean animated) { m_helper.SetShowsCancelButton(showsCancelButton , animated);}
 		#endregion
@@ -2327,6 +3499,97 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		public event EventHandler TouchDown;
+		public event EventHandler TouchDownRepeat;
+		public event EventHandler TouchDragInside;
+		public event EventHandler TouchDragOutside;
+		public event EventHandler TouchDragEnter;
+		public event EventHandler TouchDragExit;
+		public event EventHandler TouchUpInside;
+		public event EventHandler TouchUpOutside;
+		public event EventHandler TouchCancel;
+		public event EventHandler ValueChanged;
+		public event EventHandler EditingDidBegin;
+		public event EventHandler EditingChanged;
+		public event EventHandler EditingDidEnd;
+		public event EventHandler EditingDidEndOnExit;
+		public event EventHandler AllTouchEvents;
+		public event EventHandler AllEditingEvents;
+		public event EventHandler AllEvents;
+		internal override void setupEvents ()
+		{
+			m_helper.TouchDown+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDown != null)
+			TouchDown(sender,e);
+			};
+			m_helper.TouchDownRepeat+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDownRepeat != null)
+			TouchDownRepeat(sender,e);
+			};
+			m_helper.TouchDragInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragInside != null)
+			TouchDragInside(sender,e);
+			};
+			m_helper.TouchDragOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragOutside != null)
+			TouchDragOutside(sender,e);
+			};
+			m_helper.TouchDragEnter+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragEnter != null)
+			TouchDragEnter(sender,e);
+			};
+			m_helper.TouchDragExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragExit != null)
+			TouchDragExit(sender,e);
+			};
+			m_helper.TouchUpInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpInside != null)
+			TouchUpInside(sender,e);
+			};
+			m_helper.TouchUpOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpOutside != null)
+			TouchUpOutside(sender,e);
+			};
+			m_helper.TouchCancel+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchCancel != null)
+			TouchCancel(sender,e);
+			};
+			m_helper.ValueChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(ValueChanged != null)
+			ValueChanged(sender,e);
+			};
+			m_helper.EditingDidBegin+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidBegin != null)
+			EditingDidBegin(sender,e);
+			};
+			m_helper.EditingChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingChanged != null)
+			EditingChanged(sender,e);
+			};
+			m_helper.EditingDidEnd+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEnd != null)
+			EditingDidEnd(sender,e);
+			};
+			m_helper.EditingDidEndOnExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEndOnExit != null)
+			EditingDidEndOnExit(sender,e);
+			};
+			m_helper.AllTouchEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllTouchEvents != null)
+			AllTouchEvents(sender,e);
+			};
+			m_helper.AllEditingEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEditingEvents != null)
+			AllEditingEvents(sender,e);
+			};
+			m_helper.AllEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEvents != null)
+			AllEvents(sender,e);
+			};
+		}
+		
 		#endregion
 		#region Methods
 		public  void SetValue (System.Single value , System.Boolean animated) { m_helper.SetValue(value , animated);}
@@ -2414,6 +3677,97 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		public event EventHandler TouchDown;
+		public event EventHandler TouchDownRepeat;
+		public event EventHandler TouchDragInside;
+		public event EventHandler TouchDragOutside;
+		public event EventHandler TouchDragEnter;
+		public event EventHandler TouchDragExit;
+		public event EventHandler TouchUpInside;
+		public event EventHandler TouchUpOutside;
+		public event EventHandler TouchCancel;
+		public event EventHandler ValueChanged;
+		public event EventHandler EditingDidBegin;
+		public event EventHandler EditingChanged;
+		public event EventHandler EditingDidEnd;
+		public event EventHandler EditingDidEndOnExit;
+		public event EventHandler AllTouchEvents;
+		public event EventHandler AllEditingEvents;
+		public event EventHandler AllEvents;
+		internal override void setupEvents ()
+		{
+			m_helper.TouchDown+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDown != null)
+			TouchDown(sender,e);
+			};
+			m_helper.TouchDownRepeat+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDownRepeat != null)
+			TouchDownRepeat(sender,e);
+			};
+			m_helper.TouchDragInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragInside != null)
+			TouchDragInside(sender,e);
+			};
+			m_helper.TouchDragOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragOutside != null)
+			TouchDragOutside(sender,e);
+			};
+			m_helper.TouchDragEnter+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragEnter != null)
+			TouchDragEnter(sender,e);
+			};
+			m_helper.TouchDragExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchDragExit != null)
+			TouchDragExit(sender,e);
+			};
+			m_helper.TouchUpInside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpInside != null)
+			TouchUpInside(sender,e);
+			};
+			m_helper.TouchUpOutside+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchUpOutside != null)
+			TouchUpOutside(sender,e);
+			};
+			m_helper.TouchCancel+=  delegate (System.Object sender,System.EventArgs e){
+			if(TouchCancel != null)
+			TouchCancel(sender,e);
+			};
+			m_helper.ValueChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(ValueChanged != null)
+			ValueChanged(sender,e);
+			};
+			m_helper.EditingDidBegin+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidBegin != null)
+			EditingDidBegin(sender,e);
+			};
+			m_helper.EditingChanged+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingChanged != null)
+			EditingChanged(sender,e);
+			};
+			m_helper.EditingDidEnd+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEnd != null)
+			EditingDidEnd(sender,e);
+			};
+			m_helper.EditingDidEndOnExit+=  delegate (System.Object sender,System.EventArgs e){
+			if(EditingDidEndOnExit != null)
+			EditingDidEndOnExit(sender,e);
+			};
+			m_helper.AllTouchEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllTouchEvents != null)
+			AllTouchEvents(sender,e);
+			};
+			m_helper.AllEditingEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEditingEvents != null)
+			AllEditingEvents(sender,e);
+			};
+			m_helper.AllEvents+=  delegate (System.Object sender,System.EventArgs e){
+			if(AllEvents != null)
+			AllEvents(sender,e);
+			};
+		}
+		
+		#endregion
 		#region Methods
 		public  void SetState (System.Boolean newState , System.Boolean animated) { m_helper.SetState(newState , animated);}
 		#endregion
@@ -2483,6 +3837,37 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		public event EventHandler ItemSelected;
+		public event EventHandler WillBeginCustomizingItems;
+		public event EventHandler DidBeginCustomizingItems;
+		public event EventHandler WillEndCustomizingItems;
+		public event EventHandler DidEndCustomizingItems;
+		internal override void setupEvents ()
+		{
+			m_helper.ItemSelected+=  delegate (System.Object sender,MonoTouch.UIKit.UITabBarItemEventArgs e){
+			if(ItemSelected != null)
+			ItemSelected(sender,e);
+			};
+			m_helper.WillBeginCustomizingItems+=  delegate (System.Object sender,MonoTouch.UIKit.UITabBarItemsEventArgs e){
+			if(WillBeginCustomizingItems != null)
+			WillBeginCustomizingItems(sender,e);
+			};
+			m_helper.DidBeginCustomizingItems+=  delegate (System.Object sender,MonoTouch.UIKit.UITabBarItemsEventArgs e){
+			if(DidBeginCustomizingItems != null)
+			DidBeginCustomizingItems(sender,e);
+			};
+			m_helper.WillEndCustomizingItems+=  delegate (System.Object sender,MonoTouch.UIKit.UITabBarFinalItemsEventArgs e){
+			if(WillEndCustomizingItems != null)
+			WillEndCustomizingItems(sender,e);
+			};
+			m_helper.DidEndCustomizingItems+=  delegate (System.Object sender,MonoTouch.UIKit.UITabBarFinalItemsEventArgs e){
+			if(DidEndCustomizingItems != null)
+			DidEndCustomizingItems(sender,e);
+			};
+		}
+		
 		#endregion
 		#region Methods
 		public  void SetItems (MonoTouch.UIKit.UITabBarItem[] items , System.Boolean animated) { m_helper.SetItems(items , animated);}
@@ -2555,6 +3940,12 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
 		#endregion
 		#region Methods
 		public  void SetItems (MonoTouch.UIKit.UIBarButtonItem[] items , System.Boolean animated) { m_helper.SetItems(items , animated);}
@@ -2631,6 +4022,27 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		public event EventHandler LoadStarted;
+		public event EventHandler LoadFinished;
+		public event EventHandler LoadError;
+		internal override void setupEvents ()
+		{
+			m_helper.LoadStarted+=  delegate (System.Object sender,System.EventArgs e){
+			if(LoadStarted != null)
+			LoadStarted(sender,e);
+			};
+			m_helper.LoadFinished+=  delegate (System.Object sender,System.EventArgs e){
+			if(LoadFinished != null)
+			LoadFinished(sender,e);
+			};
+			m_helper.LoadError+=  delegate (System.Object sender,MonoTouch.UIKit.UIWebErrorArgs e){
+			if(LoadError != null)
+			LoadError(sender,e);
+			};
+		}
+		
 		#endregion
 		#region Methods
 		public  void LoadRequest (MonoTouch.Foundation.NSUrlRequest r) { m_helper.LoadRequest(r);}
@@ -2715,6 +4127,12 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
+		#endregion
 		#region Methods
 		public  void PrepareForReuse () { m_helper.PrepareForReuse();}
 		public  void SetSelected (System.Boolean selected , System.Boolean animated) { m_helper.SetSelected(selected , animated);}
@@ -2795,6 +4213,12 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
+		#endregion
 		#region Methods
 		#endregion
 	}
@@ -2874,6 +4298,12 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
+		#endregion
 		#region Methods
 		#endregion
 	}
@@ -2949,6 +4379,12 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
 		#endregion
 		#region Methods
 		public  void CreatePath () { m_helper.CreatePath();}
@@ -3033,6 +4469,12 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
+		#endregion
 		#region Methods
 		#endregion
 	}
@@ -3110,6 +4552,12 @@ namespace XamlForIphone
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
 		#endregion
+		#region Events
+		internal override void setupEvents ()
+		{
+		}
+		
+		#endregion
 		#region Methods
 		#endregion
 	}
@@ -3181,6 +4629,27 @@ namespace XamlForIphone
 		public MonoTouch.UIKit.UIView InputView {get{return m_helper.InputView;}}
 		public System.IntPtr SuperHandle {get{return m_helper.SuperHandle;}}
 		public System.IntPtr Handle {get{return m_helper.Handle;}set{m_helper.Handle = value;}}
+		#endregion
+		#region Events
+		public event EventHandler AdLoaded;
+		public event EventHandler FailedToReceiveAd;
+		public event EventHandler ActionFinished;
+		internal override void setupEvents ()
+		{
+			m_helper.AdLoaded+=  delegate (System.Object sender,System.EventArgs e){
+			if(AdLoaded != null)
+			AdLoaded(sender,e);
+			};
+			m_helper.FailedToReceiveAd+=  delegate (System.Object sender,MonoTouch.iAd.AdErrorEventArgs e){
+			if(FailedToReceiveAd != null)
+			FailedToReceiveAd(sender,e);
+			};
+			m_helper.ActionFinished+=  delegate (System.Object sender,System.EventArgs e){
+			if(ActionFinished != null)
+			ActionFinished(sender,e);
+			};
+		}
+		
 		#endregion
 		#region Methods
 		public  void CancelBannerViewAction () { m_helper.CancelBannerViewAction();}
