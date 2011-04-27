@@ -14,6 +14,6 @@
     shell:SystemTray.IsVisible="True"
     BackgroundColor = "Blue">    
     	<UITextField Canvas.Left="100" BackgroundColor = "Yellow" TextColor ="Blue" Canvas.Top="20" Name="uITextField1" Text="MY this was from xaml" Height="25" Width="200" />
-    	<UITextField Canvas.Left="50" BackgroundColor = "Purple" TextColor ="White" Canvas.Top="200" TextAlignment="Center" Name="uITextField1" Text="tb 2" Height="35" Width="200" />
+    	<UITextField Canvas.Left="50" BackgroundColor = "Purple" TextColor ="White" Canvas.Top="200" x:Name="tbBinding" TextAlignment="Center" Name="uITextField1" Text="{Binding Name" Height="35" Width="200" />
     	<UIButton Canvas.Left = "25" Canvas.Top = "100" Text = "Hi" Height="35" Width="200"/>
 </Canvas>

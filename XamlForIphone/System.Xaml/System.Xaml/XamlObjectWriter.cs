@@ -32,6 +32,7 @@ using System.Xaml.Schema;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Windows;
+using System.Windows.Data;
 
 // To use this under .NET, compile sources as:
 //
@@ -373,13 +374,38 @@ namespace System.Xaml
 		void SetValue (XamlMember member, object value)
 		{
 			if (member == XamlLanguage.FactoryMethod)
+			{
 				object_states.Peek ().FactoryMethod = (string) value;
-			else if (member.IsDirective)
 				return;
-			else if (member.IsAttachable)
+			}
+			if (member.IsDirective)
+				return;
+			
+			if (!typeof (Binding).IsAssignableFrom (Type)) {
+				Binding binding = value as Binding;
+				if (binding != null) {
+					SetBinding (binding, Element.Object);
+					return;
+				}
+			}
+
+			if (!typeof (TemplateBindingExpression).IsAssignableFrom (Type)) {
+				TemplateBindingExpression tb = value as TemplateBindingExpression;
+				if (tb != null) {
+					SetTemplateBinding (tb, obj.Object);
+					return;
+				}
+			}
+
+			
+			if (member.IsAttachable)
+			{
 				AttachablePropertyServices.SetProperty (object_states.Peek ().Value, new AttachableMemberIdentifier (member.DeclaringType.UnderlyingType, member.Name), value);
-			else if (!source.OnSetValue (this, member, value))
+			}
+			if (!source.OnSetValue (this, member, value))
+			{
 				member.Invoker.SetValue (object_states.Peek ().Value, value);
+			}
 		}
 
 		void PopulateObject (bool considerPositionalParameters, IList<object> contents)

@@ -158,7 +158,10 @@ namespace System.Windows {
 		}
 		
 		internal static NameScope name_scope = new NameScope();
-				
+		public object FindName (string name)
+		{
+			return name_scope.FindName(name);
+		}		
 
 	}
 }

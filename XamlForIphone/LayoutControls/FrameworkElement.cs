@@ -41,7 +41,7 @@ using System;
 //using System.Windows.Automation;
 //using System.Windows.Controls.Primitives;
 
-namespace XamlForIphone {
+namespace System.Windows.Controls {
 	public abstract partial class FrameworkElement : UIElement {
 		/*
 		public event EventHandler LayoutUpdated {

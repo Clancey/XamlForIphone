@@ -1,9 +1,10 @@
 using System;
 using System.Windows;
 using System.ComponentModel;
+using System.Windows.Controls;
 namespace XamlForIphone
 {
-	public partial class UITextField : UIElement
+	public partial class UITextField : FrameworkElement
 	{
 		#region implemented abstract members of XamlForIphone.UIElement
 

@@ -29,7 +29,8 @@ namespace SilverlightApplication1
 			var obj = (UIElement)XamlServices.Parse(tb.Text);
 			//var obj = (UIElement)XamlServices.Load(stream);
 			obj.Frame = this.Bounds;
-			
+			var tb = (XamlForIphone.UITextField)obj.FindName("tbBinding");
+			tb
 			 var del = (AppDelegate)UIApplication.SharedApplication.Delegate;
 			foreach(var view in del.secondaryVc.View.Subviews)
 			{

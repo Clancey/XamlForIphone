@@ -2,9 +2,10 @@ using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Drawing;
+using System.Windows.Controls;
 namespace XamlForIphone
 {
-	public  partial class UIView : UIElement
+	public  partial class UIView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -121,7 +122,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class MKMapView : UIElement
+	public  partial class MKMapView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -316,7 +317,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class MKOverlayView : UIElement
+	public  partial class MKOverlayView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -395,7 +396,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIActionSheet : UIElement
+	public  partial class UIActionSheet : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -514,7 +515,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIAlertView : UIElement
+	public  partial class UIAlertView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -626,7 +627,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIControl : UIElement
+	public  partial class UIControl : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -802,7 +803,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIPickerView : UIElement
+	public  partial class UIPickerView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -886,7 +887,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UISegmentedControl : UIElement
+	public  partial class UISegmentedControl : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -1071,7 +1072,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UITableView : UIElement
+	public  partial class UITableView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -1268,7 +1269,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UITableViewCell : UIElement
+	public  partial class UITableViewCell : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -1365,7 +1366,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UITextField : UIElement
+	public  partial class UITextField : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -1581,7 +1582,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UITextView : UIElement
+	public  partial class UITextView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -1843,7 +1844,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIWindow : UIElement
+	public  partial class UIWindow : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -1926,7 +1927,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class MPVolumeView : UIElement
+	public  partial class MPVolumeView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -1999,7 +2000,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIActivityIndicatorView : UIElement
+	public  partial class UIActivityIndicatorView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -2074,7 +2075,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIBezierPath : UIElement
+	public  partial class UIBezierPath : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -2263,7 +2264,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIButton : UIElement
+	public  partial class UIButton : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -2462,7 +2463,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UILabel : UIElement
+	public  partial class UILabel : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -2551,7 +2552,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIImageView : UIElement
+	public  partial class UIImageView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -2631,7 +2632,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIDatePicker : UIElement
+	public  partial class UIDatePicker : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -2806,7 +2807,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UINavigationBar : UIElement
+	public  partial class UINavigationBar : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -2888,7 +2889,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIPageControl : UIElement
+	public  partial class UIPageControl : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -3059,7 +3060,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIProgressView : UIElement
+	public  partial class UIProgressView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -3131,7 +3132,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIScrollView : UIElement
+	public  partial class UIScrollView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -3288,7 +3289,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UISearchBar : UIElement
+	public  partial class UISearchBar : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -3421,7 +3422,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UISlider : UIElement
+	public  partial class UISlider : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -3606,7 +3607,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UISwitch : UIElement
+	public  partial class UISwitch : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -3773,7 +3774,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UITabBar : UIElement
+	public  partial class UITabBar : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -3876,7 +3877,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIToolbar : UIElement
+	public  partial class UIToolbar : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -3952,7 +3953,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class UIWebView : UIElement
+	public  partial class UIWebView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -4056,7 +4057,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class MKAnnotationView : UIElement
+	public  partial class MKAnnotationView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -4140,7 +4141,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class MKCircleView : UIElement
+	public  partial class MKCircleView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -4223,7 +4224,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class MKPinAnnotationView : UIElement
+	public  partial class MKPinAnnotationView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -4308,7 +4309,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class MKOverlayPathView : UIElement
+	public  partial class MKOverlayPathView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -4396,7 +4397,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class MKPolygonView : UIElement
+	public  partial class MKPolygonView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -4479,7 +4480,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class MKPolylineView : UIElement
+	public  partial class MKPolylineView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{
@@ -4562,7 +4563,7 @@ namespace XamlForIphone
 		#endregion
 	}
 	
-	public  partial class ADBannerView : UIElement
+	public  partial class ADBannerView : FrameworkElement
 	{
 		internal override void ArrangeInternal (Rect finalRect)
 		{

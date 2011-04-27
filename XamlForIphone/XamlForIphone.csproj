@@ -258,6 +258,24 @@
     <Compile Include="iPhone\UIKit.g.cs" />
     <Compile Include="iPhone\UIView.cs" />
     <Compile Include="iPhone\UIButton.cs" />
+    <Compile Include="Binding.cs" />
+    <Compile Include="BindingBase.cs" />
+    <Compile Include="IValueConverter.cs" />
+    <Compile Include="PropertyPath.cs" />
+    <Compile Include="BindingMode.cs" />
+    <Compile Include="UpdateSourceTrigger.cs" />
+    <Compile Include="RelativeSource.cs" />
+    <Compile Include="RelativeSourceMode.cs" />
+    <Compile Include="PropertyPathConverter.cs" />
+    <Compile Include="TypeConverters.cs" />
+    <Compile Include="TemplateBindingExpression.cs" />
+    <Compile Include="Expression.cs" />
+    <Compile Include="IListenPropertyChanged.cs" />
+    <Compile Include="WeakPropertyChangedListener.cs" />
+    <Compile Include="IWeakListener.cs" />
+    <Compile Include="Resource.Designer.cs" />
+    <Compile Include="LayoutControls\Control.cs" />
+    <Compile Include="LayoutControls\ContentControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="System.Xaml\System.Windows.Markup\ChangeLog" />
@@ -292,6 +310,7 @@
     <None Include="Util.cs">
       <Visible>False</Visible>
     </None>
+    <None Include="Resource.resx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LayoutControls\" />
